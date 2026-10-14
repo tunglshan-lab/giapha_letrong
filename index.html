@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gia Phả Lê Trọng - Cây Phả Hệ & Lịch Sử Dòng Họ</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts for Classical & Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        heritage: {
+                            50: '#fdfbf7',
+                            100: '#f7f2e8',
+                            200: '#eee2cc',
+                            300: '#e1cb9e',
+                            600: '#9e6e30',
+                            800: '#5c3d18',
+                            900: '#38230c',
+                        },
+                        amberGold: '#d97706',
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(158, 110, 48, 0.4);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(158, 110, 48, 0.7);
+        }
+        
+        /* Tree view connector lines */
+        .tree-branch-line {
+            position: relative;
+        }
+        .tree-branch-line::before {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: rgba(156, 163, 175, 0.3);
+        }
+        .tree-node-item::before {
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: 24px;
+            width: 16px;
+            height: 2px;
+            background-color: rgba(156, 163, 175, 0.3);
+        }
+        .dark .tree-branch-line::before,
+        .dark .tree-node-item::before {
+            background-color: rgba(156, 163, 175, 0.2);
+        }
+
+        /* Smooth collapse transitions */
+        .collapsible-content {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            max-height: 2000px;
+            opacity: 1;
+            overflow: hidden;
+        }
+        .collapsible-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+            margin-top: 0 !important;
+            margin-bottom: 0 !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            pointer-events: none;
+        }
+
+        /* Highlight pulse for deep-linked nodes */
+        @keyframes highlightPulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
+            50% { box-shadow: 0 0 0 6px rgba(217, 119, 6, 0.8); }
+        }
+        .highlight-node {
+            animation: highlightPulse 1.8s ease-in-out 3;
+            border-color: #d97706 !important;
+        }
+
+        /* Classical Letter Ornamental Frame for "Đôi dòng tâm sự" */
+        .letter-frame {
+            position: relative;
+            border: 1px solid rgba(217, 119, 6, 0.35);
+            padding: 2.5rem 2rem;
+            border-radius: 1rem;
+        }
+        .letter-frame::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(217, 119, 6, 0.2);
+            border-radius: 0.75rem;
+            pointer-events: none;
+        }
+
+        /* Drop cap styling */
+        .drop-cap::first-letter {
+            font-family: 'Merriweather', serif;
+            font-size: 3.25rem;
+            line-height: 0.85;
+            float: left;
+            margin-right: 0.75rem;
+            margin-top: 0.2rem;
+            color: #d97706;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="bg-heritage-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100 font-sans antialiased min-h-screen flex flex-col transition-colors duration-200">
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-40 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-heritage-200 dark:border-gray-800 shadow-sm transition-colors duration-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 gap-4">
+                
+                <!-- Logo & Clan Name -->
+                <div class="flex items-center gap-3 shrink-0 cursor-pointer" id="headerLogoBtn">
+                    <div class="w-10 h-10 rounded-full bg-heritage-800 dark:bg-amber-600 text-amber-200 dark:text-white flex items-center justify-center font-serif font-bold text-xl shadow-md border border-amber-500/30">
+                        武
+                    </div>
+                    <div>
+                        <h1 class="font-serif font-bold text-lg text-heritage-900 dark:text-amber-400 tracking-tight leading-none">GIA PHẢ LÊ TRỌNG</h1>
+                        <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">Bản Triều - Ninh Bình</span>
+                    </div>
+                </div>
+
+                <!-- Global Search Input with Unaccented Vietnamese Support -->
+                <div class="flex-1 max-w-md hidden md:block relative">
+                    <div class="relative">
+                        <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                        <input id="searchInputHeader" type="text" 
+                            placeholder="Tìm tên thành viên (ví dụ: Vũ Văn A, Tuấn...)" 
+                            class="w-full pl-10 pr-10 py-2 rounded-full border border-heritage-200 dark:border-gray-700 bg-heritage-50/50 dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-heritage-600 dark:focus:ring-amber-500 transition-all placeholder:text-gray-400">
+                        <button id="clearSearchBtn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
+                            <i class="fa-solid fa-circle-xmark text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Actions & Dark Mode Toggle -->
+                <div class="flex items-center gap-2">
+                    <button id="themeToggleBtn" title="Chuyển chế độ sáng/tối" 
+                        class="p-2.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-heritage-100 dark:hover:bg-gray-800 transition-colors">
+                        <i class="fa-solid fa-moon text-lg dark:hidden"></i>
+                        <i class="fa-solid fa-sun text-lg hidden dark:block text-amber-400"></i>
+                    </button>
+                    <button id="mobileSearchBtn" class="md:hidden p-2.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-heritage-100 dark:hover:bg-gray-800">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Search Bar Expandable -->
+            <div id="mobileSearchContainer" class="hidden md:hidden pb-3 pt-1">
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
+                    <input id="searchInputMobile" type="text" 
+                        placeholder="Tìm kiếm tiếng Việt không dấu..." 
+                        class="w-full pl-10 pr-4 py-2 rounded-lg border border-heritage-200 dark:border-gray-700 bg-heritage-50/50 dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-heritage-600">
+                </div>
+            </div>
+
+            <!-- Quick Navigation Sub-Bar (Branches & Tabs) -->
+            <nav class="flex items-center gap-1 overflow-x-auto py-2 border-t border-heritage-100 dark:border-gray-800/60 text-xs sm:text-sm font-medium scrollbar-none">
+                <button data-target="section-tree" class="nav-tab active flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-heritage-800 dark:bg-amber-600 text-white shrink-0 shadow-sm transition-all">
+                    <i class="fa-solid fa-sitemap text-xs"></i> Cây Phả Hệ
+                </button>
+                <div class="h-4 w-px bg-gray-300 dark:bg-gray-700 mx-1 shrink-0"></div>
+                <!-- Branch Jump Buttons -->
+                <button data-branch="Chi 1" class="branch-filter-btn px-2.5 py-1 rounded-md text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-colors">Chi 1 (Trưởng)</button>
+                <button data-branch="Chi 2" class="branch-filter-btn px-2.5 py-1 rounded-md text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-colors">Chi 2</button>
+                <button data-branch="Chi 3" class="branch-filter-btn px-2.5 py-1 rounded-md text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-colors">Chi 3</button>
+                <button data-branch="Chi 4" class="branch-filter-btn px-2.5 py-1 rounded-md text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-colors">Chi 4</button>
+                <button data-branch="Chi 5" class="branch-filter-btn px-2.5 py-1 rounded-md text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-colors">Chi 5</button>
+                <div class="h-4 w-px bg-gray-300 dark:bg-gray-700 mx-1 shrink-0"></div>
+                <button data-target="section-timeline" class="nav-tab flex items-center gap-1.5 px-3 py-1.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-all">
+                    <i class="fa-solid fa-clock-rotate-left text-xs"></i> Lịch Sử Dòng Họ
+                </button>
+                <button data-target="section-anniversary" class="nav-tab flex items-center gap-1.5 px-3 py-1.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-all">
+                    <i class="fa-solid fa-calendar-days text-xs"></i> Lịch Giỗ Âm Lịch
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Banner & Action Buttons -->
+    <section class="bg-gradient-to-b from-heritage-100/70 via-heritage-100/30 to-transparent dark:from-gray-900 dark:via-gray-900/50 dark:to-transparent border-b border-heritage-200/50 dark:border-gray-800 py-10 px-4 sm:px-6 transition-colors">
+        <div class="max-w-4xl mx-auto text-center space-y-4">
+            
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 dark:text-amber-400 text-xs font-semibold uppercase tracking-wider">
+                <i class="fa-solid fa-landmark text-amber-600"></i> GIA PHẢ BẢN TRIỀU
+            </div>
+
+            <h2 class="font-serif text-2xl sm:text-4xl font-bold text-heritage-900 dark:text-amber-100 tracking-tight">
+                VŨ TỘC • NGHĨA HƯNG
+            </h2>
+
+            <div class="w-16 h-0.5 bg-amber-500/40 mx-auto rounded-full"></div>
+
+            <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
+                Từ thế kỷ XVII, Cụ Thủy Tổ Vũ Đạo Chính khai cơ lập nghiệp trên đất Thụy Chính, Thái Thụy, Thái Bình, gây dựng nên dòng họ Vũ nơi đây. Qua bảy đời nối tiếp, đến Cụ Vũ Đức Mậu sinh hạ năm người con trai đều thành đạt, lập thành năm Chi — đời sau gọi là "Ngũ Chi Phương". Trang này ghi lại phả hệ năm Chi ấy, để con cháu xa gần cùng tìm về cội nguồn.
+            </p>
+
+            <!-- Two Featured Action Buttons: "Đôi dòng tâm sự" & "Hướng dẫn xem" -->
+            <div class="flex items-center justify-center gap-3 pt-2">
+                <button id="btnTamSuHero" class="px-4 py-2.5 rounded-full bg-heritage-800 dark:bg-amber-600 text-amber-100 dark:text-white text-xs sm:text-sm font-semibold hover:bg-heritage-900 dark:hover:bg-amber-700 transition-all shadow-md flex items-center gap-2">
+                    <i class="fa-regular fa-envelope text-amber-300"></i>
+                    <span>Đôi dòng tâm sự</span>
+                </button>
+
+                <button id="btnHuongDanHero" class="px-4 py-2.5 rounded-full bg-amber-500/10 dark:bg-gray-800 border border-amber-500/40 dark:border-gray-700 text-heritage-900 dark:text-amber-300 text-xs sm:text-sm font-semibold hover:bg-amber-500/20 dark:hover:bg-gray-700 transition-all flex items-center gap-2">
+                    <i class="fa-regular fa-circle-question text-amber-600 dark:text-amber-400"></i>
+                    <span>Hướng dẫn xem</span>
+                </button>
+            </div>
+
+            <!-- Stats Bar Row -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 max-w-2xl mx-auto">
+                <div class="bg-white/80 dark:bg-gray-900/80 p-2.5 rounded-xl border border-heritage-200 dark:border-gray-800 text-center shadow-sm">
+                    <span class="block text-lg font-bold text-heritage-800 dark:text-amber-400" id="statTotalMembers">0</span>
+                    <span class="text-[11px] text-gray-500 dark:text-gray-400">Tổng thành viên</span>
+                </div>
+                <div class="bg-white/80 dark:bg-gray-900/80 p-2.5 rounded-xl border border-blue-200 dark:border-blue-900/40 text-center shadow-sm">
+                    <span class="block text-lg font-bold text-blue-600 dark:text-blue-400" id="statMaleCount">0</span>
+                    <span class="text-[11px] text-gray-500 dark:text-gray-400">Con trai (Nam)</span>
+                </div>
+                <div class="bg-white/80 dark:bg-gray-900/80 p-2.5 rounded-xl border border-emerald-200 dark:border-emerald-900/40 text-center shadow-sm">
+                    <span class="block text-lg font-bold text-emerald-600 dark:text-emerald-400" id="statFemaleCount">0</span>
+                    <span class="text-[11px] text-gray-500 dark:text-gray-400">Con gái (Nữ)</span>
+                </div>
+                <div class="bg-white/80 dark:bg-gray-900/80 p-2.5 rounded-xl border border-purple-200 dark:border-purple-900/40 text-center shadow-sm">
+                    <span class="block text-lg font-bold text-purple-600 dark:text-purple-400" id="statSpouseCount">0</span>
+                    <span class="text-[11px] text-gray-500 dark:text-gray-400">Dâu / Rể 💍</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-1 w-full">
+
+        <!-- Controls Legend Bar for Tree -->
+        <div id="treeControlsBar" class="mb-6 flex flex-wrap items-center justify-between gap-4 bg-white dark:bg-gray-900 p-4 rounded-xl border border-heritage-200 dark:border-gray-800 shadow-sm">
+            <div class="flex flex-wrap items-center gap-3 text-xs">
+                <span class="font-semibold text-gray-500 dark:text-gray-400">Chú thích:</span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
+                    <i class="fa-solid fa-mars text-blue-500"></i> Con Trai
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                    <i class="fa-solid fa-venus text-emerald-500"></i> Con Gái
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-purple-50 dark:bg-purple-950/50 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800 border-dashed">
+                    <i class="fa-solid fa-ring text-purple-500"></i> Dâu / Rể
+                </span>
+                <span class="inline-flex items-center gap-1.5 px-2 py-1 text-gray-500">
+                    <span class="w-2 h-2 rounded-full bg-gray-400"></span> Đã mất
+                </span>
+            </div>
+
+            <!-- Quick Expand / Collapse Tree buttons -->
+            <div class="flex items-center gap-2">
+                <button id="expandAllBtn" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-heritage-100 dark:bg-gray-800 text-heritage-800 dark:text-amber-300 hover:bg-heritage-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fa-solid fa-folder-open mr-1"></i> Mở rộng tất cả
+                </button>
+                <button id="collapseAllBtn" class="px-3 py-1.5 text-xs font-medium rounded-lg bg-heritage-100 dark:bg-gray-800 text-heritage-800 dark:text-amber-300 hover:bg-heritage-200 dark:hover:bg-gray-700 transition-colors">
+                    <i class="fa-solid fa-folder mr-1"></i> Thu gọn tất cả
+                </button>
+            </div>
+        </div>
+
+        <!-- SECTION 1: CÂY PHẢ HỆ TƯƠNG TÁC -->
+        <section id="section-tree" class="tab-content space-y-4">
+            <div id="treeContainer" class="space-y-4">
+                <!-- Tree rendered dynamically via JavaScript -->
+            </div>
+            
+            <div id="noResultsState" class="hidden text-center py-12 bg-white dark:bg-gray-900 rounded-2xl border border-heritage-200 dark:border-gray-800 p-8">
+                <i class="fa-solid fa-user-slash text-4xl text-gray-300 dark:text-gray-700 mb-3"></i>
+                <p class="text-base font-semibold text-gray-700 dark:text-gray-300">Không tìm thấy thành viên phù hợp</p>
+                <p class="text-xs text-gray-500 mt-1">Thử đổi từ khóa tìm kiếm tiếng Việt hoặc bỏ bớt bộ lọc chi dòng họ.</p>
+                <button id="resetSearchBtn" class="mt-4 px-4 py-2 bg-heritage-800 dark:bg-amber-600 text-white rounded-lg text-xs font-medium shadow">
+                    Đặt lại bộ lọc
+                </button>
+            </div>
+        </section>
+
+        <!-- SECTION 2: LỊCH SỬ DÒNG HỌ (TIMELINE) -->
+        <section id="section-timeline" class="tab-content hidden space-y-6">
+            <div class="bg-white dark:bg-gray-900 p-6 sm:p-8 rounded-2xl border border-heritage-200 dark:border-gray-800 shadow-sm">
+                <div class="border-b border-heritage-100 dark:border-gray-800 pb-4 mb-8">
+                    <h3 class="font-serif text-xl font-bold text-heritage-900 dark:text-amber-300 flex items-center gap-2">
+                        <i class="fa-solid fa-landmark text-amber-600"></i> Niên Biểu & Mốc Lịch Sử Dòng Họ
+                    </h3>
+                    <p class="text-xs text-gray-500 mt-1">Ghi chép các sự kiện quan trọng qua nhiều thế hệ kể từ ngày khởi dựng từ đường.</p>
+                </div>
+
+                <div class="relative pl-6 sm:pl-8 space-y-8 before:absolute before:left-2.5 sm:before:left-3.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-dashed before:border-l-2 before:border-dashed before:border-heritage-300 dark:before:border-gray-700" id="timelineContainer">
+                    <!-- Timeline items will be rendered by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: LỊCH GIỖ ÂM LỊCH -->
+        <section id="section-anniversary" class="tab-content hidden space-y-6">
+            <div class="bg-white dark:bg-gray-900 p-6 sm:p-8 rounded-2xl border border-heritage-200 dark:border-gray-800 shadow-sm">
+                
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-heritage-100 dark:border-gray-800 pb-6">
+                    <div>
+                        <h3 class="font-serif text-xl font-bold text-heritage-900 dark:text-amber-300 flex items-center gap-2">
+                            <i class="fa-solid fa-calendar-check text-amber-600"></i> Danh Sách Lịch Giỗ & Tưởng Niệm
+                        </h3>
+                        <p class="text-xs text-gray-500 mt-1">Sắp xếp theo ngày giỗ âm lịch hàng năm để con cháu chuẩn bị lễ nghi nghi thức.</p>
+                    </div>
+
+                    <div class="flex items-center bg-heritage-100 dark:bg-gray-800 p-1 rounded-xl text-xs font-semibold">
+                        <button id="tabByMonthBtn" class="px-3 py-1.5 rounded-lg bg-white dark:bg-amber-600 text-heritage-900 dark:text-white shadow-sm transition-all">
+                            <i class="fa-solid fa-calendar-days mr-1"></i> Theo Tháng Âm
+                        </button>
+                        <button id="tabByGenBtn" class="px-3 py-1.5 rounded-lg text-gray-600 dark:text-gray-300 hover:text-heritage-900 transition-all">
+                            <i class="fa-solid fa-layer-group mr-1"></i> Theo Đời
+                        </button>
+                    </div>
+                </div>
+
+                <div id="lunarMonthPills" class="flex items-center gap-2 overflow-x-auto py-2 scrollbar-none">
+                    <button data-month="all" class="month-pill active px-3 py-1 rounded-full text-xs font-medium bg-heritage-800 dark:bg-amber-600 text-white shrink-0">Tất cả tháng</button>
+                    <button data-month="1" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 1 (Giêng)</button>
+                    <button data-month="2" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 2</button>
+                    <button data-month="3" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 3</button>
+                    <button data-month="4" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 4</button>
+                    <button data-month="5" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 5</button>
+                    <button data-month="6" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 6</button>
+                    <button data-month="7" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 7</button>
+                    <button data-month="8" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 8</button>
+                    <button data-month="9" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 9</button>
+                    <button data-month="10" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 10</button>
+                    <button data-month="11" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 11</button>
+                    <button data-month="12" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 12 (Chạp)</button>
+                </div>
+
+                <div id="anniversaryListContainer" class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ĐÔI DÒNG TÂM SỰ (#tam-su) -->
+        <section id="section-tamsu" class="tab-content hidden space-y-6">
+            <div class="mb-4">
+                <button class="btn-back-to-tree inline-flex items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-400 hover:underline">
+                    <i class="fa-solid fa-arrow-left"></i> Về Phả hệ
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 rounded-2xl border border-heritage-200 dark:border-gray-800 shadow-md p-6 sm:p-12 max-w-3xl mx-auto">
+                <div class="letter-frame bg-heritage-50/50 dark:bg-gray-950/40 text-center sm:text-left space-y-6">
+                    
+                    <div class="text-center space-y-2">
+                        <div class="text-amber-600 dark:text-amber-500 text-sm">❖ ❖ ❖</div>
+                        <h3 class="font-serif font-bold text-2xl sm:text-3xl text-heritage-900 dark:text-amber-200">Đôi dòng tâm sự</h3>
+                        <p class="text-xs text-gray-500 italic">Thái Bình, tháng 10 năm 2026</p>
+                    </div>
+
+                    <p class="font-serif font-bold text-sm text-heritage-800 dark:text-amber-300 border-b border-amber-500/20 pb-3">
+                        Kính gửi các cụ, các ông bà, cô bác và anh chị em trong họ,
+                    </p>
+
+                    <div class="space-y-4 text-xs sm:text-sm leading-relaxed text-gray-700 dark:text-gray-300 font-serif">
+                        <p class="drop-cap">
+                            rước đây, tôi hiểu khá mù mờ về gia phả. Những dịp Thanh minh về từ đường, nhìn bản phả hệ in A0 quá to và dài, dù rất trân trọng công sức của các bác, các chú, các anh đi trước đã dày công ghi chép, nhưng do bản in có chỗ chưa chuẩn tên đệm của gia đình tôi, cộng thêm thông tin qua nhiều năm đã cũ chưa được cập nhật nên tôi cũng ngại đọc và chưa thực sự để tâm.
+                        </p>
+
+                        <p>
+                            Đến cuối tháng 8 năm 2026, bố tôi phải đi viện cấp cứu và rơi vào tình trạng hôn mê sâu suốt 3 ngày. Lúc đó, anh em tôi nghĩ là ông không qua khỏi. Tôi cấp tốc chạy về Thái Bình xem phần đất mộ của gia đình (đã chuẩn bị sẵn từ mấy năm trước nhưng chưa xây) để thuê thợ đổ nền, xây tường. Tôi tính...
+                        </p>
+
+                        <p>
+                            Mỗi trang gia phả không chỉ là danh sách những cái tên, mà là gạch nối thiêng liêng kết nối quá khứ với hiện tại và tương lai. Khi được số hóa, con cháu dù ở xa quê hương hay nước ngoài cũng dễ dàng tra cứu, truyền cho thế hệ sau tinh thần uống nước nhớ nguồn, giữ gìn nếp nhà truyền thống của dòng họ Vũ.
+                        </p>
+                    </div>
+
+                    <div class="pt-6 border-t border-amber-500/20 flex flex-col items-end text-xs font-serif text-heritage-900 dark:text-amber-300">
+                        <span>Tộc phả truyền thừa</span>
+                        <span class="font-bold text-sm mt-1">Con cháu Vũ Tộc</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: HƯỚNG DẪN XEM (#huong-dan) -->
+        <section id="section-huongdan" class="tab-content hidden space-y-8">
+            <div class="mb-2">
+                <button class="btn-back-to-tree inline-flex items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-400 hover:underline">
+                    <i class="fa-solid fa-arrow-left"></i> Về Phả hệ
+                </button>
+            </div>
+
+            <!-- Guide Intro -->
+            <div class="space-y-2">
+                <h3 class="font-serif text-2xl sm:text-3xl font-bold text-heritage-900 dark:text-amber-200">Hướng dẫn xem gia phả</h3>
+                <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+                    Chỉ cần 3 bước dưới đây là xem được. Muốn biết kỹ phần nào, bấm vào mục đó bên dưới.
+                </p>
+            </div>
+
+            <!-- 3 Steps Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Step 1 -->
+                <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-heritage-200 dark:border-gray-800 shadow-sm flex items-start gap-4">
+                    <div class="w-9 h-9 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 text-sm shadow">
+                        1
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-serif font-bold text-sm text-heritage-900 dark:text-gray-100">Gõ tên</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Gõ tên người cần tìm vào ô <b>Tìm tên người</b> ở đầu thẻ Phả hệ — không dấu cũng được.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-heritage-200 dark:border-gray-800 shadow-sm flex items-start gap-4">
+                    <div class="w-9 h-9 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 text-sm shadow">
+                        2
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-serif font-bold text-sm text-heritage-900 dark:text-gray-100">Bấm vào kết quả</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Trang tự cuộn tới đúng người đó và nháy sáng thẻ.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-heritage-200 dark:border-gray-800 shadow-sm flex items-start gap-4">
+                    <div class="w-9 h-9 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 text-sm shadow">
+                        3
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-serif font-bold text-sm text-heritage-900 dark:text-gray-100">Mở xem</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                            Bấm vào thẻ để hiện các con · bấm <b>Chi tiết</b> để đọc thông tin, vợ/chồng.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ / Detailed Guide Accordion Section -->
+            <div class="space-y-4 pt-4">
+                <h4 class="font-serif font-bold text-xs uppercase tracking-wider text-amber-700 dark:text-amber-400">TÌM HIỂU THÊM</h4>
+
+                <div class="space-y-3">
+                    <!-- Item 1 -->
+                    <div class="accordion-item bg-white dark:bg-gray-900 rounded-xl border border-heritage-200 dark:border-gray-800 overflow-hidden shadow-sm">
+                        <button class="accordion-header w-full p-4 text-left flex items-center justify-between hover:bg-heritage-50/50 dark:hover:bg-gray-800/50 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xl">🌳</span>
+                                <div>
+                                    <h5 class="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">Cây gia phả sắp xếp thế nào</h5>
+                                    <p class="text-xs text-gray-500">Đời, Chi, thứ tự anh em, con của các bà cô</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div class="accordion-body hidden p-4 border-t border-heritage-100 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 leading-relaxed bg-heritage-50/30 dark:bg-gray-950/30">
+                            Phả hệ sắp xếp theo thứ tự Đời (từ Đời 1 - Cụ Thủy Tổ trở xuống). Các thành viên được xếp thụt lề dưới cha/mẹ tương ứng. Anh em sắp xếp theo thứ tự tuổi tác từ trên xuống dưới.
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="accordion-item bg-white dark:bg-gray-900 rounded-xl border border-heritage-200 dark:border-gray-800 overflow-hidden shadow-sm">
+                        <button class="accordion-header w-full p-4 text-left flex items-center justify-between hover:bg-heritage-50/50 dark:hover:bg-gray-800/50 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xl">🪪</span>
+                                <div>
+                                    <h5 class="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">Nhận biết một thẻ người</h5>
+                                    <p class="text-xs text-gray-500">Màu thẻ trai/gái, dâu/rể, nút mở nhánh, nút Chi tiết</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div class="accordion-body hidden p-4 border-t border-heritage-100 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 leading-relaxed bg-heritage-50/30 dark:bg-gray-950/30">
+                            • Thẻ màu xanh dương dịu: Con trai dòng họ.<br>
+                            • Thẻ màu xanh lá: Con gái dòng họ.<br>
+                            • Thẻ viền nét đứt màu tím + nhẫn 💍: Dâu hoặc Rể.<br>
+                            • Dấu chấm xám nhỏ: Thành viên đã mất.
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="accordion-item bg-white dark:bg-gray-900 rounded-xl border border-heritage-200 dark:border-gray-800 overflow-hidden shadow-sm">
+                        <button class="accordion-header w-full p-4 text-left flex items-center justify-between hover:bg-heritage-50/50 dark:hover:bg-gray-800/50 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xl">🔍</span>
+                                <div>
+                                    <h5 class="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">Tìm một người trong họ</h5>
+                                    <p class="text-xs text-gray-500">Gõ không dấu, tìm cả tên thường gọi</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div class="accordion-body hidden p-4 border-t border-heritage-100 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 leading-relaxed bg-heritage-50/30 dark:bg-gray-950/30">
+                            Bạn chỉ cần gõ tên (ví dụ: "Tuan", "Duc", "An"...) vào ô tìm kiếm ở thanh trên cùng. Hệ thống tự nhận diện tiếng Việt không dấu và lọc ra kết quả chính xác nhất.
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="accordion-item bg-white dark:bg-gray-900 rounded-xl border border-heritage-200 dark:border-gray-800 overflow-hidden shadow-sm">
+                        <button class="accordion-header w-full p-4 text-left flex items-center justify-between hover:bg-heritage-50/50 dark:hover:bg-gray-800/50 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xl">✉️</span>
+                                <div>
+                                    <h5 class="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">Xem chi tiết và gửi cho người thân</h5>
+                                    <p class="text-xs text-gray-500">Đường về Thủy Tổ, nút Chia sẻ qua Zalo</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div class="accordion-body hidden p-4 border-t border-heritage-100 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 leading-relaxed bg-heritage-50/30 dark:bg-gray-950/30">
+                            Nhấn nút <b>Chi tiết</b> trên thẻ nhân vật để xem đường dẫn trực hệ từ Cụ Thủy Tổ đến người đó, hoặc nhấn nút <b>Chia sẻ</b> để gửi link mở thẳng thẻ qua Zalo, Facebook hoặc Messenger.
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="accordion-item bg-white dark:bg-gray-900 rounded-xl border border-heritage-200 dark:border-gray-800 overflow-hidden shadow-sm">
+                        <button class="accordion-header w-full p-4 text-left flex items-center justify-between hover:bg-heritage-50/50 dark:hover:bg-gray-800/50 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xl">📅</span>
+                                <div>
+                                    <h5 class="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">Thẻ Lịch sử và Lịch giỗ</h5>
+                                    <p class="text-xs text-gray-500">Ngày giỗ tự đổi ra dương lịch, chỉ đường tới mộ</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div class="accordion-body hidden p-4 border-t border-heritage-100 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 leading-relaxed bg-heritage-50/30 dark:bg-gray-950/30">
+                            Mục <b>Lịch Giỗ Âm Lịch</b> tập hợp các ngày giỗ theo tháng âm trong năm, giúp con cháu chuẩn bị cúng giỗ chu đáo.
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="accordion-item bg-white dark:bg-gray-900 rounded-xl border border-heritage-200 dark:border-gray-800 overflow-hidden shadow-sm">
+                        <button class="accordion-header w-full p-4 text-left flex items-center justify-between hover:bg-heritage-50/50 dark:hover:bg-gray-800/50 transition-colors">
+                            <div class="flex items-center gap-3">
+                                <span class="text-xl">💬</span>
+                                <div>
+                                    <h5 class="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">Hỏi đáp thường gặp</h5>
+                                    <p class="text-xs text-gray-500">6 câu hỏi bà con hay hỏi</p>
+                                </div>
+                            </div>
+                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
+                        </button>
+                        <div class="accordion-body hidden p-4 border-t border-heritage-100 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 leading-relaxed bg-heritage-50/30 dark:bg-gray-950/30">
+                            Nếu phát hiện sai sót về tên tuổi hoặc muốn bổ sung thành viên mới chào đời, xin hãy liên hệ ban quản trị gia tộc để cập nhật vào bản phả hệ trực tuyến.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- MEMBER DETAIL MODAL -->
+    <div id="memberDetailModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-200 opacity-0">
+        <div class="bg-white dark:bg-gray-900 w-full max-w-2xl rounded-2xl shadow-2xl border border-heritage-200 dark:border-gray-800 overflow-hidden transform scale-95 transition-transform duration-200 flex flex-col max-h-[90vh]">
+            
+            <div class="bg-heritage-100/80 dark:bg-gray-800/80 p-5 border-b border-heritage-200 dark:border-gray-800 flex items-start justify-between">
+                <div class="flex items-center gap-3">
+                    <div id="modalAvatar" class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 flex items-center justify-center text-xl font-bold border-2 border-blue-400">
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 id="modalFullName" class="font-serif text-xl font-bold text-heritage-900 dark:text-amber-200">Vũ Văn A</h3>
+                            <span id="modalBranchBadge" class="px-2 py-0.5 rounded text-xs font-medium bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300">Chi 1</span>
+                        </div>
+                        <p id="modalTitle" class="text-xs text-gray-500 dark:text-gray-400 font-medium mt-0.5">Thành viên đời thứ 3 • Còn sống</p>
+                    </div>
+                </div>
+                <button id="closeModalBtn" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-2 rounded-lg">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <div class="p-6 overflow-y-auto space-y-6 text-sm">
+                <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Trực Hệ Nguồn Cội</h4>
+                    <div id="modalLineagePath" class="p-3 rounded-xl bg-heritage-50 dark:bg-gray-800/60 border border-heritage-200 dark:border-gray-700 flex flex-wrap items-center gap-2 text-xs font-medium">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-800">
+                        <span class="text-xs text-gray-400 block mb-1"><i class="fa-solid fa-cake-candles mr-1"></i> Năm sinh / Năm mất</span>
+                        <span id="modalLifespan" class="font-semibold text-gray-800 dark:text-gray-200">1950 - Còn sống</span>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-800">
+                        <span class="text-xs text-gray-400 block mb-1"><i class="fa-solid fa-calendar-day mr-1"></i> Ngày Giỗ Âm Lịch</span>
+                        <span id="modalDeathAnniversary" class="font-semibold text-gray-800 dark:text-gray-200">Chưa cập nhật</span>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-800">
+                        <span class="text-xs text-gray-400 block mb-1"><i class="fa-solid fa-heart mr-1"></i> Vợ / Chồng</span>
+                        <span id="modalSpouse" class="font-semibold text-gray-800 dark:text-gray-200">Bà Nguyễn Thị B</span>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-800">
+                        <span class="text-xs text-gray-400 block mb-1"><i class="fa-solid fa-location-dot mr-1"></i> Nơi An Nghỉ / Chỗ Ở</span>
+                        <span id="modalRestingPlace" class="font-semibold text-gray-800 dark:text-gray-200">Hà Nội</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Tiểu Sử & Sự Nghiệp</h4>
+                    <p id="modalBio" class="text-gray-600 dark:text-gray-300 leading-relaxed p-4 rounded-xl bg-gray-50 dark:bg-gray-800/30 border border-gray-100 dark:border-gray-800">
+                        Tiểu sử chi tiết thành viên đang được tiếp tục cập nhật...
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 dark:bg-gray-800/50 p-4 border-t border-heritage-200 dark:border-gray-800 flex items-center justify-between">
+                <button id="modalShareBtn" class="px-4 py-2 rounded-lg border border-heritage-300 dark:border-gray-700 text-xs font-semibold hover:bg-heritage-100 dark:hover:bg-gray-700 transition-colors flex items-center gap-1.5">
+                    <i class="fa-solid fa-share-nodes text-amber-600"></i> Chia sẻ thông tin
+                </button>
+                <button id="closeModalFooterBtn" class="px-4 py-2 bg-heritage-800 dark:bg-amber-600 text-white rounded-lg text-xs font-semibold hover:bg-heritage-900 transition-colors">
+                    Đóng cửa sổ
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SOCIAL SHARE MODAL -->
+    <div id="socialShareModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-200 opacity-0">
+        <div class="bg-white dark:bg-gray-900 w-full max-w-md rounded-2xl shadow-2xl border border-heritage-200 dark:border-gray-800 overflow-hidden transform scale-95 transition-transform duration-200 flex flex-col">
+            
+            <div class="bg-heritage-100/80 dark:bg-gray-800/80 p-4 border-b border-heritage-200 dark:border-gray-800 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-share-nodes text-amber-600 dark:text-amber-400 text-lg"></i>
+                    <h3 class="font-serif font-bold text-base text-heritage-900 dark:text-amber-200">Chia Sẻ Liên Kết Gia Phả</h3>
+                </div>
+                <button id="closeShareModalBtn" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1.5 rounded-lg">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <div class="p-5 space-y-5 text-sm">
+                <div class="p-3 rounded-xl bg-heritage-50 dark:bg-gray-800/60 border border-heritage-200/80 dark:border-gray-700">
+                    <span id="shareTargetTitle" class="font-serif font-bold text-gray-900 dark:text-gray-100 block">Thành viên</span>
+                    <span id="shareTargetSubtitle" class="text-xs text-gray-500 dark:text-gray-400 block mt-0.5">Chi 1 • Thế hệ đời thứ 1</span>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-1.5">Liên kết trực tiếp:</label>
+                    <div class="flex items-center gap-2">
+                        <input id="shareUrlInput" type="text" readonly class="w-full px-3 py-2 text-xs rounded-xl border border-heritage-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-300 focus:outline-none select-all">
+                        <button id="copyShareUrlBtn" class="px-3.5 py-2 bg-heritage-800 dark:bg-amber-600 text-white rounded-xl text-xs font-semibold hover:bg-heritage-900 shrink-0 flex items-center gap-1 transition-colors">
+                            <i class="fa-regular fa-copy"></i> Copy
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-3">Chia sẻ qua ứng dụng:</label>
+                    <div class="grid grid-cols-4 gap-3 text-center">
+                        <button id="shareZaloBtn" class="flex flex-col items-center gap-1.5 p-2.5 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 hover:bg-blue-100 border border-blue-200 dark:border-blue-800/50 transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-sm group-hover:scale-110 transition-transform">
+                                Zalo
+                            </div>
+                            <span class="text-[11px] font-medium text-gray-700 dark:text-gray-300">Zalo</span>
+                        </button>
+
+                        <button id="shareFbBtn" class="flex flex-col items-center gap-1.5 p-2.5 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 hover:bg-blue-100 border border-blue-200 dark:border-blue-800/50 transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center text-lg shadow-sm group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </div>
+                            <span class="text-[11px] font-medium text-gray-700 dark:text-gray-300">Facebook</span>
+                        </button>
+
+                        <button id="shareMessengerBtn" class="flex flex-col items-center gap-1.5 p-2.5 rounded-xl bg-sky-50/60 dark:bg-sky-950/40 hover:bg-sky-100 border border-sky-200 dark:border-sky-800/50 transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-blue-600 to-pink-500 text-white flex items-center justify-center text-lg shadow-sm group-hover:scale-110 transition-transform">
+                                <i class="fa-brands fa-facebook-messenger"></i>
+                            </div>
+                            <span class="text-[11px] font-medium text-gray-700 dark:text-gray-300">Messenger</span>
+                        </button>
+
+                        <button id="shareNativeBtn" class="flex flex-col items-center gap-1.5 p-2.5 rounded-xl bg-amber-50/60 dark:bg-amber-950/40 hover:bg-amber-100 border border-amber-200 dark:border-amber-800/50 transition-all group">
+                            <div class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center text-base shadow-sm group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </div>
+                            <span class="text-[11px] font-medium text-gray-700 dark:text-gray-300">Khác</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pt-2 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between gap-4">
+                    <div class="text-xs text-gray-500 dark:text-gray-400">
+                        <span class="font-semibold block text-gray-700 dark:text-gray-300 mb-0.5"><i class="fa-solid fa-qrcode mr-1"></i> Quét mã QR</span>
+                        Quét camera để mở trang gia phả
+                    </div>
+                    <div class="p-1.5 bg-white rounded-lg border border-gray-200 shadow-sm shrink-0">
+                        <img id="shareQrCodeImg" src="" alt="QR Code" class="w-16 h-16 object-contain">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Popup -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-gray-900 text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 text-xs border border-gray-700">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+        <span id="toastMessage">Đã sao chép liên kết vào bộ nhớ tạm!</span>
+    </div>
+
+    <!-- Floating "Báo tin" Button (Fixed Bottom-Right) -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdC2e8AY86_hyDv2tawztpTqBvRqjXwVNeDDfurzyDG958iig/viewform" 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       id="floatingBaoTinBtn" 
+       title="Báo tin hiếu, hỷ, đính chính thông tin" 
+       class="fixed bottom-6 right-6 z-40 px-4 py-2.5 rounded-full bg-heritage-900/90 dark:bg-gray-900/90 border border-amber-500/60 dark:border-amber-400/50 text-amber-300 dark:text-amber-400 font-semibold text-xs sm:text-sm shadow-2xl hover:scale-105 hover:bg-heritage-800 dark:hover:bg-gray-800 transition-all duration-200 flex items-center gap-2 backdrop-blur-md group">
+        <i class="fa-solid fa-pen-to-square text-amber-400 group-hover:rotate-12 transition-transform"></i>
+        <span>Báo tin</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-900 border-t border-heritage-200 dark:border-gray-800 py-6 mt-12 text-center text-xs text-gray-500">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p class="font-serif font-semibold text-heritage-900 dark:text-amber-400">HỘI ĐỒNG GIA TỘC VŨ TỘC - BẢN TRIỀU</p>
+            <p>© 2026 Gia Phả Dòng Họ. Bảo tồn giá trị truyền thống & Số hóa phả hệ.</p>
+        </div>
+    </footer>
+
+    <script>
+        // =========================================================================================
+        // HƯỚNG DẪN THÊM THÀNH VIÊN MỚI VÀO GIA PHẢ:
+        // 
+        // 1. `id`        : Mã định danh DUY NHẤT (Ví dụ: "m01", "m02", "m15"...).
+        // 2. `ten`       : Họ và tên đầy đủ (Ví dụ: "Vũ Văn A").
+        // 3. `doi`       : Thế hệ / đời thứ mấy trong dòng họ (Số nguyên: 1, 2, 3, 4...).
+        // 4. `parentId`  : ID của Cha/Mẹ trực hệ.
+        //                  - Cụ Tổ (đời 1) không có cha mẹ thì để `null`.
+        // 5. `gioiTinh`  : "nam" (Con trai), "nu" (Con gái), "dau" (Con dâu), "re" (Con rể)
+        // 6. `namSinh`   : Năm sinh (Ví dụ: "1950").
+        // 7. `namMat`    : Năm mất (Ví dụ: "2020"). Nếu CÒN SỐNG thì để `""` hoặc `null`.
+        // 8. `chi`       : Chi nhánh ("Chi 1", "Chi 2", "Chi 3", "Chi 4", "Chi 5").
+        // 9. `voChong`   : Tên Vợ hoặc Chồng.
+        // 10.`ngayGioAm` : Ngày giỗ âm { day: ngày, month: tháng }.
+        // 11.`noiAnNghi` : Nơi an nghỉ / Địa chỉ hiện tại.
+        // 12.`ghiChu`    : Tiểu sử, công trạng, ghi chú thêm.
+        // =========================================================================================
+
+        const duLieuGiaPha = [
+            // ĐỜI THỨ 1
+            {
+                id: "m01",
+                ten: "Vũ Đạo Chính",
+                doi: 1,
+                parentId: null,
+                gioiTinh: "nam",
+                chi: "Chi 1",
+                namSinh: "1680",
+                namMat: "1755",
+                voChong: "Bà Từ Nhân (Bà Tổ Cố)",
+                ngayGioAm: { day: 15, month: 7 },
+                noiAnNghi: "Từ đường Thái Thụy, Thái Bình",
+                ghiChu: "Cụ Thủy Tổ khai cơ lập nghiệp trên đất Thụy Chính, Thái Thụy, Thái Bình."
+            },
+
+            // ĐỜI THỨ 2
+            {
+                id: "m02",
+                ten: "Vũ Khuyến Chánh",
+                doi: 2,
+                parentId: "m01",
+                gioiTinh: "nam",
+                chi: "Chi 1",
+                namSinh: "1710",
+                namMat: "1782",
+                voChong: "Phạm Thị Nở",
+                ngayGioAm: { day: 10, month: 3 },
+                noiAnNghi: "Từ đường Thái Bình",
+                ghiChu: "Nối nghiệp Cụ Thủy Tổ giữ gìn nếp nhà gia tộc."
+            },
+
+            // ĐỜI THỨ 3
+            {
+                id: "m03",
+                ten: "Vũ Đôn Thục",
+                doi: 3,
+                parentId: "m02",
+                gioiTinh: "nam",
+                chi: "Chi 1",
+                namSinh: "1745",
+                namMat: "1815",
+                voChong: "Trần Thị Lài",
+                ngayGioAm: { day: 22, month: 11 },
+                noiAnNghi: "Thái Bình",
+                ghiChu: "Dòng trưởng Đời 3."
+            },
+
+            // ĐỜI THỨ 4
+            {
+                id: "m04",
+                ten: "Vũ Đức Mậu",
+                doi: 4,
+                parentId: "m03",
+                gioiTinh: "nam",
+                chi: "Chi 1",
+                namSinh: "1780",
+                namMat: "1850",
+                voChong: "Nguyễn Thị Sen",
+                ngayGioAm: { day: 5, month: 1 },
+                noiAnNghi: "Thái Bình",
+                ghiChu: "Sinh hạ 5 người con trai đều thành đạt, lập thành 5 Chi (Ngũ Chi Phương)."
+            },
+
+            // ĐỜI THỨ 5 (5 CHI)
+            {
+                id: "m05",
+                ten: "Vũ Văn Chi Trưởng",
+                doi: 5,
+                parentId: "m04",
+                gioiTinh: "nam",
+                chi: "Chi 1",
+                namSinh: "1815",
+                namMat: "1888",
+                voChong: "Hoàng Thị Mai",
+                ngayGioAm: { day: 12, month: 6 },
+                noiAnNghi: "Thái Bình",
+                ghiChu: "Khởi lập Chi 1 Trưởng."
+            },
+            {
+                id: "m06",
+                ten: "Vũ Văn Chi Nhị",
+                doi: 5,
+                parentId: "m04",
+                gioiTinh: "nam",
+                chi: "Chi 2",
+                namSinh: "1818",
+                namMat: "1892",
+                voChong: "Đỗ Thị Thu",
+                ngayGioAm: { day: 18, month: 8 },
+                noiAnNghi: "Hà Nội",
+                ghiChu: "Khởi lập Chi 2."
+            },
+            {
+                id: "m07",
+                ten: "Vũ Văn Chi Tam",
+                doi: 5,
+                parentId: "m04",
+                gioiTinh: "nam",
+                chi: "Chi 3",
+                namSinh: "1822",
+                namMat: "1896",
+                voChong: "Lê Thị Nga",
+                ngayGioAm: { day: 8, month: 4 },
+                noiAnNghi: "Thái Bình",
+                ghiChu: "Khởi lập Chi 3."
+            },
+
+            // ĐỜI THỨ 6
+            {
+                id: "m08",
+                ten: "Vũ Tuấn Anh",
+                doi: 6,
+                parentId: "m05",
+                gioiTinh: "nam",
+                chi: "Chi 1",
+                namSinh: "1955",
+                namMat: "",
+                voChong: "Bùi Thị Hồng",
+                ngayGioAm: null,
+                noiAnNghi: "Hà Nội",
+                ghiChu: "Chuyên gia CNTT phụ trách số hóa gia phả."
+            },
+            {
+                id: "m09",
+                ten: "Vũ Phương Thảo",
+                doi: 6,
+                parentId: "m05",
+                gioiTinh: "nu",
+                chi: "Chi 1",
+                namSinh: "1960",
+                namMat: "",
+                voChong: "Trần Bảo Nam",
+                ngayGioAm: null,
+                noiAnNghi: "TP. Hồ Chí Minh",
+                ghiChu: "Con gái Chi 1."
+            }
+        ];
+
+        const clanData = duLieuGiaPha.map(item => ({
+            id: item.id,
+            parentId: item.parentId,
+            fullName: item.ten,
+            generation: item.doi,
+            branch: item.chi || "Chi 1",
+            gender: item.gioiTinh === "nam" ? "male" : (item.gioiTinh === "nu" ? "female" : "spouse"),
+            isSpouse: item.gioiTinh === "dau" || item.gioiTinh === "re",
+            birthYear: item.namSinh || "",
+            deathYear: item.namMat || null,
+            isAlive: !item.namMat,
+            lunarDeathDate: item.ngayGioAm || null,
+            spouseName: item.voChong || "",
+            restingPlace: item.noiAnNghi || "",
+            bio: item.ghiChu || ""
+        }));
+
+        const timelineEvents = [
+            {
+                year: "1680",
+                title: "Thủy Tổ Khai Cơ Lập Nghiệp",
+                description: "Cụ Thủy Tổ Vũ Đạo Chính khai cơ lập nghiệp trên đất Thụy Chính, Thái Thụy, Thái Bình."
+            },
+            {
+                year: "1815",
+                title: "Thành Lập Ngũ Chi Phương",
+                description: "Cụ Vũ Đức Mậu sinh hạ 5 người con trai lập thành năm Chi trong gia tộc."
+            },
+            {
+                year: "2026",
+                title: "Số Hóa Phả Hệ Trực Tuyến",
+                description: "Công trình số hóa cây phả hệ phục vụ con cháu tra cứu trực tiếp."
+            }
+        ];
+
+        function removeVietnameseTones(str) {
+            if (!str) return "";
+            str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+            str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+            str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+            str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+            str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+            str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+            str = str.replace(/đ/g, "d");
+            str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "A");
+            str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "E");
+            str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "I");
+            str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "O");
+            str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "U");
+            str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "Y");
+            str = str.replace(/Đ/g, "D");
+            return str.toLowerCase().trim();
+        }
+
+        let activeBranchFilter = "all";
+        let activeSearchQuery = "";
+        let collapsedNodes = new Set();
+
+        function updateStats() {
+            const total = clanData.length;
+            const males = clanData.filter(m => m.gender === "male").length;
+            const females = clanData.filter(m => m.gender === "female").length;
+            const spouses = clanData.filter(m => m.isSpouse || m.gender.includes("spouse")).length;
+
+            document.getElementById("statTotalMembers").textContent = total;
+            document.getElementById("statMaleCount").textContent = males;
+            document.getElementById("statFemaleCount").textContent = females;
+            document.getElementById("statSpouseCount").textContent = spouses;
+        }
+
+        function getChildren(parentId) {
+            return clanData.filter(item => item.parentId === parentId);
+        }
+
+        function createMemberCardHtml(member) {
+            const children = getChildren(member.id);
+            const hasChildren = children.length > 0;
+            const isCollapsed = collapsedNodes.has(member.id);
+
+            let borderStyle = "";
+            let badgeBg = "";
+            let genderIcon = "";
+
+            if (member.isSpouse) {
+                borderStyle = "border-2 border-dashed border-purple-300 dark:border-purple-800 bg-purple-50/40 dark:bg-purple-950/20";
+                badgeBg = "bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300";
+                genderIcon = '<i class="fa-solid fa-ring text-purple-500" title="Dâu / Rể"></i>';
+            } else if (member.gender === "male") {
+                borderStyle = "border border-blue-200 dark:border-blue-800/60 bg-blue-50/30 dark:bg-blue-950/20";
+                badgeBg = "bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300";
+                genderIcon = '<i class="fa-solid fa-mars text-blue-500" title="Con trai"></i>';
+            } else if (member.gender === "female") {
+                borderStyle = "border border-emerald-200 dark:border-emerald-800/60 bg-emerald-50/30 dark:bg-emerald-950/20";
+                badgeBg = "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300";
+                genderIcon = '<i class="fa-solid fa-venus text-emerald-500" title="Con gái"></i>';
+            }
+
+            const lifespanText = member.isAlive 
+                ? `${member.birthYear} - Còn sống` 
+                : `${member.birthYear} - ${member.deathYear || '?'}`;
+
+            return `
+                <div class="tree-node-item relative my-3 group" id="node-${member.id}">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-xl ${borderStyle} bg-white dark:bg-gray-900 shadow-sm hover:shadow-md transition-all">
+                        
+                        <div class="flex items-center gap-3">
+                            ${hasChildren ? `
+                                <button onclick="toggleNodeCollapse('${member.id}')" 
+                                    class="w-7 h-7 rounded-lg bg-heritage-100 dark:bg-gray-800 text-heritage-800 dark:text-amber-400 flex items-center justify-center hover:bg-heritage-200 transition-transform ${isCollapsed ? '' : 'rotate-90'}">
+                                    <i class="fa-solid fa-chevron-right text-xs"></i>
+                                </button>
+                            ` : `
+                                <div class="w-7 h-7 flex items-center justify-center text-gray-300 dark:text-gray-700">
+                                    <i class="fa-solid fa-circle text-[6px]"></i>
+                                </div>
+                            `}
+
+                            <div>
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <span class="font-serif font-bold text-base text-gray-900 dark:text-gray-100 group-hover:text-amber-700 dark:group-hover:text-amber-400 transition-colors">
+                                        ${member.fullName}
+                                    </span>
+                                    <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold ${badgeBg} flex items-center gap-1">
+                                        ${genderIcon} Đời ${member.generation}
+                                    </span>
+                                    <span class="px-2 py-0.5 rounded-md text-[11px] font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
+                                        ${member.branch}
+                                    </span>
+                                    ${!member.isAlive ? '<span class="w-2 h-2 rounded-full bg-gray-400" title="Đã mất"></span>' : ''}
+                                </div>
+
+                                <div class="text-xs text-gray-500 dark:text-gray-400 mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+                                    <span><i class="fa-regular fa-clock text-[10px] mr-1"></i>${lifespanText}</span>
+                                    ${member.spouseName ? `<span class="text-purple-600 dark:text-purple-400"><i class="fa-solid fa-heart text-[10px] mr-1"></i>Hôn phối: ${member.spouseName}</span>` : ''}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-2 self-end sm:self-center shrink-0 pt-2 sm:pt-0 border-t sm:border-0 border-gray-100 dark:border-gray-800 w-full sm:w-auto justify-end">
+                            <button onclick="openMemberDetailModal('${member.id}')" class="px-3 py-1.5 rounded-lg bg-heritage-100 dark:bg-gray-800 text-heritage-800 dark:text-amber-300 text-xs font-semibold hover:bg-heritage-200 dark:hover:bg-gray-700 transition-colors flex items-center gap-1">
+                                <i class="fa-solid fa-circle-info"></i> Chi tiết
+                            </button>
+                            <button onclick="shareMember('${member.id}')" title="Chia sẻ thông tin" class="p-1.5 rounded-lg text-gray-400 hover:text-heritage-800 dark:hover:text-amber-400 hover:bg-heritage-100 dark:hover:bg-gray-800 transition-colors">
+                                <i class="fa-solid fa-share-nodes text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    ${hasChildren ? `
+                        <div id="children-of-${member.id}" class="tree-branch-line pl-6 sm:pl-8 collapsible-content ${isCollapsed ? 'collapsed' : ''}">
+                            ${children.map(child => createMemberCardHtml(child)).join('')}
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        function renderTree() {
+            const container = document.getElementById("treeContainer");
+            const noResults = document.getElementById("noResultsState");
+            
+            let roots = clanData.filter(m => m.parentId === null);
+            const queryNorm = removeVietnameseTones(activeSearchQuery);
+            let filteredMembers = clanData;
+
+            if (activeBranchFilter !== "all") {
+                filteredMembers = filteredMembers.filter(m => m.branch === activeBranchFilter);
+            }
+
+            if (queryNorm !== "") {
+                filteredMembers = filteredMembers.filter(m => 
+                    removeVietnameseTones(m.fullName).includes(queryNorm) ||
+                    removeVietnameseTones(m.branch).includes(queryNorm) ||
+                    (m.spouseName && removeVietnameseTones(m.spouseName).includes(queryNorm))
+                );
+            }
+
+            if (filteredMembers.length === 0) {
+                container.innerHTML = "";
+                noResults.classList.remove("hidden");
+                return;
+            } else {
+                noResults.classList.add("hidden");
+            }
+
+            if (queryNorm !== "" || activeBranchFilter !== "all") {
+                container.innerHTML = `
+                    <div class="mb-3 text-xs text-gray-500">Tìm thấy <b>${filteredMembers.length}</b> kết quả phù hợp:</div>
+                    <div class="space-y-3">
+                        ${filteredMembers.map(m => createMemberCardHtml(m)).join('')}
+                    </div>
+                `;
+            } else {
+                container.innerHTML = roots.map(root => createMemberCardHtml(root)).join('');
+            }
+        }
+
+        function renderTimeline() {
+            const container = document.getElementById("timelineContainer");
+            container.innerHTML = timelineEvents.map(event => `
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-heritage-800 dark:bg-amber-500 border-4 border-white dark:border-gray-900 shadow-md group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-heritage-50/60 dark:bg-gray-800/40 p-4 rounded-xl border border-heritage-200/80 dark:border-gray-800 hover:border-amber-500/50 transition-colors">
+                        <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-500/10 text-amber-800 dark:text-amber-400 mb-1">
+                            Năm ${event.year}
+                        </span>
+                        <h4 class="font-serif font-bold text-base text-heritage-900 dark:text-gray-100">${event.title}</h4>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">${event.description}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        let activeLunarMonthFilter = "all";
+
+        function renderAnniversaryList() {
+            const container = document.getElementById("anniversaryListContainer");
+            let deceasedList = clanData.filter(m => !m.isAlive && m.lunarDeathDate);
+
+            if (activeLunarMonthFilter !== "all") {
+                const monthNum = parseInt(activeLunarMonthFilter);
+                deceasedList = deceasedList.filter(m => m.lunarDeathDate.month === monthNum);
+            }
+
+            deceasedList.sort((a, b) => {
+                if (a.lunarDeathDate.month !== b.lunarDeathDate.month) {
+                    return a.lunarDeathDate.month - b.lunarDeathDate.month;
+                }
+                return a.lunarDeathDate.day - b.lunarDeathDate.day;
+            });
+
+            if (deceasedList.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-8 text-gray-500 text-xs">
+                        Không có ngày giỗ trong tháng âm lịch đã chọn.
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = deceasedList.map(item => `
+                <div class="p-4 rounded-xl bg-heritage-50/50 dark:bg-gray-800/40 border border-heritage-200 dark:border-gray-800 flex items-start gap-4">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-800 dark:text-amber-400 flex flex-col items-center justify-center shrink-0 border border-amber-500/20 font-serif">
+                        <span class="text-xs text-gray-500 dark:text-gray-400">Thg ${item.lunarDeathDate.month}</span>
+                        <span class="font-bold text-base leading-none">${item.lunarDeathDate.day}</span>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center justify-between gap-2">
+                            <h4 class="font-serif font-bold text-sm text-heritage-900 dark:text-amber-200 truncate">${item.fullName}</h4>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 shrink-0">Đời ${item.generation}</span>
+                        </div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">${item.branch} • Hưởng thọ: ${parseInt(item.deathYear) - parseInt(item.birthYear)} tuổi</p>
+                        <p class="text-xs text-amber-700 dark:text-amber-400 mt-2 font-medium">
+                            <i class="fa-solid fa-location-dot mr-1"></i>${item.restingPlace || 'Từ Đường Thái Bình'}
+                        </p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function getAncestryPath(memberId) {
+            const path = [];
+            let current = clanData.find(m => m.id === memberId);
+            while (current) {
+                path.unshift(current);
+                current = clanData.find(m => m.id === current.parentId);
+            }
+            return path;
+        }
+
+        function openMemberDetailModal(memberId) {
+            const member = clanData.find(m => m.id === memberId);
+            if (!member) return;
+
+            document.getElementById("modalFullName").textContent = member.fullName;
+            document.getElementById("modalBranchBadge").textContent = member.branch;
+            document.getElementById("modalTitle").textContent = `Thành viên đời thứ ${member.generation} • ${member.isAlive ? 'Còn sống' : 'Đã mất'}`;
+            
+            document.getElementById("modalLifespan").textContent = member.isAlive 
+                ? `${member.birthYear} (Còn sống)` 
+                : `${member.birthYear} - ${member.deathYear} (Hưởng thọ ${parseInt(member.deathYear) - parseInt(member.birthYear)} tuổi)`;
+            
+            document.getElementById("modalDeathAnniversary").textContent = member.lunarDeathDate 
+                ? `Ngày ${member.lunarDeathDate.day} tháng ${member.lunarDeathDate.month} (Âm lịch)` 
+                : 'Chưa cập nhật';
+
+            document.getElementById("modalSpouse").textContent = member.spouseName || "Chưa cập nhật";
+            document.getElementById("modalRestingPlace").textContent = member.restingPlace || "Chưa cập nhật";
+            document.getElementById("modalBio").textContent = member.bio || "Chưa có tiểu sử chi tiết.";
+
+            const ancestry = getAncestryPath(memberId);
+            const pathContainer = document.getElementById("modalLineagePath");
+            pathContainer.innerHTML = ancestry.map((anc, idx) => `
+                <span class="hover:underline cursor-pointer ${idx === ancestry.length - 1 ? 'font-bold text-amber-800 dark:text-amber-300' : 'text-gray-600 dark:text-gray-400'}" 
+                    onclick="openMemberDetailModal('${anc.id}')">
+                    Đời ${anc.generation}: ${anc.fullName}
+                </span>
+                ${idx < ancestry.length - 1 ? '<i class="fa-solid fa-chevron-right text-[10px] text-gray-400"></i>' : ''}
+            `).join('');
+
+            const avatarBox = document.getElementById("modalAvatar");
+            if (member.gender === 'female') {
+                avatarBox.className = "w-12 h-12 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-300 flex items-center justify-center text-xl font-bold border-2 border-emerald-400";
+                avatarBox.innerHTML = '<i class="fa-solid fa-venus"></i>';
+            } else if (member.isSpouse) {
+                avatarBox.className = "w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/40 text-purple-600 dark:text-purple-300 flex items-center justify-center text-xl font-bold border-2 border-purple-400";
+                avatarBox.innerHTML = '<i class="fa-solid fa-ring"></i>';
+            } else {
+                avatarBox.className = "w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 flex items-center justify-center text-xl font-bold border-2 border-blue-400";
+                avatarBox.innerHTML = '<i class="fa-solid fa-mars"></i>';
+            }
+
+            const modal = document.getElementById("memberDetailModal");
+            modal.classList.remove("hidden");
+            setTimeout(() => {
+                modal.classList.remove("opacity-0");
+                modal.querySelector("div").classList.remove("scale-95");
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("memberDetailModal");
+            modal.classList.add("opacity-0");
+            modal.querySelector("div").classList.add("scale-95");
+            setTimeout(() => {
+                modal.classList.add("hidden");
+            }, 200);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById("toastNotification");
+            document.getElementById("toastMessage").textContent = msg;
+            toast.classList.remove("translate-y-20", "opacity-0");
+            setTimeout(() => {
+                toast.classList.add("translate-y-20", "opacity-0");
+            }, 3000);
+        }
+
+        function shareMember(memberId) {
+            const member = clanData.find(m => m.id === memberId);
+            if (!member) return;
+
+            const targetElementId = `node-${member.id}`;
+            const baseUrl = window.location.href.split('#')[0];
+            const shareUrl = `${baseUrl}#${targetElementId}`;
+            const shareTitle = `Gia Phả Vũ Tộc - ${member.fullName}`;
+            const shareText = `Xem thông tin trực hệ ${member.fullName} (${member.branch}, Đời ${member.generation}) trong Cây Phả Hệ Vũ Tộc.`;
+
+            document.getElementById("shareTargetTitle").textContent = member.fullName;
+            document.getElementById("shareTargetSubtitle").textContent = `${member.branch} • Thế hệ đời thứ ${member.generation}`;
+            document.getElementById("shareUrlInput").value = shareUrl;
+
+            const qrApi = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(shareUrl)}`;
+            document.getElementById("shareQrCodeImg").src = qrApi;
+
+            document.getElementById("shareZaloBtn").onclick = function() {
+                window.open(`https://sp.zalo.me/share_inline?url=${encodeURIComponent(shareUrl)}&title=${encodeURIComponent(shareTitle)}`, '_blank');
+            };
+
+            document.getElementById("shareFbBtn").onclick = function() {
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`, '_blank', 'width=600,height=400');
+            };
+
+            document.getElementById("shareMessengerBtn").onclick = function() {
+                window.open(`https://www.facebook.com/dialog/send?link=${encodeURIComponent(shareUrl)}&app_id=290293711551847&redirect_uri=${encodeURIComponent(shareUrl)}`, '_blank');
+            };
+
+            document.getElementById("shareNativeBtn").onclick = function() {
+                if (navigator.share) {
+                    navigator.share({ title: shareTitle, text: shareText, url: shareUrl }).catch(() => {});
+                } else {
+                    showToast("Trình duyệt không hỗ trợ menu hệ thống. Bấm Sao chép!");
+                }
+            };
+
+            document.getElementById("copyShareUrlBtn").onclick = function() {
+                const input = document.getElementById("shareUrlInput");
+                input.select();
+                try {
+                    document.execCommand("copy");
+                } catch (err) {
+                    if (navigator.clipboard) navigator.clipboard.writeText(shareUrl);
+                }
+                showToast(`Đã sao chép liên kết ${member.fullName}!`);
+            };
+
+            const modal = document.getElementById("socialShareModal");
+            modal.classList.remove("hidden");
+            setTimeout(() => {
+                modal.classList.remove("opacity-0");
+                modal.querySelector("div").classList.remove("scale-95");
+            }, 10);
+        }
+
+        function closeShareModal() {
+            const modal = document.getElementById("socialShareModal");
+            modal.classList.add("opacity-0");
+            modal.querySelector("div").classList.add("scale-95");
+            setTimeout(() => {
+                modal.classList.add("hidden");
+            }, 200);
+        }
+
+        function switchView(targetSectionId) {
+            const tabContents = document.querySelectorAll(".tab-content");
+            const treeControls = document.getElementById("treeControlsBar");
+
+            tabContents.forEach(content => {
+                if (content.id === targetSectionId) {
+                    content.classList.remove("hidden");
+                } else {
+                    content.classList.add("hidden");
+                }
+            });
+
+            // Hide tree control legend on Tam su & Huong dan views
+            if (targetSectionId === "section-tamsu" || targetSectionId === "section-huongdan") {
+                treeControls.classList.add("hidden");
+            } else {
+                treeControls.classList.remove("hidden");
+            }
+
+            // Sync Header Nav Tabs State
+            const navTabs = document.querySelectorAll(".nav-tab");
+            navTabs.forEach(t => {
+                if (t.getAttribute("data-target") === targetSectionId) {
+                    t.classList.add("bg-heritage-800", "dark:bg-amber-600", "text-white", "active");
+                    t.classList.remove("text-gray-600", "dark:text-gray-300");
+                } else {
+                    t.classList.remove("bg-heritage-800", "dark:bg-amber-600", "text-white", "active");
+                    t.classList.add("text-gray-600", "dark:text-gray-300");
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleDeepLink() {
+            const hash = window.location.hash;
+            if (!hash) return;
+
+            if (hash === "#tam-su" || hash === "#tamsu") {
+                switchView("section-tamsu");
+                return;
+            } else if (hash === "#huong-dan" || hash === "#huongdan") {
+                switchView("section-huongdan");
+                return;
+            }
+
+            const elementId = hash.replace('#', '');
+            const memberId = elementId.startsWith('node-') ? elementId.replace('node-', '') : elementId;
+            const targetMember = clanData.find(m => m.id === memberId);
+
+            if (targetMember) {
+                let current = targetMember;
+                while (current && current.parentId) {
+                    collapsedNodes.delete(current.parentId);
+                    current = clanData.find(m => m.id === current.parentId);
+                }
+                
+                switchView("section-tree");
+                renderTree();
+
+                setTimeout(() => {
+                    const el = document.getElementById(`node-${memberId}`) || document.getElementById(elementId);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        const card = el.querySelector('div');
+                        if (card) {
+                            card.classList.add('highlight-node');
+                            setTimeout(() => card.classList.remove('highlight-node'), 4000);
+                        }
+                    }
+                }, 300);
+            }
+        }
+
+        function toggleNodeCollapse(nodeId) {
+            if (collapsedNodes.has(nodeId)) {
+                collapsedNodes.delete(nodeId);
+            } else {
+                collapsedNodes.add(nodeId);
+            }
+            renderTree();
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            
+            updateStats();
+            renderTree();
+            renderTimeline();
+            renderAnniversaryList();
+
+            handleDeepLink();
+            window.addEventListener('hashchange', handleDeepLink);
+
+            // Nav Tabs Click Switcher
+            const navTabs = document.querySelectorAll(".nav-tab");
+            navTabs.forEach(tab => {
+                tab.addEventListener("click", function() {
+                    const targetId = this.getAttribute("data-target");
+                    switchView(targetId);
+                });
+            });
+
+            // Hero Action Buttons
+            document.getElementById("btnTamSuHero").addEventListener("click", function() {
+                window.location.hash = "tam-su";
+                switchView("section-tamsu");
+            });
+
+            document.getElementById("btnHuongDanHero").addEventListener("click", function() {
+                window.location.hash = "huong-dan";
+                switchView("section-huongdan");
+            });
+
+            // Back to Tree buttons
+            document.querySelectorAll(".btn-back-to-tree").forEach(btn => {
+                btn.addEventListener("click", function() {
+                    window.location.hash = "section-tree";
+                    switchView("section-tree");
+                });
+            });
+
+            // Logo click goes back to Tree
+            document.getElementById("headerLogoBtn").addEventListener("click", function() {
+                switchView("section-tree");
+            });
+
+            // Accordion Toggle for "Hướng dẫn xem"
+            document.querySelectorAll(".accordion-header").forEach(header => {
+                header.addEventListener("click", function() {
+                    const body = this.nextElementSibling;
+                    const chevron = this.querySelector(".fa-chevron-down");
+                    body.classList.toggle("hidden");
+                    chevron.classList.toggle("rotate-180");
+                });
+            });
+
+            // Branch Jump Filter Buttons
+            const branchBtns = document.querySelectorAll(".branch-filter-btn");
+            branchBtns.forEach(btn => {
+                btn.addEventListener("click", function() {
+                    const branch = this.getAttribute("data-branch");
+                    if (activeBranchFilter === branch) {
+                        activeBranchFilter = "all";
+                        this.classList.remove("bg-heritage-800", "text-white");
+                    } else {
+                        activeBranchFilter = branch;
+                        branchBtns.forEach(b => b.classList.remove("bg-heritage-800", "text-white"));
+                        this.classList.add("bg-heritage-800", "text-white");
+                    }
+                    
+                    switchView("section-tree");
+                    renderTree();
+                });
+            });
+
+            // Search Inputs Logic
+            const searchHeader = document.getElementById("searchInputHeader");
+            const searchMobile = document.getElementById("searchInputMobile");
+            const clearBtn = document.getElementById("clearSearchBtn");
+
+            function handleSearchInput(e) {
+                activeSearchQuery = e.target.value;
+                if (activeSearchQuery.length > 0) {
+                    clearBtn.classList.remove("hidden");
+                } else {
+                    clearBtn.classList.add("hidden");
+                }
+                searchHeader.value = activeSearchQuery;
+                searchMobile.value = activeSearchQuery;
+
+                switchView("section-tree");
+                renderTree();
+            }
+
+            searchHeader.addEventListener("input", handleSearchInput);
+            searchMobile.addEventListener("input", handleSearchInput);
+
+            clearBtn.addEventListener("click", function() {
+                activeSearchQuery = "";
+                searchHeader.value = "";
+                searchMobile.value = "";
+                clearBtn.classList.add("hidden");
+                renderTree();
+            });
+
+            document.getElementById("mobileSearchBtn").addEventListener("click", function() {
+                document.getElementById("mobileSearchContainer").classList.toggle("hidden");
+            });
+
+            document.getElementById("expandAllBtn").addEventListener("click", function() {
+                collapsedNodes.clear();
+                renderTree();
+            });
+
+            document.getElementById("collapseAllBtn").addEventListener("click", function() {
+                clanData.forEach(m => {
+                    if (getChildren(m.id).length > 0) collapsedNodes.add(m.id);
+                });
+                renderTree();
+            });
+
+            document.getElementById("resetSearchBtn").addEventListener("click", function() {
+                activeSearchQuery = "";
+                activeBranchFilter = "all";
+                searchHeader.value = "";
+                searchMobile.value = "";
+                branchBtns.forEach(b => b.classList.remove("bg-heritage-800", "text-white"));
+                renderTree();
+            });
+
+            const monthPills = document.querySelectorAll(".month-pill");
+            monthPills.forEach(pill => {
+                pill.addEventListener("click", function() {
+                    activeLunarMonthFilter = this.getAttribute("data-month");
+                    monthPills.forEach(p => {
+                        p.classList.remove("bg-heritage-800", "dark:bg-amber-600", "text-white");
+                        p.classList.add("bg-heritage-100", "dark:bg-gray-800", "text-gray-700", "dark:text-gray-300");
+                    });
+                    this.classList.add("bg-heritage-800", "dark:bg-amber-600", "text-white");
+                    this.classList.remove("bg-heritage-100", "dark:bg-gray-800", "text-gray-700", "dark:text-gray-300");
+                    renderAnniversaryList();
+                });
+            });
+
+            document.getElementById("closeModalBtn").addEventListener("click", closeModal);
+            document.getElementById("closeModalFooterBtn").addEventListener("click", closeModal);
+            document.getElementById("memberDetailModal").addEventListener("click", function(e) {
+                if (e.target === this) closeModal();
+            });
+
+            document.getElementById("closeShareModalBtn").addEventListener("click", closeShareModal);
+            document.getElementById("socialShareModal").addEventListener("click", function(e) {
+                if (e.target === this) closeShareModal();
+            });
+
+            document.getElementById("modalShareBtn").addEventListener("click", function() {
+                const name = document.getElementById("modalFullName").textContent;
+                const member = clanData.find(m => m.fullName === name);
+                if (member) {
+                    closeModal();
+                    shareMember(member.id);
+                }
+            });
+
+            const themeBtn = document.getElementById("themeToggleBtn");
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+
+            themeBtn.addEventListener("click", function() {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.theme = 'light';
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.theme = 'dark';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
