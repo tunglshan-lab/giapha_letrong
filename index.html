@@ -43,24 +43,12 @@
     </script>
     
     <style>
-        ::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: rgba(0,0,0,0.05);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(158, 110, 48, 0.4);
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(158, 110, 48, 0.7);
-        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+        ::-webkit-scrollbar-thumb { background: rgba(158, 110, 48, 0.4); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(158, 110, 48, 0.7); }
         
-        .tree-branch-line {
-            position: relative;
-        }
+        .tree-branch-line { position: relative; }
         .tree-branch-line::before {
             content: '';
             position: absolute;
@@ -141,9 +129,7 @@
             border-color: #d97706 !important;
             box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3) !important;
         }
-        .hero-btn-active i {
-            color: #ffffff !important;
-        }
+        .hero-btn-active i { color: #ffffff !important; }
     </style>
 </head>
 <body class="bg-heritage-50 dark:bg-gray-950 text-gray-800 dark:text-gray-100 font-sans antialiased min-h-screen flex flex-col transition-colors duration-200">
@@ -154,11 +140,11 @@
                 
                 <div class="flex items-center gap-3 shrink-0 cursor-pointer" id="headerLogoBtn">
                     <div class="w-10 h-10 rounded-full bg-heritage-800 dark:bg-amber-600 text-amber-200 dark:text-white flex items-center justify-center font-serif font-bold text-xl shadow-md border border-amber-500/30">
-                        武
+                        黎
                     </div>
                     <div>
                         <h1 class="font-serif font-bold text-lg text-heritage-900 dark:text-amber-400 tracking-tight leading-none">GIA PHẢ LÊ TRỌNG</h1>
-                        <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">Bản Triều - Ninh Bình</span>
+                        <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">Kỳ Vĩ - Hoa Lư - Ninh Bình</span>
                     </div>
                 </div>
 
@@ -166,7 +152,7 @@
                     <div class="relative">
                         <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400 text-sm"></i>
                         <input id="searchInputHeader" type="text" 
-                            placeholder="Tìm tên thành viên (ví dụ: Lê Văn A, Tuấn...)" 
+                            placeholder="Tìm tên thành viên, phái, ghi chú (không dấu)..." 
                             class="w-full pl-10 pr-10 py-2 rounded-full border border-heritage-200 dark:border-gray-700 bg-heritage-50/50 dark:bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-heritage-600 dark:focus:ring-amber-500 transition-all placeholder:text-gray-400">
                         <button id="clearSearchBtn" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:hover:text-gray-200">
                             <i class="fa-solid fa-circle-xmark text-sm"></i>
@@ -197,14 +183,12 @@
 
             <nav class="flex items-center gap-1 overflow-x-auto py-2 border-t border-heritage-100 dark:border-gray-800/60 text-xs sm:text-sm font-medium scrollbar-none">
                 <button data-target="section-tree" class="nav-tab active flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-heritage-800 dark:bg-amber-600 text-white shrink-0 shadow-sm transition-all">
-                    <i class="fa-solid fa-sitemap text-xs"></i> Cây Phả Hệ
+                    <i class="fa-solid fa-sitemap text-xs"></i> Cây Phả Hệ (Từ Đời 6)
                 </button>
                 <div class="h-4 w-px bg-gray-300 dark:bg-gray-700 mx-1 shrink-0"></div>
-                <button data-branch="Chi 1" class="branch-filter-btn px-2.5 py-1 rounded-md text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-colors">Chi 1 (Trưởng)</button>
-                <button data-branch="Chi 2" class="branch-filter-btn px-2.5 py-1 rounded-md text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-colors">Chi 2</button>
-                <button data-branch="Chi 3" class="branch-filter-btn px-2.5 py-1 rounded-md text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-colors">Chi 3</button>
-                <button data-branch="Chi 4" class="branch-filter-btn px-2.5 py-1 rounded-md text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-colors">Chi 4</button>
-                <button data-branch="Chi 5" class="branch-filter-btn px-2.5 py-1 rounded-md text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-colors">Chi 5</button>
+                <button data-branch="Ngành Cả" class="branch-filter-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-all">Ngành Cả (8 Phái)</button>
+                <button data-branch="Ngành Hai" class="branch-filter-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-all">Ngành Hai (5 Phái)</button>
+                <button data-branch="Ngành Ba" class="branch-filter-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-all">Ngành Ba (3 Phái)</button>
                 <div class="h-4 w-px bg-gray-300 dark:bg-gray-700 mx-1 shrink-0"></div>
                 <button data-target="section-timeline" class="nav-tab flex items-center gap-1.5 px-3 py-1.5 rounded-full text-gray-600 dark:text-gray-300 hover:bg-heritage-200/60 dark:hover:bg-gray-800 shrink-0 transition-all">
                     <i class="fa-solid fa-clock-rotate-left text-xs"></i> Lịch Sử Dòng Họ
@@ -217,35 +201,60 @@
     </header>
 
     <section class="bg-gradient-to-b from-heritage-100/70 via-heritage-100/30 to-transparent dark:from-gray-900 dark:via-gray-900/50 dark:to-transparent border-b border-heritage-200/50 dark:border-gray-800 py-10 px-4 sm:px-6 transition-colors">
-        <div class="max-w-4xl mx-auto text-center space-y-4">
+        <div class="max-w-5xl mx-auto text-center space-y-4">
             
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-800 dark:text-amber-400 text-xs font-semibold uppercase tracking-wider">
-                <i class="fa-solid fa-landmark text-amber-600"></i> GIA PHẢ BẢN TRIỀU
+                <i class="fa-solid fa-landmark text-amber-600"></i> GIA PHẢ ĐẠI TỘC KỲ VĨ
             </div>
 
             <h2 class="font-serif text-2xl sm:text-4xl font-bold text-heritage-900 dark:text-amber-100 tracking-tight">
-                LÊ TỘC • NINH BÌNH
+                LÊ TRỌNG TỘC • HOA LƯ, NINH BÌNH
             </h2>
 
             <div class="w-16 h-0.5 bg-amber-500/40 mx-auto rounded-full"></div>
 
             <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                Từ thế kỷ XVII, Cụ Thủy Tổ Vũ Đạo Chính khai cơ lập nghiệp trên đất Thụy Chính, Thái Thụy, Thái Bình, gây dựng nên dòng họ Vũ nơi đây. Qua bảy đời nối tiếp, đến Cụ Vũ Đức Mậu sinh hạ năm người con trai đều thành đạt, lập thành năm Chi — đời sau gọi là "Ngũ Chi Phương". Trang này ghi lại phả hệ năm Chi ấy, để con cháu xa gần cùng tìm về cội nguồn.
+                Từ đất Phượng Vĩ thuộc tổng Liễu Đôi phủ Hà Nam, Cụ Tổ họ Lê Trọng vốn xuất thân từ dòng họ Lê hoàng tộc đã thiên lý du Nam, chọn đất Kỳ Vĩ (Hoa Lư, Ninh Bình) làm nơi sinh cơ lập nghiệp, khai sáng nên một Đại tộc văn hiến lâu đời. Trải qua nhiều thế hệ nối tiếp, con cháu dòng họ phát triển phồn thịnh thành Ba Ngành (Ngành Cả, Ngành Hai, Ngành Ba) với nhiều phái nhánh — đời sau gọi là "Nhất bản ngũ cán, hậu thành tam chi". Trang này ghi lại phả hệ cùng văn bia, từ đường của dòng tộc, để con cháu xa gần cùng tìm về cội nguồn.
             </p>
 
-            <div class="flex items-center justify-center gap-3 pt-2">
-                <button id="btnTamSuHero" class="px-4 py-2.5 rounded-full bg-amber-500/10 dark:bg-gray-800 border border-amber-500/40 dark:border-gray-700 text-heritage-900 dark:text-amber-300 text-xs sm:text-sm font-semibold hover:bg-amber-500/20 dark:hover:bg-gray-700 transition-all flex items-center gap-2">
-                    <i class="fa-regular fa-envelope text-amber-600 dark:text-amber-400"></i>
-                    <span>Đôi dòng tâm sự</span>
+            <div class="flex flex-wrap items-center justify-center gap-2.5 pt-2">
+                <button data-target="section-nguongoc" data-hash="nguon-goc" class="hero-nav-btn px-3.5 py-2 rounded-full bg-amber-500/10 dark:bg-gray-800 border border-amber-500/40 dark:border-gray-700 text-heritage-900 dark:text-amber-300 text-xs sm:text-sm font-semibold hover:bg-amber-500/20 dark:hover:bg-gray-700 transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-scroll text-amber-600 dark:text-amber-400"></i>
+                    <span>Nguồn gốc và Truyền thuyết</span>
                 </button>
 
-                <button id="btnHuongDanHero" class="px-4 py-2.5 rounded-full bg-amber-500/10 dark:bg-gray-800 border border-amber-500/40 dark:border-gray-700 text-heritage-900 dark:text-amber-300 text-xs sm:text-sm font-semibold hover:bg-amber-500/20 dark:hover:bg-gray-700 transition-all flex items-center gap-2">
+                <button data-target="section-tuduong" data-hash="tu-duong" class="hero-nav-btn px-3.5 py-2 rounded-full bg-amber-500/10 dark:bg-gray-800 border border-amber-500/40 dark:border-gray-700 text-heritage-900 dark:text-amber-300 text-xs sm:text-sm font-semibold hover:bg-amber-500/20 dark:hover:bg-gray-700 transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-torii-gate text-amber-600 dark:text-amber-400"></i>
+                    <span>Từ đường</span>
+                </button>
+
+                <button data-target="section-caudoi" data-hash="cau-doi" class="hero-nav-btn px-3.5 py-2 rounded-full bg-amber-500/10 dark:bg-gray-800 border border-amber-500/40 dark:border-gray-700 text-heritage-900 dark:text-amber-300 text-xs sm:text-sm font-semibold hover:bg-amber-500/20 dark:hover:bg-gray-700 transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-monument text-amber-600 dark:text-amber-400"></i>
+                    <span>Câu đối, Đại tự và Văn Bia</span>
+                </button>
+
+                <button data-target="section-haubiky" data-hash="hau-bi-ky" class="hero-nav-btn px-3.5 py-2 rounded-full bg-amber-500/10 dark:bg-gray-800 border border-amber-500/40 dark:border-gray-700 text-heritage-900 dark:text-amber-300 text-xs sm:text-sm font-semibold hover:bg-amber-500/20 dark:hover:bg-gray-700 transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-tablet-screen-button text-amber-600 dark:text-amber-400"></i>
+                    <span>Hậu bi ký</span>
+                </button>
+
+                <button data-target="section-dotekhi" data-hash="do-te-khi" class="hero-nav-btn px-3.5 py-2 rounded-full bg-amber-500/10 dark:bg-gray-800 border border-amber-500/40 dark:border-gray-700 text-heritage-900 dark:text-amber-300 text-xs sm:text-sm font-semibold hover:bg-amber-500/20 dark:hover:bg-gray-700 transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-gopuram text-amber-600 dark:text-amber-400"></i>
+                    <span>Đồ tế khí trong nhà thờ</span>
+                </button>
+
+                <button data-target="section-mochi" data-hash="mo-chi" class="hero-nav-btn px-3.5 py-2 rounded-full bg-amber-500/10 dark:bg-gray-800 border border-amber-500/40 dark:border-gray-700 text-heritage-900 dark:text-amber-300 text-xs sm:text-sm font-semibold hover:bg-amber-500/20 dark:hover:bg-gray-700 transition-all flex items-center gap-1.5">
+                    <i class="fa-solid fa-mountain-sun text-amber-600 dark:text-amber-400"></i>
+                    <span>Mộ chí</span>
+                </button>
+
+                <button data-target="section-huongdan" data-hash="huong-dan" class="hero-nav-btn px-3.5 py-2 rounded-full bg-amber-500/10 dark:bg-gray-800 border border-amber-500/40 dark:border-gray-700 text-heritage-900 dark:text-amber-300 text-xs sm:text-sm font-semibold hover:bg-amber-500/20 dark:hover:bg-gray-700 transition-all flex items-center gap-1.5">
                     <i class="fa-regular fa-circle-question text-amber-600 dark:text-amber-400"></i>
                     <span>Hướng dẫn xem</span>
                 </button>
             </div>
 
-            <!-- Stats Bar Row with Adopted Children added -->
+            <!-- Stats Bar Row -->
             <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 pt-6 max-w-3xl mx-auto">
                 <div class="bg-white/80 dark:bg-gray-900/80 p-2.5 rounded-xl border border-heritage-200 dark:border-gray-800 text-center shadow-sm">
                     <span class="block text-lg font-bold text-heritage-800 dark:text-amber-400" id="statTotalMembers">0</span>
@@ -261,7 +270,7 @@
                 </div>
                 <div class="bg-white/80 dark:bg-gray-900/80 p-2.5 rounded-xl border border-sky-200 dark:border-sky-900/40 text-center shadow-sm">
                     <span class="block text-lg font-bold text-sky-600 dark:text-sky-400" id="statAdoptedCount">0</span>
-                    <span class="text-[11px] text-gray-500 dark:text-gray-400">Con nuôi</span>
+                    <span class="text-[11px] text-gray-500 dark:text-gray-400">Con nuôi / Con riêng</span>
                 </div>
                 <div class="bg-white/80 dark:bg-gray-900/80 p-2.5 rounded-xl border border-purple-200 dark:border-purple-900/40 text-center shadow-sm col-span-2 sm:col-span-1">
                     <span class="block text-lg font-bold text-purple-600 dark:text-purple-400" id="statSpouseCount">0</span>
@@ -311,7 +320,7 @@
             <div id="noResultsState" class="hidden text-center py-12 bg-white dark:bg-gray-900 rounded-2xl border border-heritage-200 dark:border-gray-800 p-8">
                 <i class="fa-solid fa-user-slash text-4xl text-gray-300 dark:text-gray-700 mb-3"></i>
                 <p class="text-base font-semibold text-gray-700 dark:text-gray-300">Không tìm thấy thành viên phù hợp</p>
-                <p class="text-xs text-gray-500 mt-1">Thử đổi từ khóa tìm kiếm tiếng Việt hoặc bỏ bớt bộ lọc chi dòng họ.</p>
+                <p class="text-xs text-gray-500 mt-1">Thử đổi từ khóa tìm kiếm tiếng Việt hoặc bỏ bớt bộ lọc ngành dòng họ.</p>
                 <button id="resetSearchBtn" class="mt-4 px-4 py-2 bg-heritage-800 dark:bg-amber-600 text-white rounded-lg text-xs font-medium shadow">
                     Đặt lại bộ lọc
                 </button>
@@ -325,10 +334,10 @@
                     <h3 class="font-serif text-xl font-bold text-heritage-900 dark:text-amber-300 flex items-center gap-2">
                         <i class="fa-solid fa-landmark text-amber-600"></i> Niên Biểu & Mốc Lịch Sử Dòng Họ
                     </h3>
-                    <p class="text-xs text-gray-500 mt-1">Ghi chép các sự kiện quan trọng qua nhiều thế hệ kể từ ngày khởi dựng từ đường.</p>
+                    <p class="text-xs text-gray-500 mt-1">Tổng hợp vắn tắt các dấu mốc lịch sử trọng đại từ cội nguồn Phượng Vĩ đến Từ đường Kỳ Vĩ ngày nay.</p>
                 </div>
 
-                <div class="relative pl-6 sm:pl-8 space-y-8 before:absolute before:left-2.5 sm:before:left-3.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-dashed before:border-l-2 before:border-dashed before:border-heritage-300 dark:before:border-gray-700" id="timelineContainer">
+                <div class="relative pl-6 sm:pl-8 space-y-8 before:absolute before:left-2.5 sm:before:left-3.5 before:top-2 before:bottom-2 before:w-0.5 before:border-l-2 before:border-dashed before:border-heritage-300 dark:before:border-gray-700" id="timelineContainer">
                 </div>
             </div>
         </section>
@@ -344,18 +353,9 @@
                         </h3>
                         <p class="text-xs text-gray-500 mt-1">Sắp xếp theo ngày giỗ âm lịch hàng năm để con cháu chuẩn bị lễ nghi nghi thức.</p>
                     </div>
-
-                    <div class="flex items-center bg-heritage-100 dark:bg-gray-800 p-1 rounded-xl text-xs font-semibold">
-                        <button id="tabByMonthBtn" class="px-3 py-1.5 rounded-lg bg-white dark:bg-amber-600 text-heritage-900 dark:text-white shadow-sm transition-all">
-                            <i class="fa-solid fa-calendar-days mr-1"></i> Theo Tháng Âm
-                        </button>
-                        <button id="tabByGenBtn" class="px-3 py-1.5 rounded-lg text-gray-600 dark:text-gray-300 hover:text-heritage-900 transition-all">
-                            <i class="fa-solid fa-layer-group mr-1"></i> Theo Đời
-                        </button>
-                    </div>
                 </div>
 
-                <div id="lunarMonthPills" class="flex items-center gap-2 overflow-x-auto py-2 scrollbar-none">
+                <div id="lunarMonthPills" class="flex items-center gap-2 overflow-x-auto py-3 scrollbar-none">
                     <button data-month="all" class="month-pill active px-3 py-1 rounded-full text-xs font-medium bg-heritage-800 dark:bg-amber-600 text-white shrink-0">Tất cả tháng</button>
                     <button data-month="1" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 1 (Giêng)</button>
                     <button data-month="2" class="month-pill px-3 py-1 rounded-full text-xs font-medium bg-heritage-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-heritage-200 shrink-0">Tháng 2</button>
@@ -376,50 +376,439 @@
             </div>
         </section>
 
-        <!-- SECTION 4: ĐÔI DÒNG TÂM SỰ -->
-        <section id="section-tamsu" class="tab-content hidden space-y-6">
+        <!-- SECTION 4: NGUỒN GỐC VÀ TRUYỀN THUYẾT -->
+        <section id="section-nguongoc" class="tab-content hidden space-y-6">
             <div class="mb-4">
                 <button class="btn-back-to-tree inline-flex items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-400 hover:underline">
                     <i class="fa-solid fa-arrow-left"></i> Về Phả hệ
                 </button>
             </div>
 
-            <div class="bg-white dark:bg-gray-900 rounded-2xl border border-heritage-200 dark:border-gray-800 shadow-md p-6 sm:p-12 max-w-3xl mx-auto">
-                <div class="letter-frame bg-heritage-50/50 dark:bg-gray-950/40 text-center sm:text-left space-y-6">
+            <div class="bg-white dark:bg-gray-900 rounded-2xl border border-heritage-200 dark:border-gray-800 shadow-md p-6 sm:p-12 max-w-4xl mx-auto">
+                <div class="letter-frame bg-heritage-50/50 dark:bg-gray-950/40 space-y-8">
                     
-                    <div class="text-center space-y-2">
+                    <div class="text-center space-y-2 border-b border-amber-500/20 pb-6">
                         <div class="text-amber-600 dark:text-amber-500 text-sm">❖ ❖ ❖</div>
-                        <h3 class="font-serif font-bold text-2xl sm:text-3xl text-heritage-900 dark:text-amber-200">Đôi dòng tâm sự</h3>
-                        <p class="text-xs text-gray-500 italic">Thái Bình, tháng 10 năm 2026</p>
+                        <p class="font-serif font-bold text-sm uppercase tracking-widest text-amber-800 dark:text-amber-400">LÊ TRỌNG TỘC</p>
+                        <h3 class="font-serif font-bold text-2xl sm:text-3xl text-heritage-900 dark:text-amber-200">NGUỒN GỐC VÀ TRUYỀN THUYẾT</h3>
+                        <p class="text-xs text-gray-500 italic">Thôn Kỳ Vĩ, xã Ninh Nhất, huyện Hoa Lư (nay là Thôn Ninh Nhất 2, phường Hoa Lư, tỉnh Ninh Bình)</p>
                     </div>
-
-                    <p class="font-serif font-bold text-sm text-heritage-800 dark:text-amber-300 border-b border-amber-500/20 pb-3">
-                        Kính gửi các cụ, các ông bà, cô bác và anh chị em trong họ,
-                    </p>
 
                     <div class="space-y-4 text-xs sm:text-sm leading-relaxed text-gray-700 dark:text-gray-300 font-serif">
                         <p class="drop-cap">
-                            Trước đây, tôi hiểu khá mù mờ về gia phả. Những dịp Thanh minh về từ đường, nhìn bản phả hệ in A0 quá to và dài, dù rất trân trọng công sức của các bác, các chú, các anh đi trước đã dày công ghi chép, nhưng do bản in có chỗ chưa chuẩn tên đệm của gia đình tôi, cộng thêm thông tin qua nhiều năm đã cũ chưa được cập nhật nên tôi cũng ngại đọc và chưa thực sự để tâm.
+                            Họ Lê Trọng thôn Kỳ Vĩ xã Ninh Nhất huyện Hoa Lư tỉnh Ninh Bình (nay là Thôn Ninh Nhất 2 phường Hoa Lư tỉnh Ninh Bình) là một Đại tộc có nền văn hiến tương đối sớm trong cộng đồng các dòng tộc thôn Kỳ Vĩ.
+                        </p>
+                        <p>
+                            Tục truyền rằng: Cụ tổ họ Lê Trọng là người ở đất Phượng Vỹ thuộc tổng Liễu Đôi phủ Hà Nam. Liễu Đôi là một khu vực có nền văn hóa lâu đời vào bậc nhất của nhà nước Đại Việt nổi tiếng từ thời vua Đinh Tiên Hoàng dẹp loạn 12 sứ quân.
                         </p>
 
-                        <p>
-                            Đến cuối tháng 8 năm 2026, bố tôi phải đi viện cấp cứu và rơi vào tình trạng hôn mê sâu suốt 3 ngày. Lúc đó, anh em tôi nghĩ là ông không qua khỏi. Tôi cấp tốc chạy về Thái Bình xem phần đất mộ của gia đình (đã chuẩn bị sẵn từ mấy năm trước nhưng chưa xây) để thuê thợ đổ nền, xây tường. Tôi tính...
-                        </p>
+                        <div class="p-4 rounded-xl bg-amber-500/5 border border-amber-500/25 space-y-2">
+                            <p class="text-xs font-bold uppercase tracking-wider text-amber-800 dark:text-amber-400">Đôi câu đối phía nam nhà thờ đại tôn:</p>
+                            <p class="font-bold text-heritage-900 dark:text-amber-200">Bách thế bản phái tuấn liệt tắc Phượng Vĩ địa, Kỳ Vĩ địa</p>
+                            <p class="text-base text-amber-700 dark:text-amber-300">百世本之俊烈則鳳尾地奇偉地</p>
+                            <p class="italic text-gray-600 dark:text-gray-400">Có nghĩa là: Dòng họ hiển hách hàng trăm đời nay ở đất Phượng Vĩ cũng như ở đất Kỳ Vĩ!</p>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-amber-500/5 border border-amber-500/25 space-y-2">
+                            <p class="text-xs font-bold uppercase tracking-wider text-amber-800 dark:text-amber-400">Văn bia nhà thờ ghi rõ:</p>
+                            <p class="font-bold text-heritage-900 dark:text-amber-200">“Tổ sơ xuất dã, ngô Hoàng tộc nhất lệnh phái dã, ngô Dân tộc nhất vọng phiệt dã, ngô Tế Nam Phượng Vĩ sản dã”</p>
+                            <p class="italic text-gray-600 dark:text-gray-400">Nghĩa là: Tổ tiên ta xuất thân từ dòng họ Lê hoàng tộc, một dòng họ trâm anh thế phiệt của vùng Phượng Vĩ Tế Nam.</p>
+                        </div>
 
                         <p>
-                            Mỗi trang gia phả không chỉ là danh sách những cái tên, mà là gạch nối thiêng liêng kết nối quá khứ với hiện tại và tương lai. Khi được số hóa, con cháu dù ở xa quê hương hay nước ngoài cũng dễ dàng tra cứu, truyền cho thế hệ sau tinh thần uống nước nhớ nguồn, giữ gìn nếp nhà truyền thống của dòng họ Vũ.
+                            Từ đó ta có thể xác định rằng, nguồn gốc họ Lê Trọng ta chính là phái nhánh của dòng họ Hoàng Tộc nhà Tiền Lê. Và đó cũng là luận cứ khoa học để xác nhận rằng cụ Tổ họ ta xuất thân từ làng Phượng Vĩ, tổng Liễu Đôi phủ Hà Nam.
+                        </p>
+                        <p>
+                            Để khẳng định họ ta là một dòng họ văn hiến, có một truyền thuyết như sau: Là một tăng đồ có đọc sách thánh hiền, và cũng là một người con hiếu đễ, nên cụ Tổ họ ta sau khi rời khỏi đất Phượng Vĩ ra đi, trên đường thiên lí du Nam, người đã chọn đất Kỳ Vĩ làm nơi sinh cơ lập nghiệp, chim khôn chọn chốn đất lành! Người đã ở lại Kỳ Vĩ sinh cơ lập nghiệp lâu dài, nhưng sâu thẳm trong lòng ngài vẫn canh cánh một nỗi xa vắng song thân, ngài đã làm một việc có thể nói là “Độc nhất vô nhị” trong các họ tộc ở Kỳ Vĩ, đó là: Cụ tổ họ ta đã lặn lội về quê cũ, tay nải ngang vai, chân đất lên đường với một quyết tâm sắt đá: đem hài cốt nghiêm đường về nơi người sinh cơ lập nghiệp an táng để ngày đêm hương khói phụng thờ. Đó là ngôi mộ cụ Thượng Tổ an táng tại phía đông núi Hang Thờ, bên bờ tây sông Chanh, một huyệt mộ mà theo phong thủy được coi là “tả phụng hữu long” vô cùng đắc địa!
+                        </p>
+                        <p>
+                            Khi nghiên cứu về xuất thân của cụ Tổ họ ta, không thể không gắn với lịch sử văn minh của dân tộc ta sau đời Đinh – Lê (đóng đô ở Hoa Lư), đến đời Lý, nền học vấn quốc gia được xác lập, và bấy giờ tầng lớp trí thức chính là các nhà sư. Đạo Phật thịnh hành, việc truyền bá đạo Phật phải thông qua văn tự, đó chính là chữ viết, và chữ Hán của Trung Quốc du nhập vào Việt Nam có lẽ lúc đầu bằng con đường tôn giáo (như chữ Quốc ngữ ngày nay cũng được hình thành trong quá trình truyền đạo Gia-Tô của các Giáo Sĩ Tây Ban Nha). Do đó những người thông thạo chữ Hán đầu tiên ở nước ta chính là các nhà sư và tầng lớp quý tộc.
+                        </p>
+                        <p>
+                            Cụ tổ họ ta khi đặt chân lên đất Kỳ Vĩ, nguyên là một tăng lữ (có lẽ vì vậy mà nhân dân làng Kỳ Vĩ sau này còn gọi họ ta là họ Lê Chùa). Khi cụ tổ họ ta về tu tập, chùa làng Kỳ Vĩ còn đơn sơ tranh tre nứa lá. Họ Nguyễn Như, một dòng họ định cư sớm nhất ở đất Kỳ Vĩ ở gần chùa làng và đã 14 đời độc đinh. Cụ tổ họ ta lúc đó còn trẻ, cụ thường vào làng đàm đạo với các cụ họ Nguyễn Như, và sau đó do thân tình, cụ đã đi đào nghiên phong thủy trong vùng để đặt lại cho họ Nguyễn Như ngôi mộ tổ, nhờ đó mà họ Nguyễn Như phát đinh trở thành một dòng họ lớn trong làng.
+                        </p>
+                        <p>
+                            Để trả ơn cụ tổ, các cụ dòng họ Nguyễn Như đã khuyên cụ tổ họ ta hoàn tục và gả người con gái út là cụ Nguyễn Thị Tào cho cụ tổ họ ta. Từ đó cụ phá giới không đi tu nữa. Việc này, được Gia Phả họ Nguyễn Như chép lại rất rõ ràng.
+                        </p>
+                        <p>
+                            Lúc đầu do hoàn cảnh khó khăn, các cụ bên họ Nguyễn Như đã cắt cho cụ 5 thước bắc bộ (120m²) phía nam nhà thờ họ Nguyễn (nay là thổ nhà anh Nhật) để dựng tạm ngôi nhà tranh ba gian tá túc. Sau vì đất hẹp không phát triển được, cụ tổ đã trả lại để chuyển sang khu đất nhà thờ Họ bây giờ. Nhưng vốn là một trí thức, Nho Y Lí Số đều thông thạo, không lâu sau con cháu cụ đã phát triển thành ba phái với hàng chục gia đình và hàng trăm suất đinh, đến đời thứ sáu đã xây dựng được ngôi nhà thờ khang trang, to đẹp đứng vào hạng nhất trong vùng.
                         </p>
                     </div>
 
                     <div class="pt-6 border-t border-amber-500/20 flex flex-col items-end text-xs font-serif text-heritage-900 dark:text-amber-300">
                         <span>Tộc phả truyền thừa</span>
-                        <span class="font-bold text-sm mt-1">Con cháu Lê Tộc</span>
+                        <span class="font-bold text-sm mt-1">Con cháu Lê Trọng Tộc</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION 5: HƯỚNG DẪN XEM -->
+        <!-- SECTION 5: TỪ ĐƯỜNG -->
+        <section id="section-tuduong" class="tab-content hidden space-y-6">
+            <div class="mb-4">
+                <button class="btn-back-to-tree inline-flex items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-400 hover:underline">
+                    <i class="fa-solid fa-arrow-left"></i> Về Phả hệ
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 rounded-2xl border border-heritage-200 dark:border-gray-800 shadow-md p-6 sm:p-12 max-w-4xl mx-auto">
+                <div class="letter-frame bg-heritage-50/50 dark:bg-gray-950/40 space-y-8">
+                    <div class="text-center space-y-2 border-b border-amber-500/20 pb-6">
+                        <div class="text-amber-600 dark:text-amber-500 text-sm">❖ ❖ ❖</div>
+                        <p class="font-serif font-bold text-sm uppercase tracking-widest text-amber-800 dark:text-amber-400">LÊ TRỌNG TỘC</p>
+                        <h3 class="font-serif font-bold text-2xl sm:text-3xl text-heritage-900 dark:text-amber-200">TỪ ĐƯỜNG HỌ LÊ TRỌNG</h3>
+                        <p class="text-xs text-gray-500 italic">Kiến trúc cổ kính cuối thế kỷ XIX theo nghi thức Chu Gia Lễ</p>
+                    </div>
+
+                    <div class="space-y-4 text-xs sm:text-sm leading-relaxed text-gray-700 dark:text-gray-300 font-serif">
+                        <p class="drop-cap">
+                            Từ đường họ Lê Trọng là một ngôi nhà thờ kiến trúc theo kiểu cổ kính, vững chãi theo mô-típ đình chùa cuối thế kỷ 19. Nhà thờ gồm ba gian, lợp ngói vẩy, xây gạch đỏ, cột lim, cột đá vững vàng, có hiên tây rộng rãi dùng làm nơi giải chiếu để tế lễ.
+                        </p>
+                        <p>
+                            Theo nghi lễ nhà thờ được ghi chép trong bộ <b>Chu Gia Lễ</b> thì nhà thờ phải đủ ba gian mới đúng phép thờ tự, vì vậy trong nhà thờ có đôi câu đối:
+                        </p>
+
+                        <div class="p-4 rounded-xl bg-amber-500/5 border border-amber-500/25 space-y-2">
+                            <p class="font-bold text-heritage-900 dark:text-amber-200">Tam gian tận xuất Chu Gia Lễ<br>Bách thế truyền lai Lê Thị từ</p>
+                            <p class="italic text-gray-600 dark:text-gray-400">Nghĩa là: Ba gian nhà thờ biểu hiện đầy đủ nghi lễ của nhà Chu đặt ra / Ngôi nhà thờ họ Lê này sẽ truyền đến muôn đời con cháu.</p>
+                        </div>
+
+                        <p>
+                            Gian chính tẩm thờ cụ Tổ và bát hương công đồng, gian phía Bắc thờ Nhất Hội Tổ Cô, gian phía Nam thờ các cụ Tổ phân ngành.
+                        </p>
+
+                        <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-2">
+                            <h4 class="font-bold text-heritage-900 dark:text-amber-300">Các mốc xây dựng & trùng tu Từ đường:</h4>
+                            <ul class="space-y-1.5 list-disc pl-5">
+                                <li><b>Năm Mậu Tuất (1898):</b> Khởi công xây dựng nhà thờ.</li>
+                                <li><b>Mùa thu (tháng 9) năm Giáp Dần (1914):</b> Trùng tu lần thứ nhất. Theo bút tích trên thượng lương nhà thờ ghi lại: <i>“Hoàng Nguyễn Duy Tân bát niên Giáp Dần trùng cửu tiền ngũ nhật thụ trụ thượng lương tọa giáp hướng canh bính dần bính thân phân kê đại cát”</i>.</li>
+                                <li><b>Ngày mồng 2 tháng 2 năm Kỷ Sửu (tức 27/3/2009 dương lịch):</b> Xây dựng nhà bái đường.</li>
+                                <li><b>Ngày 20 tháng 4 năm Quý Tỵ (tức 29/5/2013 dương lịch):</b> Đại trùng tu nhà thờ lần cuối cùng.</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-2">
+                            <h4 class="font-bold text-heritage-900 dark:text-amber-300">Danh sách công đức tiến cúng:</h4>
+                            <ul class="space-y-1.5 list-disc pl-5">
+                                <li><b>Phiến đá, bát hương và đèn thờ bằng đá gian chính tẩm:</b> Ông Lê Tùng Sơn – Hải Phòng tiến cúng.</li>
+                                <li><b>Tam cấp đá hai bên:</b> Ông Lê Văn Nam – Ninh Bình tiến cúng.</li>
+                                <li><b>Hai cây vạn tuế:</b> Ông Lê Thanh Hải – Hà Nội tiến cúng.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CÂU ĐỐI, ĐẠI TỰ VÀ VĂN BIA -->
+        <section id="section-caudoi" class="tab-content hidden space-y-6">
+            <div class="mb-4">
+                <button class="btn-back-to-tree inline-flex items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-400 hover:underline">
+                    <i class="fa-solid fa-arrow-left"></i> Về Phả hệ
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 rounded-2xl border border-heritage-200 dark:border-gray-800 shadow-md p-6 sm:p-12 max-w-4xl mx-auto">
+                <div class="letter-frame bg-heritage-50/50 dark:bg-gray-950/40 space-y-8">
+                    <div class="text-center space-y-2 border-b border-amber-500/20 pb-6">
+                        <div class="text-amber-600 dark:text-amber-500 text-sm">❖ ❖ ❖</div>
+                        <p class="font-serif font-bold text-sm uppercase tracking-widest text-amber-800 dark:text-amber-400">LÊ TRỌNG TỘC</p>
+                        <h3 class="font-serif font-bold text-2xl sm:text-3xl text-heritage-900 dark:text-amber-200">CÂU ĐỐI – ĐẠI TỰ VÀ VĂN BIA</h3>
+                        <p class="text-xs text-gray-500 italic">Hệ thống hoành phi, đại tự, câu đối và bia đá trùng tu Từ đường năm Giáp Dần (1914)</p>
+                    </div>
+
+                    <div class="space-y-6 text-xs sm:text-sm leading-relaxed text-gray-700 dark:text-gray-300 font-serif">
+                        <!-- A -->
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-base text-heritage-900 dark:text-amber-300 border-b border-amber-500/20 pb-1">A - ĐẦU TƯỜNG PHÍA NGOÀI</h4>
+                            <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-2">
+                                <p class="font-bold text-amber-800 dark:text-amber-400">1. Đôi câu đối quay về hướng tây:</p>
+                                <p>Nguyên văn khuyết chữ: <i>Tài vinh dị thủy tam (?) (?) / (?) (?) kỳ sơn sổ nhẫn cao</i></p>
+                                <p>Tạm ghép các chữ thiếu: <b>Tái vinh dị thủy tam thâm hạ / Sủng lập kỳ sơn sổ nhẫn cao</b></p>
+                                <p class="italic">Dịch nghĩa: Dòng nước thiêng lại xuất hiện sâu ba thước / Ngọn núi cao được dựng lên cao biết bao nhiêu.</p>
+                                <p class="italic text-heritage-900 dark:text-amber-200">Dịch thơ: Trùng trùng sóng cả vạn thu ba / Sừng sững non cao ngàn khói biếc.</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-2">
+                                <p class="font-bold text-amber-800 dark:text-amber-400">2. Đôi quay mặt vào nhau:</p>
+                                <p><b>Tiên nhân tại tích lưu dư trạch / Tổ quốc như kim hệ nhất bào</b></p>
+                                <p class="italic">Dịch nghĩa: Dấu vết người xưa còn in dấu nơi đây / Dòng máu tổ tiên đến nay vẫn là một.</p>
+                                <p class="italic text-heritage-900 dark:text-amber-200">Dịch thơ: Công đức tổ tiên còn sáng mãi / Giống nòi Lê Tộc vẫn xanh tươi.</p>
+                            </div>
+                        </div>
+
+                        <!-- B -->
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-base text-heritage-900 dark:text-amber-300 border-b border-amber-500/20 pb-1">B - HIÊN TÂY</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                                    <p class="font-bold text-amber-800 dark:text-amber-400">1. Cột đá giữa quay ra hướng tây:</p>
+                                    <p><b>Đống vũ trùng tân sơn tráng sắc / Cương thường chung cổ thạch trường minh</b></p>
+                                    <p class="italic">Dịch nghĩa: Nhà thờ sang sửa lại đẹp đẽ sánh cùng sông núi / Đạo lí được ghi vào bia đá để lưu truyền mãi mãi.</p>
+                                    <p class="italic text-heritage-900 dark:text-amber-200">Dịch thơ: Nhà thờ sang sửa bừng sông núi / Hiếu nghĩa muôn đời vẫn khắc ghi.</p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                                    <p class="font-bold text-amber-800 dark:text-amber-400">2. Cột đá giữa quay mặt vào nhau:</p>
+                                    <p><b>Minh đức lai dã viễn / Cao môn hậu tắc hưng</b></p>
+                                    <p class="italic">Dịch nghĩa: Đức sáng cha ông còn lưu truyền mãi mãi về sau / Dòng họ lớn thì con cháu sau này tất hưng thịnh.</p>
+                                    <p class="italic text-heritage-900 dark:text-amber-200">Dịch thơ: Đức sáng tổ tiên như nhật nguyệt / Họ hàng con cháu thịnh về sau.</p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                                    <p class="font-bold text-amber-800 dark:text-amber-400">3. Cột đá gian phía nam:</p>
+                                    <p><b>Tam gian tận xuất Chu Gia lễ / Bách thế truyền lai Lê Thị từ</b></p>
+                                    <p class="italic">Dịch nghĩa: Ba gian biểu hiện đầy đủ nghi lễ của nhà Chu / Nhà thờ họ Lê sẽ truyền lại cho muôn đời con cháu.</p>
+                                    <p class="italic text-heritage-900 dark:text-amber-200">Dịch thơ: Ba gian nhà lớn nghiêm nghi lễ / Trăm năm hương khói tỏa mùi thơm.</p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                                    <p class="font-bold text-amber-800 dark:text-amber-400">4. Cột đá gian phía bắc:</p>
+                                    <p><b>Do thủy mộc chi hữu nguyên bản / Phàm khí huyết mạc bất tôn thân</b></p>
+                                    <p class="italic">Dịch nghĩa: Có sông nước phải có nguồn gốc / Cùng một dòng máu đều là anh em.</p>
+                                    <p class="italic text-heritage-900 dark:text-amber-200">Dịch thơ: Sông sâu nước cả ơn nguồn gốc / Con cháu muôn đời vẫn anh em.</p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                                    <p class="font-bold text-amber-800 dark:text-amber-400">5. Mặt tiền hai cột gỗ gian giữa quay ra hiên:</p>
+                                    <p><b>Dương hồ như tại kỳ thượng kỳ tả hữu / Khí nhiên hữu kiến kỳ vị kỳ dung thanh</b></p>
+                                    <p class="italic">Dịch nghĩa: Vong linh tiên tổ vời vợi trên đầu và hai vai ta / Khí thiêng tiền nhân tỏa ra trên bài vị mà ta như nhìn thấy hình ảnh và tiếng nói của các cụ.</p>
+                                    <p class="italic text-heritage-900 dark:text-amber-200">Dịch thơ: Dẫu hồn thiêng đã về tiên cảnh / Mà bóng hình vẫn hiện trong mơ.</p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                                    <p class="font-bold text-amber-800 dark:text-amber-400">6. Mặt tiền hai cột gỗ hai bên quay ra hiên:</p>
+                                    <p><b>Bách thế bản chi tuấn liệt Phượng Vĩ địa Kỳ Vĩ địa / Trung canh luân hoán cưu công ư Mậu Tuất thu Giáp Dần thu</b></p>
+                                    <p class="italic">Dịch nghĩa: Họ ta hiển hách trăm đời nay ở đất Phượng Vĩ (Hà Nam) và đất Kỳ Vĩ (Ninh Bình). Xây dựng và trùng tu lại ngôi nhà thờ này lần lượt góp công từ mùa thu năm Mậu Tuất (1898) đến mùa thu năm Giáp Dần (1914). Tính đến năm 2026 đã là 128 năm.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- C -->
+                        <div class="space-y-3">
+                            <h4 class="font-bold text-base text-heritage-900 dark:text-amber-300 border-b border-amber-500/20 pb-1">C - TRONG NHÀ THỜ</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                                <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                                    <p class="font-bold text-amber-800 dark:text-amber-400">1. Cột gian chính giữa:</p>
+                                    <p><b>Dịch thế triều bồi nhân hậu mạch / Tứ thần hồ chúc hiếu từ tâm</b></p>
+                                    <p class="italic">Dịch nghĩa: Cha ông dày công xây nền nhân đức cho con cháu / Chúng ta phải bốn mùa cúng tế để tỏ lòng hiếu trung.</p>
+                                    <p class="italic text-heritage-900 dark:text-amber-200">Dịch thơ: Tiền bối dày công xây quả Phúc / Cháu con gắng sức tỏ lòng Trung.</p>
+                                </div>
+                                <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                                    <p class="font-bold text-amber-800 dark:text-amber-400">2. Hai cột gian hai bên:</p>
+                                    <p><b>Bách thế tinh linh bằng thiệp giáng / Thiên thu từ vũ túc thanh cao</b></p>
+                                    <p class="italic">Dịch nghĩa: Tiền bối linh thiêng thường giáng ngự về đây / Từ đường đời đời là chốn thờ phụng linh thiêng.</p>
+                                    <p class="italic text-heritage-900 dark:text-amber-200">Dịch thơ: Tiên tổ anh linh thường hạ giáng / Từ đường muôn thuở vẫn thanh cao.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- D & E -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 rounded-xl bg-amber-500/5 border border-amber-500/25 space-y-2">
+                                <h4 class="font-bold text-base text-heritage-900 dark:text-amber-300">D - THƯỢNG LƯƠNG</h4>
+                                <p class="font-bold">Hoàng Nguyễn Duy Tân bát niên Giáp Dần trùng cửu tiền ngũ nhật thụ trụ thượng lương tọa giáp hương canh Bính Dần Bính Thân phân kê đại cát</p>
+                                <p class="italic text-gray-600 dark:text-gray-400">Dịch nghĩa: Thượng lương được cất lên vào giờ Bính Thân, ngày Bính Dần trước ngày mồng 5 mùa thu (tháng 9) năm Giáp Dần (Duy Tân thứ tám).</p>
+                            </div>
+                            <div class="p-4 rounded-xl bg-amber-500/5 border border-amber-500/25 space-y-2">
+                                <h4 class="font-bold text-base text-heritage-900 dark:text-amber-300">E - ĐẠI TỰ</h4>
+                                <ul class="space-y-1.5">
+                                    <li><b>Cửa phía bắc — TƯ TỤ TỘC:</b> Đây là nơi tập trung đỉnh cao của sự kết đoàn, là nơi tích tụ khí thiêng của cả dòng tộc.</li>
+                                    <li><b>Cửa chính giữa — PHỤC KỲ THỦY:</b> Phục hưng cội nguồn, làm sáng tỏ nguồn gốc.</li>
+                                    <li><b>Cửa phía nam — VIỄN LAI HĨ:</b> Nhà này phải lưu truyền mãi mãi về sau.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- F -->
+                        <div class="space-y-4">
+                            <h4 class="font-bold text-base text-heritage-900 dark:text-amber-300 border-b border-amber-500/20 pb-1">F - BIA ĐÁ: BIA TRÙNG TU NHÀ THỜ (NĂM GIÁP DẦN 1914)</h4>
+                            <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-3">
+                                <p class="font-bold text-amber-800 dark:text-amber-400">1. Phiên âm Hán Việt:</p>
+                                <p>Duy Tân bát niên tuế, Giáp Dần niên trùng tu cửu hậu bi lập. Ninh Bình tỉnh, Gia Khánh huyện, Kỳ Vĩ tổng, Kỳ Vĩ thôn, Lê Trọng tộc từ đường bi ký:</p>
+                                <p>Lê Ngô tộc dã, Ngô tổ sở tự xuất dã, Hoàng tộc nhất lệnh phái dã, Ngô dân tộc nhất vọng phiệt dã, Ngô Tế Nam Phượng Vĩ sản dã. Tự ngã cao tổ bốc địa cư vu ngã Kỳ Vĩ thôn, nhất bản ngũ cán, hậu thành tam chi, phồn diễn liên huy thất bát diệp vu tư hĩ. Đương sơ thảo muội, tài kiệm nhi dụng, quảng tự điền, tự khí hữu vi năng tạp diễn giả. Từ đường tuy tổ chức diệc nan, dĩ tức nhật thành, phù phi thế nhiên dã.</p>
+                                <p>Tuy nhiên, ngô nhân báo bản, phân thủy vi cửu viễn kế bất khả bất tảo vi chi sở, Thành Thái Mậu Tuất thu, tộc nội bá thúc huynh đệ ký diệp tôn bốc viên mưu cấu tác tam gian mộc hồng sắc, âm bạch mao, thứ vụ kinh doanh tiệm tiệm, tự trữ hồi thị tiền nhật thực hưu quang nhĩ. Kim thu đồng tập tầm dĩ nhất sơ đống vũ vị kham. Tráng cổ nãi tương dữ, cách cố nhi đỉnh tâm chi, hồng sắc đại dĩ thiết lâm, bạch mao dịch nhi thổ ngõa, mộc trụ, thạch trụ, quân dụng đối liên, cự lệnh tam bách kim, cưu công kinh nhị cá nguyệt, đài đáng sảng khải, ngật nhiên kỳ sơn tú thủy gian dã. Tứ thời hướng tế, bách thế tụ ca, kì diệc thứ hồ nhược phù phác đầu nhi đơn hoặc. Môn cao nhi dụng cái ngô hậu thế tử tôn bất hữu hưng giả tòng nhi thọ chi, trinh manh cố khả lương gia, kim cẩn chiếu tam chi tu lí. Hiện tại nhân số vãn chi vu thứ đường:</p>
+                                <p>Nhất hội tổ cô, nhất cao tứ xích tại An làng xứ, hiện chính từ đường. Hương hỏa điền: nhị cao ngũ xích đông lê hướng tây sơn.</p>
+                                <ul class="space-y-1 pl-4">
+                                    <li><b>I - Đệ nhất chi:</b> Trưởng tộc: Lê Văn Thục; Cửu phẩm bá hộ: Lê Văn Tuyển, Lê Văn Đạt; Vũ cử xuất đội: Lê Văn Thực, Lê Văn Nhị, Lê Văn Cái; Cự lí trưởng: Lê Văn Chí. Cùng các vị: Lê Khung, Lê Lung, Lê Vực, Lê Liên, Lê Thích, Lê Đường, Lê Phú, Lê Khoan, Lê Bào, Lê Vĩnh, Lê Viện, Lê Do, Lê Thí, Lê Viễn, Lê Dung, Lê Hạo, Lê Hoàn, Lê Phong, Lê Phương, Lê Vực.</li>
+                                    <li><b>II - Đệ nhị chi:</b> Đường thúc: Lê Văn Tĩnh, Lê Văn Mãn; Trưởng chi: Lê Văn Trữ, Lê Văn Cầm; Vũ cử xuất đội: Lê Văn Tình, Lê Văn Xoang. Cùng các vị: Lê Tố, Lê Tường, Lê Kim, Lê Đồng, Lê Chiếu, Lê Sinh.</li>
+                                    <li><b>III - Đệ tam chi:</b> Đường thúc: Lê Văn Hiếu, Lê Văn Giáo; Trưởng chi: Thí sinh Lê Trần Thường, Nghị đồ Lê Trần Thận, Nhất trường Lê Trần Mô. Cùng các vị: Lê Lương, Lê Bình, Lê Mỹ, Lê Ngãi.</li>
+                                </ul>
+                                <p><b>Độc biệt chu viên nhân:</b> Lê Tĩnh, Lê Mãn, Lê Hiếu, Lê Giáo, Lê Thục, Lê Tuyển, Lê Đạt, Lê Chí, Lê Tộ, Lê Thường, Lê Mô, Lê Khung. <i>Lục đại tôn Lê Trần Thường, Lê Trần Mô cộng đồng biên soạn.</i></p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-amber-500/5 border border-amber-500/25 space-y-3">
+                                <p class="font-bold text-amber-800 dark:text-amber-400">2. Bản dịch nghĩa:</p>
+                                <p>Năm Duy Tân thứ tám, mùa thu Giáp Dần trùng tu lập bia. Văn bia từ đường họ Lê Trọng thôn An Xá, tổng Kỳ Vĩ, xã Kỳ Vĩ huyện Gia Khánh tỉnh Ninh Bình.</p>
+                                <p>Họ Lê ta, tổ tiên vốn xuất thân từ họ Lê Hoàng Tộc mà ra, đó là một dòng họ lớn ở đất Phượng Vĩ, Tế Nam (Hà Nam). Từ cụ cao tổ đến ở đất này, lúc đầu có 5 người, sau phát triển thành ba chi, con cháu phồn thịnh lên 7, 8 đời ở đất này. Lúc ban đầu, còn hoang vu nghèo đói, do đó ruộng tế tự và đồ tế lễ không có bao nhiêu. Song nhà thờ vẫn được dựng lên trong một thời gian ngắn, đó là xu thế tất nhiên vậy!</p>
+                                <p>Tuy nhiên, việc báo đáp công ơn tổ tiên lâu dài, không thể không mau chóng xây dựng cho có nơi có chốn tử tế. Vậy nên, mùa thu năm Mậu Tuất (1898), anh em chú bác trong họ đã họp bàn dựng lên ba gian từ đường bằng gỗ xoan, lợp tranh, công việc hoàn thành nhanh chóng.</p>
+                                <p>Đến mùa thu năm nay, Giáp Dần (1914), cả họ thấy như vậy vẫn chưa kiên cố, nên lại họp bàn với nhau, nhất trí mua gỗ lim tu bổ lại, dỡ tranh lợp ngói, móng đá, tường gạch, cột lim, cột đá vững vàng, trong nhà thờ có chạm khắc câu đối, hoành phi, đại tự. Số tiền chi phí đến gần 300 lạng, thuê thợ làm trong hai tháng trời. Thế là ngôi nhà thờ khang trang, vững chãi sừng sững mọc lên giữa phong cảnh núi sông tươi đẹp! Từ đây, bốn mùa cúng tế, muôn đời con cháu tụ họp vui vẻ. Thật được thế này là huy hoàng lắm lắm!</p>
+                                <p>Còn như thay cũ đổi mới, làm cho nhà thờ ngày càng to đẹp hơn nữa hẳn có con cháu chúng ta kế tục; vậy nên khắc ghi vào bia đá này để hậu thế noi theo. Nay kính cẩn kê khai những người có công đóng góp và tham gia tu sửa nhà thờ ở cả ba chi như trên. Đức tổ cô cúng ruộng 1 sào 4 thước xứ đồng An Làng để làm chính ngôi nhà thờ này và 2 sào 5 thước (đông tây tổ phụ) để làm ruộng tế tự.</p>
+                                <p><b>Những người đôn đốc, theo dõi và nghiệm thu công trình:</b> Lê Tĩnh, Lê Mãn, Lê Hiếu, Lê Giáo, Lê Thục, Lê Tuyển, Lê Đạt, Lê Chí, Lê Tộ, Lê Thường, Lê Mô, Lê Khung. <i>Cháu đời thứ sáu: Lê Trần Thường và Lê Trần Mô cùng biên soạn. Lập bia ngày 9 tháng 9 năm Giáp Dần.</i></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: HẬU BI KÝ -->
+        <section id="section-haubiky" class="tab-content hidden space-y-6">
+            <div class="mb-4">
+                <button class="btn-back-to-tree inline-flex items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-400 hover:underline">
+                    <i class="fa-solid fa-arrow-left"></i> Về Phả hệ
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 rounded-2xl border border-heritage-200 dark:border-gray-800 shadow-md p-6 sm:p-12 max-w-4xl mx-auto">
+                <div class="letter-frame bg-heritage-50/50 dark:bg-gray-950/40 space-y-8">
+                    <div class="text-center space-y-2 border-b border-amber-500/20 pb-6">
+                        <div class="text-amber-600 dark:text-amber-500 text-sm">❖ ❖ ❖</div>
+                        <p class="font-serif font-bold text-sm uppercase tracking-widest text-amber-800 dark:text-amber-400">LÊ TRỌNG TỘC</p>
+                        <h3 class="font-serif font-bold text-2xl sm:text-3xl text-heritage-900 dark:text-amber-200">HẬU BI KÝ</h3>
+                        <p class="text-xs text-gray-500 italic">Văn bia ghi chép hậu điền & nghĩa điền năm Duy Tân thứ tám (1914)</p>
+                    </div>
+
+                    <div class="space-y-6 text-xs sm:text-sm leading-relaxed text-gray-700 dark:text-gray-300 font-serif">
+                        <div class="p-4 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-3">
+                            <h4 class="font-bold text-amber-800 dark:text-amber-400">I. Nguyên văn phiên âm Hán Việt:</h4>
+                            <p>Duy Tân bát niên, Ninh Bình tỉnh, Gia Khánh huyện, Kỳ Vĩ tổng, Kỳ Vĩ xã, An Xá thôn, Lê tộc đồng tộc vi lập chủ tôn.</p>
+                            <p>Thiết niệm hậu giả hậu dã, hậu ư sở hậu dĩ nhiên dã, nhi ninh phi tình dã. Gia cổ nhân chi lập hậu điền, nghĩa điền, ký hậu thi ư tôn tộc giả; Lương hữu di dã, ngã tộc nhất sơ tư điền vi ti vi hãn. Cận lai, bá thúc cô điệt tầm tương tư điền ký hậu tộc nội, chiếu nhẫn luân canh, cúng kỵ thả vi hương hỏa chi nhu. Tắc tuy vị cảm nghĩ: ư cổ nhân nhiên tình, hệ tôn thân chư hậu, diệc khả vi hậu ư sở hậu giả dĩ.</p>
+                            <p>Nhưng thử đường thành, bi vu kỳ hạ, dung thi bất vong, y yêu kỳ chư nhân ký hậu tịnh tiến cúng liệt hậu:</p>
+                            <ul class="space-y-2 list-disc pl-5">
+                                <li>Đường thúc Lê Văn Tĩnh cúng điền tại Tiền đồng xứ, nhất sở nhất mẫu đông đinh mục, tây Phúc Sơn điền; Nhất sở nhất cao đông thị Duy Tân Phúc Sơn điền; Yên đồng xứ nhất sở nhất mẫu đông thập nhất cống, tây tổ phụ; Nhất sở nhất cao đông... tây... ư yên thị tam cao An làng xứ; Nhất sở nhất cao ngũ xích chủ kỵ dĩ hạ: Tiền huyện Quảng Xương Tổng trưởng Lê Quý Công húy Trọng Ngưu phủ quân thập nguyệt sơ cửu nhật.</li>
+                                <li>Đường thúc Lê Văn Tĩnh, cúng điền tại Tiền đồng nhất sở tam cao ngũ xích đông Lê thị, tây bắc nhất giáp. An đồng xứ nhất sở nhất cao đông Lê Tư; nhất sở nhị cao; nhất sở nhị cao tôn hậu tiền đội trưởng Lê Trọng Đàm lục nguyệt sơ tứ nhật kỵ.</li>
+                                <li>Lê Văn Tuyển cúng điền tại Thí An xứ ngũ cao tôn hậu Lê Thị Hòa tam nguyệt thập lục nhật kỵ.</li>
+                                <li>Lê Văn Đạt, cúng điền tại An đồng xứ lục cao tam xích, nhất sở nhất cao Thí An xứ nhất sở tứ cao nhất xích tôn hậu Lê Trọng Dần thập nhị nguyệt chấp ngũ nhật kỵ.</li>
+                                <li>Lê Văn Thí cúng điền tại Yên Hàn xứ nhất sở nhị cao thập xích tôn hậu Lê Trọng Khí cửu nguyệt chấp nhị nhật kỵ.</li>
+                                <li>Lê Văn Mãn cúng điền tại An Thí xứ nhất sở nhị cao: Thanh Minh điền.</li>
+                                <li>Lê Văn Tộ cúng điền tại Yên Hàn xứ nhất sở nhị cao thập xích; nhất sở thập xích thổ viên tại An làng xứ; nhất sở thập xích tôn hậu tiền lí trưởng Lê Trọng Cầm lục nguyệt sơ nhất nhật kỵ. Chính thất Nguyễn Thị Thập thập nhị nguyệt nhất nhật kỵ.</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-amber-500/5 border border-amber-500/25 space-y-3">
+                            <h4 class="font-bold text-amber-800 dark:text-amber-400">II. Bản dịch nghĩa:</h4>
+                            <p>Năm Duy Tân thứ tám, tại thôn An Làng, tổng Kỳ Vĩ xã Kỳ Vĩ huyện Gia Khánh tỉnh Ninh Bình. Cả dòng họ Lê Trọng cùng làm Bia Hậu:</p>
+                            <p>Thiết nghĩ: lập bia hậu là việc làm nhân hậu và đạo đức, là việc làm nghĩa khí vậy! Con người ta lập nghĩa điền, tự điền là để tăng công đức cho Tôn tộc, đó là việc làm rất tốt đẹp. Họ ta, buổi ban đầu ruộng tế tự chẳng có bao nhiêu, gần đây anh em chú bác mới đem ruộng tư của mình cúng cho họ thay nhau canh tác để làm giỗ và dùng cho việc chi tiêu hương hỏa, chứ thực không dám làm việc ấy cho tôn thân của mình mà dám gọi là hậu đức vậy!</p>
+                            <p>Tuy nhiên, nhà thờ họ đã làm xong thì nên để bia lại để ghi nhớ cho khỏi quên, vậy nên liệt kê những người gửi hậu điền dùng cho các ngày giỗ sau đây:</p>
+                            <ul class="space-y-2 list-disc pl-5">
+                                <li><b>Đường thúc Lê Văn Tĩnh:</b> Cúng ruộng một mảnh ở Đồng Cửa giáp Phúc Sơn: một mẫu, một mảnh một sào cũng ở Đồng Cửa, một mảnh một mẫu ở Ngõ Sủng, một mảnh một sào ở Sau Cổng, một mảnh một sào năm thước cũng ở Sau Cổng làm ruộng giỗ cho cụ Tổng trưởng huyện Quảng Xương Lê Quý Công <b>Lê Trọng Ngưu</b> ngày 9/10.</li>
+                                <li><b>Đường thúc Lê Văn Tĩnh:</b> Tiến cúng ruộng một mảnh ba sào năm thước tại Đồng Cửa, một mảnh một sào, một mảnh hai sào, một mảnh một sào năm thước và một mảnh hai sào ở Chùa Yên, một mảnh tám sào mười thước ở đồng Chiều (chân núi Hang Thờ), một mảnh hai sào ở Ngõ Sủng để làm giỗ cho cụ <b>Lê Trọng Đàm</b> ngày 4/6.</li>
+                                <li><b>Cụ Lê Văn Tuyển:</b> Cúng ruộng năm sào bên Đồng Chiều để giỗ cụ <b>Lê Thị Hòa</b> ngày 16/3.</li>
+                                <li><b>Cụ Lê Văn Đạt:</b> Cúng ruộng một mảnh sáu sào ba thước ở Ngõ Sủng, một mảnh bốn sào bảy thước ở bên Đồng Chiều, một mảnh một sào ở Cửa Chùa, một mảnh hai sào ba thước để giỗ cụ <b>Lê Trọng Dần</b> ngày 15/2.</li>
+                                <li><b>Cụ Lê Văn Thí:</b> Cúng ruộng một mảnh hai sào ba thước ở Đỗi Hàn, để làm giỗ cho cụ <b>Lê Trọng Khí</b> ngày 12/9.</li>
+                                <li><b>Cụ Lê Văn Mãn:</b> Cúng ruộng một mảnh hai sào ở Đồng Chiều để làm lễ <b>Thanh Minh</b> hàng năm.</li>
+                                <li><b>Cụ Lê Văn Tộ:</b> Cúng ruộng một mảnh hai sào mười thước ở Đỗi Hàn, một mảnh mười thước thổ cư tại xóm Hậu để giỗ cụ lí trưởng <b>Lê Trọng Cầm</b> và bà cả <b>Nguyễn Thị Thập</b> ngày 12/11.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: ĐỒ TẾ KHÍ TRONG NHÀ THỜ -->
+        <section id="section-dotekhi" class="tab-content hidden space-y-6">
+            <div class="mb-4">
+                <button class="btn-back-to-tree inline-flex items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-400 hover:underline">
+                    <i class="fa-solid fa-arrow-left"></i> Về Phả hệ
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 rounded-2xl border border-heritage-200 dark:border-gray-800 shadow-md p-6 sm:p-12 max-w-4xl mx-auto">
+                <div class="letter-frame bg-heritage-50/50 dark:bg-gray-950/40 space-y-8">
+                    <div class="text-center space-y-2 border-b border-amber-500/20 pb-6">
+                        <div class="text-amber-600 dark:text-amber-500 text-sm">❖ ❖ ❖</div>
+                        <p class="font-serif font-bold text-sm uppercase tracking-widest text-amber-800 dark:text-amber-400">LÊ TRỌNG TỘC</p>
+                        <h3 class="font-serif font-bold text-2xl sm:text-3xl text-heritage-900 dark:text-amber-200">ĐỒ TẾ KHÍ TRONG NHÀ THỜ</h3>
+                        <p class="text-xs text-gray-500 italic">Danh lục tự khí, ngai thờ, đỉnh đồng và chuông đồng do con cháu tiến cúng</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm font-serif">
+                        <div class="p-5 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-2">
+                            <h4 class="font-bold text-base text-heritage-900 dark:text-amber-300 border-b border-amber-500/20 pb-1.5">1. Gian Chính Tẩm</h4>
+                            <ul class="space-y-2 list-disc pl-5 text-gray-700 dark:text-gray-300">
+                                <li><b>Bộ ngai đặt bài vị Cụ Khởi Tổ:</b> Ông Lê Thanh Hải (Hà Nội) tiến cúng.</li>
+                                <li><b>Bộ ngũ sự bằng đồng đen:</b> Ông Lê Tùng Sơn (Hải Phòng) tiến cúng.</li>
+                                <li><b>Bàn thờ chính tẩm:</b> Ông Lê Trúc Thông (Hải Phòng) tiến cúng.</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-2">
+                            <h4 class="font-bold text-base text-heritage-900 dark:text-amber-300 border-b border-amber-500/20 pb-1.5">2. Gian Thờ Nhất Hội Tổ Cô</h4>
+                            <ul class="space-y-2 list-disc pl-5 text-gray-700 dark:text-gray-300">
+                                <li><b>Bộ ngai đặt bài vị Đức Tổ Cô:</b> Ông Lê Thanh Hải (Hà Nội) tiến cúng.</li>
+                                <li><b>Bộ ngũ sự bằng đồng đen:</b> Bà Lê Thị Châu (Đà Lạt) tiến cúng.</li>
+                                <li><b>Bàn thờ gỗ:</b> Ông Lê Trúc Thông (Hải Phòng) tiến cúng.</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-2">
+                            <h4 class="font-bold text-base text-heritage-900 dark:text-amber-300 border-b border-amber-500/20 pb-1.5">3. Gian Thờ Các Cụ Tổ Phân Ngành</h4>
+                            <ul class="space-y-2 list-disc pl-5 text-gray-700 dark:text-gray-300">
+                                <li><b>Bộ ngai đặt bài vị:</b> Ông Lê Thanh Hải (Hà Nội) tiến cúng.</li>
+                                <li><b>Bộ ngũ sự bằng đồng đen:</b> Bà Lê Thị Linh (Ninh Bình) tiến cúng.</li>
+                                <li><b>Bàn thờ gỗ:</b> Ông Lê Trúc Thông (Hải Phòng) tiến cúng.</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-amber-500/5 border border-amber-500/25 space-y-2">
+                            <h4 class="font-bold text-base text-heritage-900 dark:text-amber-300 border-b border-amber-500/20 pb-1.5">4. Pháp Khí & Tự Khí Chung</h4>
+                            <ul class="space-y-2 list-disc pl-5 text-gray-700 dark:text-gray-300">
+                                <li><b>Chuông đồng:</b> Ông Lê Trúc Thông (Hải Phòng) tiến cúng.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 9: MỘ CHÍ -->
+        <section id="section-mochi" class="tab-content hidden space-y-6">
+            <div class="mb-4">
+                <button class="btn-back-to-tree inline-flex items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-400 hover:underline">
+                    <i class="fa-solid fa-arrow-left"></i> Về Phả hệ
+                </button>
+            </div>
+
+            <div class="bg-white dark:bg-gray-900 rounded-2xl border border-heritage-200 dark:border-gray-800 shadow-md p-6 sm:p-12 max-w-4xl mx-auto">
+                <div class="letter-frame bg-heritage-50/50 dark:bg-gray-950/40 space-y-8">
+                    <div class="text-center space-y-2 border-b border-amber-500/20 pb-6">
+                        <div class="text-amber-600 dark:text-amber-500 text-sm">❖ ❖ ❖</div>
+                        <p class="font-serif font-bold text-sm uppercase tracking-widest text-amber-800 dark:text-amber-400">LÊ TRỌNG TỘC</p>
+                        <h3 class="font-serif font-bold text-2xl sm:text-3xl text-heritage-900 dark:text-amber-200">MỘ CHÍ TIÊN TỔ</h3>
+                        <p class="text-xs text-gray-500 italic">Vị trí lăng mộ các bậc Thủy Tổ, Khởi Tổ và Tổ các ngành tại Kỳ Vĩ</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm font-serif">
+                        <div class="p-5 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                            <span class="inline-block px-2 py-0.5 rounded bg-amber-500/10 text-amber-800 dark:text-amber-400 text-xs font-bold">1. MỘ CỤ THỦY TỔ</span>
+                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed pt-1">Đặt tại <b>Thí Yên xứ</b> — tức cánh đồng bên Triều làng Xuân Áng cũ.</p>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                            <span class="inline-block px-2 py-0.5 rounded bg-amber-500/10 text-amber-800 dark:text-amber-400 text-xs font-bold">2. MỘ CỤ KHỞI TỔ</span>
+                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed pt-1">Đặt tại <b>Gồ Diệc</b> — xóm Tiền Kỳ Vĩ (nay là thôn Ninh Nhất 1 – Hoa Lư).</p>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                            <span class="inline-block px-2 py-0.5 rounded bg-amber-500/10 text-amber-800 dark:text-amber-400 text-xs font-bold">3. MỘ CỤ TỔ NGÀNH CẢ (Khuyết danh)</span>
+                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed pt-1">Đặt tại <b>Trung Đồng xứ</b> — tức khu nghĩa địa Đồng Giữa Kỳ Vĩ.</p>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                            <span class="inline-block px-2 py-0.5 rounded bg-amber-500/10 text-amber-800 dark:text-amber-400 text-xs font-bold">4. MỘ CỤ TỔ NGÀNH HAI (Lê Trọng Ngưu)</span>
+                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed pt-1">Đặt tại <b>Trung Đồng xứ</b> — tức khu nghĩa địa Đồng Giữa Kỳ Vĩ.</p>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-white/80 dark:bg-gray-900/70 border border-heritage-200 dark:border-gray-800 space-y-1.5">
+                            <span class="inline-block px-2 py-0.5 rounded bg-amber-500/10 text-amber-800 dark:text-amber-400 text-xs font-bold">5. MỘ CỤ TỔ NGÀNH BA (Lê Trọng Công)</span>
+                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed pt-1">Đặt tại <b>Trung Đồng xứ</b> — tức khu nghĩa địa Đồng Giữa Kỳ Vĩ.</p>
+                        </div>
+
+                        <div class="p-5 rounded-xl bg-amber-500/5 border border-amber-500/25 space-y-1.5">
+                            <span class="inline-block px-2 py-0.5 rounded bg-amber-500/20 text-amber-900 dark:text-amber-300 text-xs font-bold">6. MỘ CÁC CỤ CÁC PHÁI KHÁC</span>
+                            <p class="text-gray-700 dark:text-gray-300 leading-relaxed pt-1">Mộ các cụ các phái khác nay đều quy tụ về <b>khu nghĩa địa Đồng Giữa Kỳ Vĩ</b>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 10: HƯỚNG DẪN XEM -->
         <section id="section-huongdan" class="tab-content hidden space-y-8">
             <div class="mb-2">
                 <button class="btn-back-to-tree inline-flex items-center gap-2 text-xs font-semibold text-amber-700 dark:text-amber-400 hover:underline">
@@ -436,144 +825,32 @@
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-heritage-200 dark:border-gray-800 shadow-sm flex items-start gap-4">
-                    <div class="w-9 h-9 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 text-sm shadow">
-                        1
-                    </div>
+                    <div class="w-9 h-9 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 text-sm shadow">1</div>
                     <div class="space-y-1">
-                        <h4 class="font-serif font-bold text-sm text-heritage-900 dark:text-gray-100">Gõ tên</h4>
+                        <h4 class="font-serif font-bold text-sm text-heritage-900 dark:text-gray-100">Gõ tên hoặc lọc Ngành</h4>
                         <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Gõ tên người cần tìm vào ô <b>Tìm tên người</b> ở đầu thẻ Phả hệ — không dấu cũng được.
+                            Gõ tên người cần tìm vào ô tìm kiếm trên đầu trang (không dấu cũng được) hoặc chọn <b>Ngành Cả / Ngành Hai / Ngành Ba</b>.
                         </p>
                     </div>
                 </div>
 
                 <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-heritage-200 dark:border-gray-800 shadow-sm flex items-start gap-4">
-                    <div class="w-9 h-9 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 text-sm shadow">
-                        2
-                    </div>
+                    <div class="w-9 h-9 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 text-sm shadow">2</div>
                     <div class="space-y-1">
-                        <h4 class="font-serif font-bold text-sm text-heritage-900 dark:text-gray-100">Bấm vào kết quả</h4>
+                        <h4 class="font-serif font-bold text-sm text-heritage-900 dark:text-gray-100">Mở rộng / Thu gọn nhánh</h4>
                         <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Trang tự cuộn tới đúng người đó và nháy sáng thẻ.
+                            Bấm vào mũi tên bên trái thẻ để mở xem con cháu các đời tiếp theo của từng phái.
                         </p>
                     </div>
                 </div>
 
                 <div class="p-5 rounded-2xl bg-white dark:bg-gray-900 border border-heritage-200 dark:border-gray-800 shadow-sm flex items-start gap-4">
-                    <div class="w-9 h-9 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 text-sm shadow">
-                        3
-                    </div>
+                    <div class="w-9 h-9 rounded-full bg-amber-500 text-white font-bold flex items-center justify-center shrink-0 text-sm shadow">3</div>
                     <div class="space-y-1">
-                        <h4 class="font-serif font-bold text-sm text-heritage-900 dark:text-gray-100">Mở xem</h4>
+                        <h4 class="font-serif font-bold text-sm text-heritage-900 dark:text-gray-100">Xem chi tiết & Chia sẻ</h4>
                         <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
-                            Bấm vào thẻ để hiện các con · bấm <b>Chi tiết</b> để đọc thông tin, vợ/chồng.
+                            Bấm <b>Chi tiết</b> để xem trực hệ từ Đời 6, vợ/chồng, ngày giỗ âm lịch và ghi chú đặc biệt.
                         </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="space-y-4 pt-4">
-                <h4 class="font-serif font-bold text-xs uppercase tracking-wider text-amber-700 dark:text-amber-400">TÌM HIỂU THÊM</h4>
-
-                <div class="space-y-3">
-                    <div class="accordion-item bg-white dark:bg-gray-900 rounded-xl border border-heritage-200 dark:border-gray-800 overflow-hidden shadow-sm">
-                        <button class="accordion-header w-full p-4 text-left flex items-center justify-between hover:bg-heritage-50/50 dark:hover:bg-gray-800/50 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <span class="text-xl">🌳</span>
-                                <div>
-                                    <h5 class="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">Cây gia phả sắp xếp thế nào</h5>
-                                    <p class="text-xs text-gray-500">Đời, Chi, thứ tự anh em, con của các bà cô</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
-                        </button>
-                        <div class="accordion-body hidden p-4 border-t border-heritage-100 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 leading-relaxed bg-heritage-50/30 dark:bg-gray-950/30">
-                            Phả hệ sắp xếp theo thứ tự Đời (từ Đời 1 - Cụ Thủy Tổ trở xuống). Các thành viên được xếp thụt lề dưới cha/mẹ tương ứng. Anh em sắp xếp theo thứ tự tuổi tác từ trên xuống dưới.
-                        </div>
-                    </div>
-
-                    <div class="accordion-item bg-white dark:bg-gray-900 rounded-xl border border-heritage-200 dark:border-gray-800 overflow-hidden shadow-sm">
-                        <button class="accordion-header w-full p-4 text-left flex items-center justify-between hover:bg-heritage-50/50 dark:hover:bg-gray-800/50 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <span class="text-xl">🪪</span>
-                                <div>
-                                    <h5 class="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">Nhận biết một thẻ người</h5>
-                                    <p class="text-xs text-gray-500">Màu thẻ trai/gái, dâu/rể, nút mở nhánh, nút Chi tiết</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
-                        </button>
-                        <div class="accordion-body hidden p-4 border-t border-heritage-100 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 leading-relaxed bg-heritage-50/30 dark:bg-gray-950/30">
-                            • Thẻ màu xanh dương dịu: Con trai dòng họ.<br>
-                            • Thẻ màu xanh lá: Con gái dòng họ.<br>
-                            • Thẻ màu xanh da trời: Con nuôi.<br>
-                            • Thẻ viền nét đứt màu tím + nhẫn 💍: Dâu hoặc Rể.<br>
-                            • Dấu chấm xám nhỏ: Thành viên đã mất.
-                        </div>
-                    </div>
-
-                    <div class="accordion-item bg-white dark:bg-gray-900 rounded-xl border border-heritage-200 dark:border-gray-800 overflow-hidden shadow-sm">
-                        <button class="accordion-header w-full p-4 text-left flex items-center justify-between hover:bg-heritage-50/50 dark:hover:bg-gray-800/50 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <span class="text-xl">🔍</span>
-                                <div>
-                                    <h5 class="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">Tìm một người trong họ</h5>
-                                    <p class="text-xs text-gray-500">Gõ không dấu, tìm cả tên thường gọi</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
-                        </button>
-                        <div class="accordion-body hidden p-4 border-t border-heritage-100 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 leading-relaxed bg-heritage-50/30 dark:bg-gray-950/30">
-                            Bạn chỉ cần gõ tên (ví dụ: "Tuan", "Duc", "An"...) vào ô tìm kiếm ở thanh trên cùng. Hệ thống tự nhận diện tiếng Việt không dấu và lọc ra kết quả chính xác nhất.
-                        </div>
-                    </div>
-
-                    <div class="accordion-item bg-white dark:bg-gray-900 rounded-xl border border-heritage-200 dark:border-gray-800 overflow-hidden shadow-sm">
-                        <button class="accordion-header w-full p-4 text-left flex items-center justify-between hover:bg-heritage-50/50 dark:hover:bg-gray-800/50 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <span class="text-xl">✉️</span>
-                                <div>
-                                    <h5 class="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">Xem chi tiết và gửi cho người thân</h5>
-                                    <p class="text-xs text-gray-500">Đường về Thủy Tổ, nút Chia sẻ qua Zalo</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
-                        </button>
-                        <div class="accordion-body hidden p-4 border-t border-heritage-100 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 leading-relaxed bg-heritage-50/30 dark:bg-gray-950/30">
-                            Nhấn nút <b>Chi tiết</b> trên thẻ nhân vật để xem đường dẫn trực hệ từ Cụ Thủy Tổ đến người đó, hoặc nhấn nút <b>Chia sẻ</b> để gửi link mở thẳng thẻ qua Zalo, Facebook hoặc Messenger.
-                        </div>
-                    </div>
-
-                    <div class="accordion-item bg-white dark:bg-gray-900 rounded-xl border border-heritage-200 dark:border-gray-800 overflow-hidden shadow-sm">
-                        <button class="accordion-header w-full p-4 text-left flex items-center justify-between hover:bg-heritage-50/50 dark:hover:bg-gray-800/50 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <span class="text-xl">📅</span>
-                                <div>
-                                    <h5 class="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">Thẻ Lịch sử và Lịch giỗ</h5>
-                                    <p class="text-xs text-gray-500">Ngày giỗ tự đổi ra dương lịch, chỉ đường tới mộ</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
-                        </button>
-                        <div class="accordion-body hidden p-4 border-t border-heritage-100 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 leading-relaxed bg-heritage-50/30 dark:bg-gray-950/30">
-                            Mục <b>Lịch Giỗ Âm Lịch</b> tập hợp các ngày giỗ theo tháng âm trong năm, giúp con cháu chuẩn bị cúng giỗ chu đáo.
-                        </div>
-                    </div>
-
-                    <div class="accordion-item bg-white dark:bg-gray-900 rounded-xl border border-heritage-200 dark:border-gray-800 overflow-hidden shadow-sm">
-                        <button class="accordion-header w-full p-4 text-left flex items-center justify-between hover:bg-heritage-50/50 dark:hover:bg-gray-800/50 transition-colors">
-                            <div class="flex items-center gap-3">
-                                <span class="text-xl">💬</span>
-                                <div>
-                                    <h5 class="font-serif font-bold text-sm text-gray-900 dark:text-gray-100">Hỏi đáp thường gặp</h5>
-                                    <p class="text-xs text-gray-500">6 câu hỏi bà con hay hỏi</p>
-                                </div>
-                            </div>
-                            <i class="fa-solid fa-chevron-down text-gray-400 text-xs transition-transform duration-200"></i>
-                        </button>
-                        <div class="accordion-body hidden p-4 border-t border-heritage-100 dark:border-gray-800 text-xs text-gray-600 dark:text-gray-300 leading-relaxed bg-heritage-50/30 dark:bg-gray-950/30">
-                            Nếu phát hiện sai sót về tên tuổi hoặc muốn bổ sung thành viên mới chào đời, xin hãy nhấn nút <b>Báo tin</b> ở góc màn hình để cập nhật vào bản phả hệ trực tuyến.
-                        </div>
                     </div>
                 </div>
             </div>
@@ -590,11 +867,11 @@
                     <div id="modalAvatar" class="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 flex items-center justify-center text-xl font-bold border-2 border-blue-400">
                     </div>
                     <div>
-                        <div class="flex items-center gap-2">
-                            <h3 id="modalFullName" class="font-serif text-xl font-bold text-heritage-900 dark:text-amber-200">Lê Văn A</h3>
-                            <span id="modalBranchBadge" class="px-2 py-0.5 rounded text-xs font-medium bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300">Chi 1</span>
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <h3 id="modalFullName" class="font-serif text-xl font-bold text-heritage-900 dark:text-amber-200">Lê Văn Thục</h3>
+                            <span id="modalBranchBadge" class="px-2 py-0.5 rounded text-xs font-medium bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300">Ngành Cả - Phái Cả</span>
                         </div>
-                        <p id="modalTitle" class="text-xs text-gray-500 dark:text-gray-400 font-medium mt-0.5">Thành viên đời thứ 3 • Còn sống</p>
+                        <p id="modalTitle" class="text-xs text-gray-500 dark:text-gray-400 font-medium mt-0.5">Thành viên đời thứ 6</p>
                     </div>
                 </div>
                 <button id="closeModalBtn" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-2 rounded-lg">
@@ -604,15 +881,20 @@
 
             <div class="p-6 overflow-y-auto space-y-6 text-sm">
                 <div>
-                    <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Trực Hệ Nguồn Cội</h4>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Trực Hệ Nguồn Cội (Từ Đời 6)</h4>
                     <div id="modalLineagePath" class="p-3 rounded-xl bg-heritage-50 dark:bg-gray-800/60 border border-heritage-200 dark:border-gray-700 flex flex-wrap items-center gap-2 text-xs font-medium">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-800">
+                        <span class="text-xs text-gray-400 block mb-1"><i class="fa-solid fa-sitemap mr-1"></i> Ngành / Phái / Đời</span>
+                        <span id="modalBranchLineage" class="font-semibold text-gray-800 dark:text-gray-200">Ngành Cả • Phái Cả • Đời 6</span>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-800">
                         <span class="text-xs text-gray-400 block mb-1"><i class="fa-solid fa-cake-candles mr-1"></i> Năm sinh / Năm mất</span>
-                        <span id="modalLifespan" class="font-semibold text-gray-800 dark:text-gray-200">1950 - Còn sống</span>
+                        <span id="modalLifespan" class="font-semibold text-gray-800 dark:text-gray-200">Chưa cập nhật</span>
                     </div>
 
                     <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-800">
@@ -621,20 +903,20 @@
                     </div>
 
                     <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-800">
-                        <span class="text-xs text-gray-400 block mb-1"><i class="fa-solid fa-heart mr-1"></i> Vợ / Chồng</span>
-                        <span id="modalSpouse" class="font-semibold text-gray-800 dark:text-gray-200">Bà Nguyễn Thị B</span>
+                        <span class="text-xs text-gray-400 block mb-1"><i class="fa-solid fa-location-dot mr-1"></i> Nơi An Nghỉ / Chỗ Ở</span>
+                        <span id="modalRestingPlace" class="font-semibold text-gray-800 dark:text-gray-200">Kỳ Vĩ, Hoa Lư, Ninh Bình</span>
                     </div>
 
-                    <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-800">
-                        <span class="text-xs text-gray-400 block mb-1"><i class="fa-solid fa-location-dot mr-1"></i> Nơi An Nghỉ / Chỗ Ở</span>
-                        <span id="modalRestingPlace" class="font-semibold text-gray-800 dark:text-gray-200">Hà Nội</span>
+                    <div class="p-3.5 rounded-xl bg-gray-50 dark:bg-gray-800/40 border border-gray-100 dark:border-gray-800 sm:col-span-2">
+                        <span class="text-xs text-gray-400 block mb-1"><i class="fa-solid fa-heart mr-1"></i> Vợ / Chồng</span>
+                        <span id="modalSpouse" class="font-semibold text-gray-800 dark:text-gray-200">Chưa cập nhật</span>
                     </div>
                 </div>
 
                 <div>
-                    <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Tiểu Sử & Sự Nghiệp</h4>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-2">Ghi Chú & Tiểu Sử</h4>
                     <p id="modalBio" class="text-gray-600 dark:text-gray-300 leading-relaxed p-4 rounded-xl bg-gray-50 dark:bg-gray-800/30 border border-gray-100 dark:border-gray-800">
-                        Tiểu sử chi tiết thành viên đang được tiếp tục cập nhật...
+                        Chưa có ghi chú bổ sung.
                     </p>
                 </div>
             </div>
@@ -667,7 +949,7 @@
             <div class="p-5 space-y-5 text-sm">
                 <div class="p-3 rounded-xl bg-heritage-50 dark:bg-gray-800/60 border border-heritage-200/80 dark:border-gray-700">
                     <span id="shareTargetTitle" class="font-serif font-bold text-gray-900 dark:text-gray-100 block">Thành viên</span>
-                    <span id="shareTargetSubtitle" class="text-xs text-gray-500 dark:text-gray-400 block mt-0.5">Chi 1 • Thế hệ đời thứ 1</span>
+                    <span id="shareTargetSubtitle" class="text-xs text-gray-500 dark:text-gray-400 block mt-0.5">Ngành Cả • Thế hệ đời thứ 6</span>
                 </div>
 
                 <div>
@@ -684,9 +966,7 @@
                     <label class="block text-xs font-semibold text-gray-500 dark:text-gray-400 mb-3">Chia sẻ qua ứng dụng:</label>
                     <div class="grid grid-cols-4 gap-3 text-center">
                         <button id="shareZaloBtn" class="flex flex-col items-center gap-1.5 p-2.5 rounded-xl bg-blue-50/60 dark:bg-blue-950/40 hover:bg-blue-100 border border-blue-200 dark:border-blue-800/50 transition-all group">
-                            <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-sm group-hover:scale-110 transition-transform">
-                                Zalo
-                            </div>
+                            <div class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-sm group-hover:scale-110 transition-transform">Zalo</div>
                             <span class="text-[11px] font-medium text-gray-700 dark:text-gray-300">Zalo</span>
                         </button>
 
@@ -746,193 +1026,549 @@
     <!-- Footer -->
     <footer class="bg-white dark:bg-gray-900 border-t border-heritage-200 dark:border-gray-800 py-6 mt-12 text-center text-xs text-gray-500">
         <div class="max-w-7xl mx-auto px-4 space-y-2">
-            <p class="font-serif font-semibold text-heritage-900 dark:text-amber-400">HỘI ĐỒNG GIA TỘC LÊ TỘC - BẢN TRIỀU</p>
+            <p class="font-serif font-semibold text-heritage-900 dark:text-amber-400">HỘI ĐỒNG GIA TỘC LÊ TRỌNG TỘC - KỲ VĨ, HOA LƯ, NINH BÌNH</p>
             <p>© 2026 Gia Phả Dòng Họ. Bảo tồn giá trị truyền thống & Số hóa phả hệ.</p>
         </div>
     </footer>
 
     <script>
-        const duLieuGiaPha = [
-            {
-                id: "m01",
-                ten: "Vũ Đạo Chính",
-                doi: 1,
-                parentId: null,
-                gioiTinh: "nam",
-                chi: "Chi 1",
-                namSinh: "1680",
-                namMat: "1755",
-                voChong: "Bà Từ Nhân (Bà Tổ Cố)",
-                ngayGioAm: { day: 15, month: 7 },
-                noiAnNghi: "Từ đường Thái Thụy, Thái Bình",
-                ghiChu: "Cụ Thủy Tổ khai cơ lập nghiệp trên đất Thụy Chính, Thái Thụy, Thái Bình."
-            },
-            {
-                id: "m02",
-                ten: "Vũ Khuyến Chánh",
-                doi: 2,
-                parentId: "m01",
-                gioiTinh: "nam",
-                chi: "Chi 1",
-                namSinh: "1710",
-                namMat: "1782",
-                voChong: "Phạm Thị Nở",
-                ngayGioAm: { day: 10, month: 3 },
-                noiAnNghi: "Từ đường Thái Bình",
-                ghiChu: "Nối nghiệp Cụ Thủy Tổ giữ gìn nếp nhà gia tộc."
-            },
-            {
-                id: "m03",
-                ten: "Vũ Đôn Thục",
-                doi: 3,
-                parentId: "m02",
-                gioiTinh: "nam",
-                chi: "Chi 1",
-                namSinh: "1745",
-                namMat: "1815",
-                voChong: "Trần Thị Lài",
-                ngayGioAm: { day: 22, month: 11 },
-                noiAnNghi: "Thái Bình",
-                ghiChu: "Dòng trưởng Đời 3."
-            },
-            {
-                id: "m04",
-                ten: "Vũ Đức Mậu",
-                doi: 4,
-                parentId: "m03",
-                gioiTinh: "nam",
-                chi: "Chi 1",
-                namSinh: "1780",
-                namMat: "1850",
-                voChong: "Nguyễn Thị Sen",
-                ngayGioAm: { day: 5, month: 1 },
-                noiAnNghi: "Thái Bình",
-                ghiChu: "Sinh hạ 5 người con trai đều thành đạt, lập thành 5 Chi (Ngũ Chi Phương)."
-            },
-            {
-                id: "m05",
-                ten: "Vũ Văn Chi Trưởng",
-                doi: 5,
-                parentId: "m04",
-                gioiTinh: "nam",
-                chi: "Chi 1",
-                namSinh: "1815",
-                namMat: "1888",
-                voChong: "Hoàng Thị Mai",
-                ngayGioAm: { day: 12, month: 6 },
-                noiAnNghi: "Thái Bình",
-                ghiChu: "Khởi lập Chi 1 Trưởng."
-            },
-            {
-                id: "m06",
-                ten: "Vũ Văn Chi Nhị",
-                doi: 5,
-                parentId: "m04",
-                gioiTinh: "nam",
-                chi: "Chi 2",
-                namSinh: "1818",
-                namMat: "1892",
-                voChong: "Đỗ Thị Thu",
-                ngayGioAm: { day: 18, month: 8 },
-                noiAnNghi: "Hà Nội",
-                ghiChu: "Khởi lập Chi 2."
-            },
-            {
-                id: "m07",
-                ten: "Vũ Văn Chi Tam",
-                doi: 5,
-                parentId: "m04",
-                gioiTinh: "nam",
-                chi: "Chi 3",
-                namSinh: "1822",
-                namMat: "1896",
-                voChong: "Lê Thị Nga",
-                ngayGioAm: { day: 8, month: 4 },
-                noiAnNghi: "Thái Bình",
-                ghiChu: "Khởi lập Chi 3."
-            },
-            {
-                id: "m08",
-                ten: "Vũ Tuấn Anh",
-                doi: 6,
-                parentId: "m05",
-                gioiTinh: "nam",
-                chi: "Chi 1",
-                namSinh: "1955",
-                namMat: "",
-                voChong: "Bùi Thị Hồng",
-                ngayGioAm: null,
-                noiAnNghi: "Hà Nội",
-                ghiChu: "Chuyên gia CNTT phụ trách số hóa gia phả."
-            },
-            {
-                id: "m09",
-                ten: "Vũ Phương Thảo",
-                doi: 6,
-                parentId: "m05",
-                gioiTinh: "nu",
-                chi: "Chi 1",
-                namSinh: "1960",
-                namMat: "",
-                voChong: "Trần Bảo Nam",
-                ngayGioAm: null,
-                noiAnNghi: "TP. Hồ Chí Minh",
-                ghiChu: "Con gái Chi 1."
-            },
-            {
-                id: "m10",
-                ten: "Vũ Chí Thành",
-                doi: 6,
-                parentId: "m05",
-                gioiTinh: "nuoi",
-                chi: "Chi 1",
-                namSinh: "1965",
-                namMat: "",
-                voChong: "Nguyễn Thị Hoa",
-                ngayGioAm: null,
-                noiAnNghi: "Thái Bình",
-                ghiChu: "Con nuôi Chi 1, luôn yêu thương, gắn bó và có nhiều đóng góp dựng xây nhà từ đường dòng họ."
-            }
+        /* DỮ LIỆU PHẢ HỆ HỌ LÊ TRỌNG (TỪ ĐỜI THỨ 6 TRỞ ĐI) - ĐẦY ĐỦ 3 NGÀNH & CÁC PHÁI
+           Định dạng gọn: [id, parentId, ten, nganh, phai, doi, gioiTinh, namSinh, namMat, voChong, ngayGioAm, noiAnNghi, ghiChu]
+           gioiTinh: 'nam' | 'nu' | 'nuoi' | 'dau' | 're'
+        */
+        const rawPhaHeData = [
+            // ================= NGÀNH CẢ =================
+            // --- PHÁI CẢ ---
+            ["nc_pc_6_1", null, "Lê Văn Thục", "Ngành Cả", "Phái Cả", 6, "nam", "", "Đã mất", "Đinh Thị Tư (kỵ 23/11 ÂL)", "06/11", "Kỳ Vĩ, Hoa Lư, Ninh Bình", "Trưởng tộc đời thứ 6"],
+            ["nc_pc_6_1_v", "nc_pc_6_1", "Đinh Thị Tư", "Ngành Cả", "Phái Cả", 6, "dau", "", "Đã mất", "Lê Văn Thục", "23/11", "Kỳ Vĩ, Hoa Lư, Ninh Bình", "Cụ bà trưởng tộc"],
+            // Đời 7 - Phái Cả
+            ["nc_pc_7_1", "nc_pc_6_1", "Lê Văn Khung", "Ngành Cả", "Phái Cả", 7, "nam", "", "Đã mất", "An Thị Trâm (kỵ 25/7 ÂL)", "27/01", "Kỳ Vĩ, Hoa Lư, Ninh Bình", "Con trưởng cụ Lê Văn Thục"],
+            ["nc_pc_7_1_v", "nc_pc_7_1", "An Thị Trâm", "Ngành Cả", "Phái Cả", 7, "dau", "", "Đã mất", "Lê Văn Khung", "25/07", "Kỳ Vĩ, Hoa Lư, Ninh Bình", "Cụ bà"],
+            ["nc_pc_7_2", "nc_pc_6_1", "Lê Văn Lung", "Ngành Cả", "Phái Cả", 7, "nam", "", "", "Hà Thị Nhích", "", "Kỳ Vĩ, Hoa Lư, Ninh Bình", "Con thứ hai cụ Lê Văn Thục"],
+            ["nc_pc_7_3", "nc_pc_6_1", "Lê Thị Thuật", "Ngành Cả", "Phái Cả", 7, "nu", "", "", "", "", "", "Đi ở chùa"],
+            ["nc_pc_7_4", "nc_pc_6_1", "Lê Thị Thược", "Ngành Cả", "Phái Cả", 7, "nu", "", "", "Lê Văn Đàn", "", "", ""],
+            ["nc_pc_7_5", "nc_pc_6_1", "Lê Văn Vược", "Ngành Cả", "Phái Cả", 7, "nam", "", "", "Đinh Thị Nhưng", "", "Kỳ Vĩ, Hoa Lư, Ninh Bình", "Con thứ năm cụ Lê Văn Thục"],
+
+            // Đời 8 - Nhánh cụ Lê Văn Khung
+            ["nc_pc_8_1", "nc_pc_7_1", "Lê Văn Dung", "Ngành Cả", "Phái Cả", 8, "nam", "", "", "Bà cả: Nguyễn Thị Dơi; Bà hai: Lê Thị Nạnh", "", "", ""],
+            ["nc_pc_8_2", "nc_pc_7_1", "Lê Văn Hạo", "Ngành Cả", "Phái Cả", 8, "nam", "", "", "Nguyễn Thị Đương", "", "", ""],
+            ["nc_pc_8_3", "nc_pc_7_1", "Lê Văn Hoàn", "Ngành Cả", "Phái Cả", 8, "nam", "", "", "Bà cả: Đinh Thị Tiếp; Bà hai: Nguyễn Thị Lai (không có con)", "", "", "Bà hai Nguyễn Thị Lai không có con"],
+
+            // Đời 9 & 10 - Con ông Lê Văn Dung (Bà cả Nguyễn Thị Dơi)
+            ["nc_pc_9_1", "nc_pc_8_1", "Lê Thị Mẫn", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Nguyễn Như Thỉnh", "", "", "Con bà cả Nguyễn Thị Dơi"],
+            ["nc_pc_9_2", "nc_pc_8_1", "Lê Văn Hiến", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Hà Thị Châu", "", "", "Con bà cả Nguyễn Thị Dơi"],
+            ["nc_pc_10_1", "nc_pc_9_2", "Lê Thị Xiêm", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["nc_pc_9_3", "nc_pc_8_1", "Lê Thị Mấn", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Lê Văn Doãn", "", "", "Con bà cả Nguyễn Thị Dơi"],
+            ["nc_pc_9_4", "nc_pc_8_1", "Lê Duy Từ (Tư)", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Vợ đầu: Hoàng Thị Nội; Vợ sau: Phạm Thị Lãng", "", "", "Con bà cả Nguyễn Thị Dơi"],
+            ["nc_pc_10_2", "nc_pc_9_4", "Lê Hoàng Hà", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "", "", "", "Con vợ đầu Hoàng Thị Nội"],
+            ["nc_pc_10_3", "nc_pc_9_4", "Lê Thu Hà", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", "Con vợ sau Phạm Thị Lãng"],
+            ["nc_pc_10_4", "nc_pc_9_4", "Lê Thanh Hải", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "", "", "", "Con vợ sau Phạm Thị Lãng; Cung tiến cây vạn tuế & bộ ngai bài vị tại Từ đường"],
+            ["nc_pc_9_5", "nc_pc_8_1", "Lê Văn Năm", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Hà Thị Cúc", "", "", "Con bà cả Nguyễn Thị Dơi"],
+            ["nc_pc_10_5", "nc_pc_9_5", "Lê Thị Hương", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["nc_pc_10_6", "nc_pc_9_5", "Lê Văn Thụ", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "", "", "", ""],
+            ["nc_pc_10_7", "nc_pc_9_5", "Lê Thị Yến", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["nc_pc_9_6", "nc_pc_8_1", "Lê Thị Dòn", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Đào Sỹ Yên", "", "", "Con bà cả Nguyễn Thị Dơi"],
+            // Con bà hai Lê Thị Nạnh
+            ["nc_pc_9_7", "nc_pc_8_1", "Lê Văn Tịnh", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Phạm Thị Mỹ", "", "", "Con bà hai Lê Thị Nạnh"],
+            ["nc_pc_10_8", "nc_pc_9_7", "Lê Văn Cường", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "", "", "", ""],
+            ["nc_pc_10_9", "nc_pc_9_7", "Lê Thị Giang", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["nc_pc_10_10", "nc_pc_9_7", "Lê Thị Vân", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["nc_pc_10_11", "nc_pc_9_7", "Lê Thị Bé", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["nc_pc_10_12", "nc_pc_9_7", "Lê Văn Cương", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "", "", "", ""],
+            ["nc_pc_9_8", "nc_pc_8_1", "Lê Thị Tâm", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Chồng ở miền Nam", "", "", "Lấy chồng ở miền Nam"],
+
+            // Đời 9 & 10 - Con ông Lê Văn Hạo
+            ["nc_pc_9_9", "nc_pc_8_2", "Lê Thị Thận", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Hà Đăng Khả", "", "", ""],
+            ["nc_pc_9_10", "nc_pc_8_2", "Lê Thị Huận", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Hà Huy Dẫn", "", "", ""],
+            ["nc_pc_9_11", "nc_pc_8_2", "Lê Thị Ngăn", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Nguyễn Tử Chiều", "", "", ""],
+            ["nc_pc_9_12", "nc_pc_8_2", "Lê Bảo", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Nguyễn Thị Tính", "", "", ""],
+            ["nc_pc_10_13", "nc_pc_9_12", "Lê Kiều Oanh", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["nc_pc_10_14", "nc_pc_9_12", "Lê Phương Thúy", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "", "", "", "Phả ghi: con trai"],
+            ["nc_pc_10_15", "nc_pc_9_12", "Lê Trung Kiên", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "", "", "", ""],
+            ["nc_pc_9_13", "nc_pc_8_2", "Lê Thị Thiết", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "", "", "", ""],
+            ["nc_pc_9_14", "nc_pc_8_2", "Lê Thị Thoa", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Đinh Bình", "", "", ""],
+            ["nc_pc_9_15", "nc_pc_8_2", "Lê Văn Tuyên", "Ngành Cả", "Phái Cả", 9, "nam", "", "Đã mất", "", "", "", "Liệt sỹ chống Mỹ"],
+
+            // Đời 9 & 10 - Con ông Lê Văn Hoàn (Bà cả Đinh Thị Tiếp)
+            ["nc_pc_9_16", "nc_pc_8_3", "Lê Văn Hữu (Hào)", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Nguyễn Thị Liên", "", "", ""],
+            ["nc_pc_10_16", "nc_pc_9_16", "Lê Văn Huy", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "", "", "", ""],
+            ["nc_pc_10_17", "nc_pc_9_16", "Lê Mỹ Linh", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["nc_pc_10_18", "nc_pc_9_16", "Lê Văn Hòa", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "", "", "", ""],
+            ["nc_pc_10_19", "nc_pc_9_16", "Lê Văn Hiếu", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "", "", "", ""],
+            ["nc_pc_9_17", "nc_pc_8_3", "Lê Thị Hoa", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Nguyễn Như Nghị", "", "", ""],
+            ["nc_pc_9_18", "nc_pc_8_3", "Lê Thị Hường", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Lê Quốc Khương", "", "", ""],
+            ["nc_pc_9_19", "nc_pc_8_3", "Lê Văn Hiệp", "Ngành Cả", "Phái Cả", 9, "nam", "", "Đã mất", "", "", "", "Mất sớm"],
+            ["nc_pc_9_20", "nc_pc_8_3", "Lê Thị Nga", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Trương Minh Hùng", "", "", ""],
+            ["nc_pc_9_21", "nc_pc_8_3", "Lê Thị Thanh", "Ngành Cả", "Phái Cả", 9, "nu", "", "Đã mất", "", "", "", "Mất sớm"],
+            ["nc_pc_9_22", "nc_pc_8_3", "Lê Văn Tân", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Nguyễn Thị Là", "", "", ""],
+            ["nc_pc_10_20", "nc_pc_9_22", "Lê Thị Thúy", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["nc_pc_10_21", "nc_pc_9_22", "Lê Tuấn Minh", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", "Phả ghi: con gái"],
+            ["nc_pc_9_23", "nc_pc_8_3", "Lê Thị Tâm", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Trương Văn Duyến", "", "", ""],
+
+            // Đời 8, 9, 10 - Nhánh cụ Lê Văn Lung
+            ["nc_pc_8_4", "nc_pc_7_2", "Lê Văn Lanh", "Ngành Cả", "Phái Cả", 8, "nam", "", "", "Lê Thị Khàn", "", "", ""],
+            ["nc_pc_9_24", "nc_pc_8_4", "Lê Văn Bách", "Ngành Cả", "Phái Cả", 9, "nam", "", "Đã mất", "", "", "", "Liệt sỹ chống Pháp"],
+            ["nc_pc_9_25", "nc_pc_8_4", "Lê Thị Dụt", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Nguyễn Văn Thọ", "", "", ""],
+            ["nc_pc_9_26", "nc_pc_8_4", "Lê Văn Tiếu", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Đinh Thị Đon", "", "", ""],
+            ["nc_pc_9_27", "nc_pc_8_4", "Lê Văn Tuấn", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Vợ cả: Đinh Thị Loan; Bà hai: Đinh Thị Dé", "", "", ""],
+            ["nc_pc_10_22", "nc_pc_9_27", "Lê Văn Tuân", "Ngành Cả", "Phái Cả", 10, "nuoi", "", "", "", "", "", "Con nuôi"],
+
+            ["nc_pc_8_5", "nc_pc_7_2", "Lê Văn Lánh", "Ngành Cả", "Phái Cả", 8, "nam", "", "", "Lê Thị Lã", "", "", ""],
+            ["nc_pc_9_28", "nc_pc_8_5", "Lê Thị Khanh", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Trần Văn Lương", "", "", ""],
+            ["nc_pc_9_29", "nc_pc_8_5", "Lê Văn Ánh", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Nguyễn Thị Hảo", "", "", ""],
+            ["nc_pc_9_30", "nc_pc_8_5", "Lê Thị Lan", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Đào Sỹ Năm", "", "", ""],
+            ["nc_pc_9_31", "nc_pc_8_5", "Lê Thị Lân", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Nguyễn Đình Hậu", "", "", ""],
+            ["nc_pc_9_32", "nc_pc_8_5", "Lê Văn Lưu", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Vợ cả: An Thị Chi; Bà hai: Mai Thị Nga", "", "", ""],
+            ["nc_pc_10_23", "nc_pc_9_32", "Lê Văn Lực", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "", "", "", "Con vợ cả An Thị Chi"],
+            ["nc_pc_10_24", "nc_pc_9_32", "Lê Thị Mai", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", "Con vợ cả An Thị Chi"],
+            ["nc_pc_10_25", "nc_pc_9_32", "Lê Thị Thảo", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", "Con vợ cả An Thị Chi"],
+            ["nc_pc_10_26", "nc_pc_9_32", "Lê Thị Hiền", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", "Con bà hai Mai Thị Nga"],
+            ["nc_pc_10_27", "nc_pc_9_32", "Lê Thị Hòa", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "", "", "", "Con bà hai Mai Thị Nga"],
+
+            // Đời 8, 9, 10, 11 - Nhánh cụ Lê Văn Vược
+            ["nc_pc_8_6", "nc_pc_7_5", "Lê Văn Vơn", "Ngành Cả", "Phái Cả", 8, "nam", "", "", "Lê Thị Đuấn", "", "", ""],
+            ["nc_pc_9_33", "nc_pc_8_6", "Lê Thị Xấu", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "", "", "", "Tàn tật"],
+            ["nc_pc_8_7", "nc_pc_7_5", "Lê Thị Bờn", "Ngành Cả", "Phái Cả", 8, "nu", "", "", "Nguyễn Như Trãi", "", "", ""],
+            ["nc_pc_8_8", "nc_pc_7_5", "Lê Thị Bơn", "Ngành Cả", "Phái Cả", 8, "nu", "", "Đã mất", "", "", "", "Mất sớm"],
+            ["nc_pc_8_9", "nc_pc_7_5", "Lê Văn Vật", "Ngành Cả", "Phái Cả", 8, "nam", "", "", "Lê Thị Rạng", "", "", ""],
+            ["nc_pc_9_34", "nc_pc_8_9", "Lê Vưu", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Hà Thị Thái", "", "", ""],
+            ["nc_pc_10_28", "nc_pc_9_34", "Lê Tùng Sơn", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "Lê Hải Ninh", "", "Hải Phòng", "Tiến cúng phiến đá, bát hương, đèn thờ & bộ ngũ sự đồng đen gian chính tẩm"],
+            ["nc_pc_11_1", "nc_pc_10_28", "Lê Vỹ Linh", "Ngành Cả", "Phái Cả", 11, "nu", "", "", "", "", "", ""],
+            ["nc_pc_11_2", "nc_pc_10_28", "Lê Trọng Nguyên", "Ngành Cả", "Phái Cả", 11, "nam", "", "", "", "", "", ""],
+            ["nc_pc_10_29", "nc_pc_9_34", "Lê Thị Hồng Thủy", "Ngành Cả", "Phái Cả", 10, "nu", "", "", "Phạm Anh Quân", "", "", ""],
+            ["nc_pc_10_30", "nc_pc_9_34", "Lê Sơn Tùng", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "Đoàn Hoài Thu", "", "", ""],
+            ["nc_pc_11_3", "nc_pc_10_30", "Lê Vỹ Anh Thư", "Ngành Cả", "Phái Cả", 11, "nu", "", "", "", "", "", ""],
+            ["nc_pc_11_4", "nc_pc_10_30", "Lê Trọng Vĩ", "Ngành Cả", "Phái Cả", 11, "nam", "", "", "", "", "", ""],
+            ["nc_pc_11_5", "nc_pc_10_30", "Lê Minh Anh", "Ngành Cả", "Phái Cả", 11, "nam", "", "", "", "", "", "Phả ghi: con trai"],
+            ["nc_pc_10_31", "nc_pc_9_34", "Lê Trúc Thông", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "Vũ Thị Huế", "", "Hải Phòng", "Tiến cúng bàn thờ các gian & chuông đồng tại Từ đường"],
+            ["nc_pc_11_6", "nc_pc_10_31", "Lê Trúc Linh", "Ngành Cả", "Phái Cả", 11, "nu", "", "", "", "", "", ""],
+            ["nc_pc_11_7", "nc_pc_10_31", "Lê Trọng Khôi", "Ngành Cả", "Phái Cả", 11, "nam", "", "", "", "", "", ""],
+            ["nc_pc_11_8", "nc_pc_10_31", "Lê Trọng Khánh", "Ngành Cả", "Phái Cả", 11, "nam", "", "", "", "", "", ""],
+            ["nc_pc_9_35", "nc_pc_8_9", "Lê Thị Sáng", "Ngành Cả", "Phái Cả", 9, "nu", "", "", "Phạm Văn Thìn", "", "", ""],
+            ["nc_pc_9_36", "nc_pc_8_9", "Lê Văn Tú", "Ngành Cả", "Phái Cả", 9, "nam", "", "", "Nguyễn Thị Dần", "", "", ""],
+            ["nc_pc_10_32", "nc_pc_9_36", "Lê Văn Thanh", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "Thị Hường", "", "", ""],
+            ["nc_pc_11_9", "nc_pc_10_32", "Lê Bảo Anh", "Ngành Cả", "Phái Cả", 11, "nu", "", "", "", "", "", ""],
+            ["nc_pc_11_10", "nc_pc_10_32", "Lê Minh Quân", "Ngành Cả", "Phái Cả", 11, "nam", "", "", "", "", "", ""],
+            ["nc_pc_10_33", "nc_pc_9_36", "Lê Văn Bình", "Ngành Cả", "Phái Cả", 10, "nam", "", "", "Hà Thị Huyền", "", "", ""],
+            ["nc_pc_11_11", "nc_pc_10_33", "Lê Hà My", "Ngành Cả", "Phái Cả", 11, "nu", "", "", "", "", "", ""],
+            ["nc_pc_11_12", "nc_pc_10_33", "Lê Nhật Vy", "Ngành Cả", "Phái Cả", 11, "nu", "", "", "", "", "", ""],
+            ["nc_pc_8_10", "nc_pc_7_5", "Lê Thị Ngởi", "Ngành Cả", "Phái Cả", 8, "nu", "", "", "Ngô Văn Xuốm", "", "", ""],
+            ["nc_pc_8_11", "nc_pc_7_5", "Lê Văn Khớn", "Ngành Cả", "Phái Cả", 8, "nam", "", "", "", "", "", "Đi khỏi nhà khi mới 15 tuổi"],
+
+            // --- PHÁI HAI (NGÀNH CẢ) ---
+            ["nc_p2_6_1", null, "Lê Văn Tuyển", "Ngành Cả", "Phái Hai", 6, "nam", "", "", "Nguyễn Thị Trầm", "", "", "Cửu phẩm bá hộ; Cúng ruộng hậu điền"],
+            ["nc_p2_7_1", "nc_p2_6_1", "Lê Thị Tươi", "Ngành Cả", "Phái Hai", 7, "nu", "", "", "Lê Văn Đường", "", "", "Không có con"],
+            ["nc_p2_7_2", "nc_p2_6_1", "Lê Văn Vận", "Ngành Cả", "Phái Hai", 7, "nam", "", "", "Bà cả: Nguyễn Thị Nẩy; Bà hai", "", "", ""],
+            ["nc_p2_8_1", "nc_p2_7_2", "Lê Văn Mạnh", "Ngành Cả", "Phái Hai", 8, "nam", "", "Đã mất", "", "", "", "Mất sớm (con bà cả Nguyễn Thị Nẩy)"],
+            ["nc_p2_7_3", "nc_p2_6_1", "Lê Thị Oanh", "Ngành Cả", "Phái Hai", 7, "nu", "", "", "Đinh Văn Hởi", "", "", ""],
+            ["nc_p2_7_4", "nc_p2_6_1", "Lê Thị Bành", "Ngành Cả", "Phái Hai", 7, "nu", "", "", "Lê Văn Chuyên", "", "", ""],
+            ["nc_p2_7_5", "nc_p2_6_1", "Lê Thị Nối", "Ngành Cả", "Phái Hai", 7, "nu", "", "", "Lê Văn Yến", "", "", ""],
+
+            // --- PHÁI BA (NGÀNH CẢ) ---
+            ["nc_p3_6_1", null, "Lê Văn Đạt", "Ngành Cả", "Phái Ba", 6, "nam", "", "", "Đinh Thị Cái", "", "", "Cửu phẩm bá hộ; Cúng ruộng hậu điền"],
+            ["nc_p3_7_1", "nc_p3_6_1", "Lê Thị Ngôn", "Ngành Cả", "Phái Ba", 7, "nu", "", "", "Đào Sỹ Chí", "", "", ""],
+            ["nc_p3_7_2", "nc_p3_6_1", "Lê Thị Từ", "Ngành Cả", "Phái Ba", 7, "nu", "", "", "Nguyễn Văn Bàn", "", "", ""],
+            ["nc_p3_7_3", "nc_p3_6_1", "Lê Văn Khoát", "Ngành Cả", "Phái Ba", 7, "nam", "", "", "Nguyễn Thị Nguyên", "", "", ""],
+            ["nc_p3_8_1", "nc_p3_7_3", "Lê Văn Toại", "Ngành Cả", "Phái Ba", 8, "nam", "", "", "Vũ Thụ Nhung", "", "", ""],
+            ["nc_p3_9_1", "nc_p3_8_1", "Lê Văn Tuấn", "Ngành Cả", "Phái Ba", 9, "nam", "", "", "Vũ Thị Ninh", "", "", ""],
+            ["nc_p3_10_1", "nc_p3_9_1", "Lê Thị Hương", "Ngành Cả", "Phái Ba", 10, "nu", "", "", "", "", "", ""],
+            ["nc_p3_9_2", "nc_p3_8_1", "Lê Văn Tú", "Ngành Cả", "Phái Ba", 9, "nam", "", "", "", "", "", ""],
+            ["nc_p3_9_3", "nc_p3_8_1", "Lê Văn Khôi", "Ngành Cả", "Phái Ba", 9, "nam", "", "", "Đinh Thị Thanh", "", "", ""],
+            ["nc_p3_10_2", "nc_p3_9_3", "Lê Minh Lộc", "Ngành Cả", "Phái Ba", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p3_9_4", "nc_p3_8_1", "Lê Thị Ngọc Lan", "Ngành Cả", "Phái Ba", 9, "nu", "", "", "Lê Minh Thắng", "", "", ""],
+            ["nc_p3_9_5", "nc_p3_8_1", "Lê Văn Minh", "Ngành Cả", "Phái Ba", 9, "nam", "", "", "", "", "", ""],
+            ["nc_p3_9_6", "nc_p3_8_1", "Lê Thị Kim Huệ", "Ngành Cả", "Phái Ba", 9, "nu", "", "", "Lê Phi Hùng", "", "", ""],
+            ["nc_p3_9_7", "nc_p3_8_1", "Lê Văn Toàn", "Ngành Cả", "Phái Ba", 9, "nam", "", "", "", "", "", ""],
+            ["nc_p3_9_8", "nc_p3_8_1", "Lê Thị Bích", "Ngành Cả", "Phái Ba", 9, "nu", "", "", "Huỳnh Ngọc Thắng", "", "", ""],
+            ["nc_p3_7_4", "nc_p3_6_1", "Lê Văn Tiến", "Ngành Cả", "Phái Ba", 7, "nam", "", "", "Đinh Thị Vụm", "", "", "Không có con"],
+            ["nc_p3_7_5", "nc_p3_6_1", "Lê Văn Phối", "Ngành Cả", "Phái Ba", 7, "nam", "", "", "Nguyễn Thị Nhài", "", "", "Không có con"],
+
+            // --- PHÁI BỐN (NGÀNH CẢ) ---
+            ["nc_p4_6_1", null, "Lê Văn Thực", "Ngành Cả", "Phái Bốn", 6, "nam", "", "", "Đào Thị Thóc", "", "", "Vũ cử xuất đội"],
+            ["nc_p4_7_1", "nc_p4_6_1", "Lê Văn Hiệng", "Ngành Cả", "Phái Bốn", 7, "nam", "", "", "", "", "", ""],
+            ["nc_p4_7_2", "nc_p4_6_1", "Lê Văn Đờng", "Ngành Cả", "Phái Bốn", 7, "nam", "", "", "Nguyễn Thị Cống", "", "", ""],
+            ["nc_p4_8_1", "nc_p4_7_2", "Lê Thị Lõi", "Ngành Cả", "Phái Bốn", 8, "nu", "", "", "Hà Đăng Bàm", "", "", ""],
+            ["nc_p4_7_3", "nc_p4_6_1", "Lê Văn Phúa", "Ngành Cả", "Phái Bốn", 7, "nam", "", "", "Lê Thị Lơn", "", "", ""],
+            // Đời 8, 9, 10 con cụ Lê Văn Phúa
+            ["nc_p4_8_2", "nc_p4_7_3", "Lê Văn Võ", "Ngành Cả", "Phái Bốn", 8, "nam", "", "", "Lê Thị Khiêm", "", "", ""],
+            ["nc_p4_9_1", "nc_p4_8_2", "Lê Văn Thụy", "Ngành Cả", "Phái Bốn", 9, "nam", "", "Đã mất", "", "", "", "Liệt sỹ chống Mỹ"],
+            ["nc_p4_9_2", "nc_p4_8_2", "Lê Văn Truyện", "Ngành Cả", "Phái Bốn", 9, "nam", "", "", "Phạm Thị Hai", "", "", ""],
+            ["nc_p4_10_1", "nc_p4_9_2", "Lê Văn Trường", "Ngành Cả", "Phái Bốn", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p4_10_2", "nc_p4_9_2", "Lê Văn Thinh", "Ngành Cả", "Phái Bốn", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p4_10_3", "nc_p4_9_2", "Lê Văn Bình", "Ngành Cả", "Phái Bốn", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p4_10_4", "nc_p4_9_2", "Lê Thị Minh", "Ngành Cả", "Phái Bốn", 10, "nu", "", "", "", "", "", ""],
+            ["nc_p4_9_3", "nc_p4_8_2", "Lê Thị Ngọt", "Ngành Cả", "Phái Bốn", 9, "nu", "", "", "Đinh Ngọc Liên", "", "", ""],
+            ["nc_p4_9_4", "nc_p4_8_2", "Lê Thị Thanh", "Ngành Cả", "Phái Bốn", 9, "nu", "", "", "Nguyễn Văn Chiến", "", "", ""],
+            ["nc_p4_9_5", "nc_p4_8_2", "Lê Văn Thịnh", "Ngành Cả", "Phái Bốn", 9, "nam", "", "", "Vợ cả: Nguyễn Thị Luật; Vợ sau", "", "", ""],
+            ["nc_p4_10_5", "nc_p4_9_5", "Lê Văn Thuận", "Ngành Cả", "Phái Bốn", 10, "nam", "", "", "", "", "", "Con vợ cả Nguyễn Thị Luật"],
+            ["nc_p4_10_6", "nc_p4_9_5", "Lê Thị Hưng", "Ngành Cả", "Phái Bốn", 10, "nu", "", "", "", "", "", "Con vợ cả Nguyễn Thị Luật"],
+            ["nc_p4_10_7", "nc_p4_9_5", "Lê Thị Hiền", "Ngành Cả", "Phái Bốn", 10, "nu", "", "", "", "", "", "Con vợ cả Nguyễn Thị Luật"],
+            ["nc_p4_10_8", "nc_p4_9_5", "Lê Đức Long", "Ngành Cả", "Phái Bốn", 10, "nam", "", "", "", "", "", "Con vợ sau"],
+            ["nc_p4_9_6", "nc_p4_8_2", "Lê Thị Lục", "Ngành Cả", "Phái Bốn", 9, "nu", "", "", "Nguyễn Văn Ước", "", "", ""],
+            ["nc_p4_9_7", "nc_p4_8_2", "Lê Văn Lưu", "Ngành Cả", "Phái Bốn", 9, "nam", "", "", "Nguyễn Thị Mận", "", "", ""],
+            ["nc_p4_10_9", "nc_p4_9_7", "Lê Văn Phúc", "Ngành Cả", "Phái Bốn", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p4_10_10", "nc_p4_9_7", "Lê Văn Hằng", "Ngành Cả", "Phái Bốn", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p4_10_11", "nc_p4_9_7", "Lê Thị Oanh", "Ngành Cả", "Phái Bốn", 10, "nu", "", "", "", "", "", ""],
+
+            ["nc_p4_8_3", "nc_p4_7_3", "Lê Văn Trọ", "Ngành Cả", "Phái Bốn", 8, "nam", "", "", "Lưu Thị Hà", "", "", ""],
+            ["nc_p4_9_8", "nc_p4_8_3", "Lê Thị Sơn", "Ngành Cả", "Phái Bốn", 9, "nu", "", "", "Phạm Bình", "", "", ""],
+            ["nc_p4_9_9", "nc_p4_8_3", "Lê Thị Luyên", "Ngành Cả", "Phái Bốn", 9, "nu", "", "", "Đinh Dung", "", "", ""],
+            ["nc_p4_9_10", "nc_p4_8_3", "Lê Văn Vững", "Ngành Cả", "Phái Bốn", 9, "nam", "", "", "Vợ cả: Nguyễn Thị Vang", "", "", ""],
+            ["nc_p4_10_12", "nc_p4_9_10", "Lê Thị Vân", "Ngành Cả", "Phái Bốn", 10, "nu", "", "", "", "", "", ""],
+            ["nc_p4_10_13", "nc_p4_9_10", "Lê Việt", "Ngành Cả", "Phái Bốn", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p4_9_11", "nc_p4_8_3", "Lê Văn Vường", "Ngành Cả", "Phái Bốn", 9, "nam", "", "", "Đinh Thị Liễu", "", "", ""],
+            ["nc_p4_10_14", "nc_p4_9_11", "Lê Kiều Trang", "Ngành Cả", "Phái Bốn", 10, "nu", "", "", "", "", "", ""],
+            ["nc_p4_10_15", "nc_p4_9_11", "Lê Việt Vương", "Ngành Cả", "Phái Bốn", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p4_10_16", "nc_p4_9_11", "Lê Văn Trác", "Ngành Cả", "Phái Bốn", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p4_9_12", "nc_p4_8_3", "Lê Văn Châu", "Ngành Cả", "Phái Bốn", 9, "nam", "", "", "Lê Thị Phượng", "", "", ""],
+            ["nc_p4_10_17", "nc_p4_9_12", "Lê Đức Anh", "Ngành Cả", "Phái Bốn", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p4_10_18", "nc_p4_9_12", "Lê Tuấn Nghĩa", "Ngành Cả", "Phái Bốn", 10, "nam", "", "", "", "", "", ""],
+
+            ["nc_p4_8_4", "nc_p4_7_3", "Lê Văn Hàn", "Ngành Cả", "Phái Bốn", 8, "nam", "", "Đã mất", "", "", "", "Liệt sỹ chống Pháp"],
+            ["nc_p4_8_5", "nc_p4_7_3", "Lê Xuân Thọ", "Ngành Cả", "Phái Bốn", 8, "nam", "", "Đã mất", "", "", "", "Liệt sỹ chống Pháp"],
+            ["nc_p4_8_6", "nc_p4_7_3", "Lê Văn Hấn", "Ngành Cả", "Phái Bốn", 8, "nam", "", "Đã mất", "", "", "", "Mất sớm"],
+
+            ["nc_p4_7_4", "nc_p4_6_1", "Lê Văn Khoan", "Ngành Cả", "Phái Bốn", 7, "nam", "", "", "", "", "", ""],
+            ["nc_p4_7_5", "nc_p4_6_1", "Lê Văn Đoan", "Ngành Cả", "Phái Bốn", 7, "nam", "", "", "", "", "", ""],
+            ["nc_p4_7_6", "nc_p4_6_1", "Lê Thị Thạ", "Ngành Cả", "Phái Bốn", 7, "nu", "", "", "Ông Xã Huấn", "", "", ""],
+            ["nc_p4_7_7", "nc_p4_6_1", "Lê Thị Thanh", "Ngành Cả", "Phái Bốn", 7, "nu", "", "", "", "", "", ""],
+
+            // --- PHÁI NĂM (NGÀNH CẢ) ---
+            ["nc_p5_6_1", null, "Lê Văn Thới", "Ngành Cả", "Phái Năm", 6, "nam", "", "", "Bà cả (khuyết danh); Bà hai", "", "", ""],
+            ["nc_p5_7_1", "nc_p5_6_1", "Lê Văn Thợi", "Ngành Cả", "Phái Năm", 7, "nam", "", "", "Hà Thị Hiến", "", "", ""],
+            ["nc_p5_8_1", "nc_p5_7_1", "Lê Thị Côi", "Ngành Cả", "Phái Năm", 8, "nu", "", "", "", "", "", ""],
+            ["nc_p5_7_2", "nc_p5_6_1", "Lê Thị Hến", "Ngành Cả", "Phái Năm", 7, "nu", "", "", "Lê Văn Tháp", "", "", ""],
+            ["nc_p5_7_3", "nc_p5_6_1", "Lê Văn Mạch", "Ngành Cả", "Phái Năm", 7, "nam", "", "", "Nguyễn Thị Đỏm", "", "", ""],
+            ["nc_p5_8_2", "nc_p5_7_3", "Lê Thị Đương", "Ngành Cả", "Phái Năm", 8, "nu", "", "", "Lê Văn Huân", "", "", ""],
+            ["nc_p5_8_3", "nc_p5_7_3", "Lê Thị Nuôi", "Ngành Cả", "Phái Năm", 8, "nu", "", "", "Nguyễn Đình Hống", "", "", ""],
+            ["nc_p5_8_4", "nc_p5_7_3", "Lê Thị Đảm", "Ngành Cả", "Phái Năm", 8, "nu", "", "", "Nguyễn Như Tỉnh", "", "", ""],
+            ["nc_p5_8_5", "nc_p5_7_3", "Lê Văn Hợi", "Ngành Cả", "Phái Năm", 8, "nam", "", "", "Bà (khuyết danh)", "", "", ""],
+            ["nc_p5_9_1", "nc_p5_8_5", "Lê Văn Đức", "Ngành Cả", "Phái Năm", 9, "nam", "", "", "Đinh Thị Hợp", "", "", ""],
+            ["nc_p5_10_1", "nc_p5_9_1", "Lê Văn Cường", "Ngành Cả", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p5_10_2", "nc_p5_9_1", "Lê Văn Công", "Ngành Cả", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p5_10_3", "nc_p5_9_1", "Lê Văn Linh", "Ngành Cả", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p5_7_4", "nc_p5_6_1", "Lê Văn Vẹm", "Ngành Cả", "Phái Năm", 7, "nam", "", "", "Bà cả: An Thị Me; Bà hai: Nguyễn Thị Sen", "", "", "Con bà hai của cụ Lê Văn Thới"],
+            ["nc_p5_8_6", "nc_p5_7_4", "Lê Thị Vườn", "Ngành Cả", "Phái Năm", 8, "nu", "", "", "Ông Huệ ở Lạng Sơn", "", "", "Con bà cả An Thị Me; Lấy chồng ở Lạng Sơn"],
+            ["nc_p5_8_7", "nc_p5_7_4", "Lê Văn Uông", "Ngành Cả", "Phái Năm", 8, "nuoi", "", "", "Nguyễn Thị Hiền", "", "", "Con riêng bà hai Nguyễn Thị Sen"],
+            ["nc_p5_8_8", "nc_p5_7_4", "Lê Thị Vươn", "Ngành Cả", "Phái Năm", 8, "nu", "", "", "Nguyễn Đình Lẫm", "", "", "Con bà hai Nguyễn Thị Sen"],
+            ["nc_p5_8_9", "nc_p5_7_4", "Lê Thị Vượn", "Ngành Cả", "Phái Năm", 8, "nu", "", "Đã mất", "", "", "", "Mất sớm (con bà hai Nguyễn Thị Sen)"],
+            ["nc_p5_8_10", "nc_p5_7_4", "Lê Văn Viến", "Ngành Cả", "Phái Năm", 8, "nam", "", "", "Lê Thị Thẩm", "", "", "Con bà hai Nguyễn Thị Sen"],
+            ["nc_p5_9_2", "nc_p5_8_10", "Lê Văn Bình", "Ngành Cả", "Phái Năm", 9, "nam", "", "", "Lê Thị Hợp", "", "", ""],
+            ["nc_p5_10_4", "nc_p5_9_2", "Lê Thị Thảo", "Ngành Cả", "Phái Năm", 10, "nu", "", "", "", "", "", ""],
+            ["nc_p5_10_5", "nc_p5_9_2", "Lê Văn Hiếu", "Ngành Cả", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p5_9_3", "nc_p5_8_10", "Lê Đức Hạnh", "Ngành Cả", "Phái Năm", 9, "nam", "", "", "Hoàng Thị Tươi", "", "", ""],
+            ["nc_p5_9_4", "nc_p5_8_10", "Lê Thị Lan", "Ngành Cả", "Phái Năm", 9, "nu", "", "", "Đào Sỹ Phúc", "", "", ""],
+            ["nc_p5_9_5", "nc_p5_8_10", "Lê Thị Phúc", "Ngành Cả", "Phái Năm", 9, "nu", "", "", "Hà Đăng Quỳnh", "", "", ""],
+
+            // --- PHÁI SÁU (NGÀNH CẢ) ---
+            ["nc_p6_6_1", null, "Lê Văn Tới", "Ngành Cả", "Phái Sáu", 6, "nam", "", "", "Lê Thị Chi", "", "", ""],
+            ["nc_p6_7_1", "nc_p6_6_1", "Lê Thị Ếch", "Ngành Cả", "Phái Sáu", 7, "nu", "", "", "Hà Đăng Vọng", "", "", ""],
+            ["nc_p6_7_2", "nc_p6_6_1", "Lê Thị Vôi", "Ngành Cả", "Phái Sáu", 7, "nu", "", "", "Phan Đăng Dương", "", "", ""],
+            ["nc_p6_7_3", "nc_p6_6_1", "Lê Thị Hóp", "Ngành Cả", "Phái Sáu", 7, "nu", "", "", "Hà Đăng Tiến", "", "", ""],
+
+            // --- PHÁI BẢY (NGÀNH CẢ) ---
+            ["nc_p7_6_1", null, "Lê Văn Cới", "Ngành Cả", "Phái Bảy", 6, "nam", "", "", "Bà (khuyết danh)", "", "", ""],
+            ["nc_p7_7_1", "nc_p7_6_1", "Lê Trọng Phu (Cai Tuối)", "Ngành Cả", "Phái Bảy", 7, "nam", "", "", "Bà cả: Nguyễn Thị Bé; Bà hai: Phạm Thị Khâm", "", "", ""],
+            ["nc_p7_8_1", "nc_p7_7_1", "Lê Trọng Mão", "Ngành Cả", "Phái Bảy", 8, "nam", "", "Đã mất", "", "", "", "Mất sớm (con bà cả Nguyễn Thị Bé)"],
+            ["nc_p7_8_2", "nc_p7_7_1", "Lê Ngọc", "Ngành Cả", "Phái Bảy", 8, "nam", "", "Đã mất", "", "", "", "Mất sớm (con bà cả Nguyễn Thị Bé)"],
+            ["nc_p7_8_3", "nc_p7_7_1", "Lê Kim", "Ngành Cả", "Phái Bảy", 8, "nam", "", "Đã mất", "", "", "", "Mất sớm (con bà cả Nguyễn Thị Bé)"],
+            ["nc_p7_8_4", "nc_p7_7_1", "Lê Thị Gái", "Ngành Cả", "Phái Bảy", 8, "nu", "", "Đã mất", "", "", "", "Mất sớm (con bà cả Nguyễn Thị Bé)"],
+            ["nc_p7_8_5", "nc_p7_7_1", "Lê Thị Quý", "Ngành Cả", "Phái Bảy", 8, "nu", "", "", "Nguyễn Tử Chuyền", "", "", "Con bà cả Nguyễn Thị Bé"],
+            ["nc_p7_8_6", "nc_p7_7_1", "Lê Văn Yên", "Ngành Cả", "Phái Bảy", 8, "nam", "", "", "Ngô Thị Quý", "", "", "Con bà hai Phạm Thị Khâm"],
+            ["nc_p7_9_1", "nc_p7_8_6", "Lê Văn Tuân", "Ngành Cả", "Phái Bảy", 9, "nam", "", "", "Lê Thị Quý", "", "", ""],
+            ["nc_p7_10_1", "nc_p7_9_1", "Lê Phú An", "Ngành Cả", "Phái Bảy", 10, "nam", "", "", "", "", "", ""],
+            ["nc_p7_8_7", "nc_p7_7_1", "Lê Văn Hải", "Ngành Cả", "Phái Bảy", 8, "nam", "", "", "Đỗ Thị Minh", "", "", "Con bà hai Phạm Thị Khâm"],
+            ["nc_p7_9_2", "nc_p7_8_7", "Lê Văn Sơn", "Ngành Cả", "Phái Bảy", 9, "nam", "", "", "Thị Phượng", "", "", ""],
+            ["nc_p7_9_3", "nc_p7_8_7", "Lê Thị Thúy", "Ngành Cả", "Phái Bảy", 9, "nu", "", "", "Văn Chúc", "", "", ""],
+            ["nc_p7_9_4", "nc_p7_8_7", "Lê Văn Hà", "Ngành Cả", "Phái Bảy", 9, "nam", "", "", "", "", "", ""],
+            ["nc_p7_8_8", "nc_p7_7_1", "Lê Thị Tỵ", "Ngành Cả", "Phái Bảy", 8, "nu", "", "", "", "", "", "Có một con ngoài giá thú là Kiếm"],
+            ["nc_p7_9_5", "nc_p7_8_8", "Kiếm", "Ngành Cả", "Phái Bảy", 9, "nam", "", "", "", "", "", "Con ngoài giá thú của bà Lê Thị Tỵ"],
+
+            // --- PHÁI TÁM (NGÀNH CẢ) ---
+            ["nc_p8_6_1", null, "Lê Văn Lẽ", "Ngành Cả", "Phái Tám", 6, "nam", "", "", "Hà Thị Tĩnh", "", "", ""],
+            ["nc_p8_7_1", "nc_p8_6_1", "Lê Thị Lim", "Ngành Cả", "Phái Tám", 7, "nu", "", "", "Hà Đăng Ảnh", "", "", ""],
+            ["nc_p8_7_2", "nc_p8_6_1", "Lê Văn Viễn", "Ngành Cả", "Phái Tám", 7, "nam", "", "", "Hà Thị Lương", "", "", ""],
+            ["nc_p8_8_1", "nc_p8_7_2", "Lê Thị Đầm", "Ngành Cả", "Phái Tám", 8, "nu", "", "", "Đinh Văn Huân", "", "", ""],
+            ["nc_p8_8_2", "nc_p8_7_2", "Lê Văn Lạp", "Ngành Cả", "Phái Tám", 8, "nam", "", "Đã mất", "", "", "", "Mất sớm"],
+
+            // ================= NGÀNH HAI =================
+            // --- PHÁI CẢ (NGÀNH HAI) ---
+            ["n2_pc_6_1", null, "Lê Văn Tuềnh", "Ngành Hai", "Phái Cả", 6, "nam", "", "", "Hà Thị Điển", "", "", ""],
+            ["n2_pc_7_1", "n2_pc_6_1", "Lê Thị Hiểu", "Ngành Hai", "Phái Cả", 7, "nu", "", "Đã mất", "", "", "", "Mất sớm"],
+            ["n2_pc_7_2", "n2_pc_6_1", "Lê Văn Nhân", "Ngành Hai", "Phái Cả", 7, "nam", "", "", "Lê Thị Tẩm", "", "", ""],
+            ["n2_pc_8_1", "n2_pc_7_2", "Lê Văn Duyên", "Ngành Hai", "Phái Cả", 8, "nam", "", "", "Hà Thị Tụ", "", "", ""],
+            ["n2_pc_9_1", "n2_pc_8_1", "Lê Văn Hồng", "Ngành Hai", "Phái Cả", 9, "nam", "", "", "Đinh Thị Tươi", "", "", ""],
+            ["n2_pc_10_1", "n2_pc_9_1", "Lê Thị Hiên", "Ngành Hai", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["n2_pc_10_2", "n2_pc_9_1", "Lê Thị Hải Anh", "Ngành Hai", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["n2_pc_10_3", "n2_pc_9_1", "Lê Thị Vân", "Ngành Hai", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["n2_pc_9_2", "n2_pc_8_1", "Lê Văn Quản", "Ngành Hai", "Phái Cả", 9, "nam", "", "", "Đào Thị Liên", "", "", ""],
+            ["n2_pc_10_4", "n2_pc_9_2", "Lê Tuấn Anh", "Ngành Hai", "Phái Cả", 10, "nam", "", "", "", "", "", ""],
+            ["n2_pc_10_5", "n2_pc_9_2", "Lê Trường Giang", "Ngành Hai", "Phái Cả", 10, "nam", "", "", "", "", "", ""],
+            ["n2_pc_9_3", "n2_pc_8_1", "Lê Văn Nam", "Ngành Hai", "Phái Cả", 9, "nam", "", "", "Nguyễn Thị Liên", "", "Ninh Bình", "Tiến cúng tam cấp đá hai bên Từ đường"],
+            ["n2_pc_10_6", "n2_pc_9_3", "Lê Thị Hương", "Ngành Hai", "Phái Cả", 10, "nu", "", "", "Chồng Trung Quốc", "", "", "Lấy chồng Trung Quốc"],
+            ["n2_pc_8_2", "n2_pc_7_2", "Lê Thị Nhún (Nhung)", "Ngành Hai", "Phái Cả", 8, "nu", "", "", "Nguyễn Như Cừu", "", "", ""],
+            ["n2_pc_8_3", "n2_pc_7_2", "Lê Văn Thiệu", "Ngành Hai", "Phái Cả", 8, "nam", "", "", "Nguyễn Thị Gắng (Thủy)", "", "", ""],
+            ["n2_pc_9_4", "n2_pc_8_3", "Lê Văn Thanh", "Ngành Hai", "Phái Cả", 9, "nam", "", "", "Lê Thị Khánh", "", "", ""],
+            ["n2_pc_10_7", "n2_pc_9_4", "Lê Việt Long", "Ngành Hai", "Phái Cả", 10, "nam", "", "", "", "", "", ""],
+            ["n2_pc_9_5", "n2_pc_8_3", "Lê Thị Thúy", "Ngành Hai", "Phái Cả", 9, "nu", "", "", "", "", "", ""],
+            ["n2_pc_9_6", "n2_pc_8_3", "Lê Văn Sơn", "Ngành Hai", "Phái Cả", 9, "nam", "", "", "Hà Thị Lư", "", "", ""],
+            ["n2_pc_8_4", "n2_pc_7_2", "Lê Thị Nội", "Ngành Hai", "Phái Cả", 8, "nu", "", "", "Nguyễn Như Hậu", "", "", ""],
+            ["n2_pc_8_5", "n2_pc_7_2", "Lê Văn Định", "Ngành Hai", "Phái Cả", 8, "nam", "", "", "Đinh Thị Vông", "", "", ""],
+            ["n2_pc_9_7", "n2_pc_8_5", "Lê Văn Dũng", "Ngành Hai", "Phái Cả", 9, "nam", "", "", "", "", "", ""],
+            ["n2_pc_9_8", "n2_pc_8_5", "Lê Thị Oanh", "Ngành Hai", "Phái Cả", 9, "nu", "", "", "", "", "", ""],
+
+            // --- PHÁI HAI (NGÀNH HAI) ---
+            ["n2_p2_6_1", null, "Lê Văn Chấp", "Ngành Hai", "Phái Hai", 6, "nam", "", "", "Bà (khuyết danh)", "", "", ""],
+            ["n2_p2_7_1", "n2_p2_6_1", "Lê Thị Nậm", "Ngành Hai", "Phái Hai", 7, "nu", "", "", "Nguyễn Đình Còm", "", "", ""],
+
+            // --- PHÁI BA (NGÀNH HAI) ---
+            ["n2_p3_6_1", null, "Lê Văn Xoang", "Ngành Hai", "Phái Ba", 6, "nam", "", "", "Bà (khuyết danh)", "", "", "Vũ cử xuất đội"],
+            ["n2_p3_7_1", "n2_p3_6_1", "Lê Thị Xuênh", "Ngành Hai", "Phái Ba", 7, "nu", "", "", "Nguyễn Đình Cương", "", "", ""],
+            ["n2_p3_7_2", "n2_p3_6_1", "Lê Thị Lớn", "Ngành Hai", "Phái Ba", 7, "nu", "", "", "", "", "", ""],
+            ["n2_p3_7_3", "n2_p3_6_1", "Lê Thị Liến", "Ngành Hai", "Phái Ba", 7, "nu", "", "", "Nguyễn Như Rãi", "", "", ""],
+
+            // --- PHÁI BỐN (NGÀNH HAI) ---
+            ["n2_p4_6_1", null, "Lê Văn Tộ", "Ngành Hai", "Phái Bốn", 6, "nam", "", "", "Lê Thị Lữa", "", "", "Cúng ruộng hậu điền"],
+            ["n2_p4_7_1", "n2_p4_6_1", "Lê Thị Vin", "Ngành Hai", "Phái Bốn", 7, "nu", "", "", "", "", "", ""],
+            ["n2_p4_7_2", "n2_p4_6_1", "Lê Thị Đềm", "Ngành Hai", "Phái Bốn", 7, "nu", "", "", "", "", "", ""],
+            ["n2_p4_6_2", null, "Lê Văn Tường", "Ngành Hai", "Phái Bốn", 6, "nam", "", "", "Phạm Thị Thoan", "", "", ""],
+            ["n2_p4_8_1", "n2_p4_6_2", "Lê Thị Nguộc", "Ngành Hai", "Phái Bốn", 8, "nu", "", "", "Nguyễn Như Vi", "", "", ""],
+            ["n2_p4_8_2", "n2_p4_6_2", "Lê Thị Ngòa", "Ngành Hai", "Phái Bốn", 8, "nu", "", "", "Đinh Văn Trực", "", "", ""],
+            ["n2_p4_8_3", "n2_p4_6_2", "Lê Văn Lễ", "Ngành Hai", "Phái Bốn", 8, "nam", "", "", "Nguyễn Thị Ngờ", "", "", ""],
+            ["n2_p4_9_1", "n2_p4_8_3", "Lê Văn Lâm", "Ngành Hai", "Phái Bốn", 9, "nam", "", "", "Lê Thị Hoa", "", "", ""],
+            ["n2_p4_9_2", "n2_p4_8_3", "Lê Văn Lý", "Ngành Hai", "Phái Bốn", 9, "nam", "", "", "", "", "", ""],
+            ["n2_p4_9_3", "n2_p4_8_3", "Lê Văn Lương", "Ngành Hai", "Phái Bốn", 9, "nam", "", "", "", "", "", ""],
+            ["n2_p4_9_4", "n2_p4_8_3", "Lê Thị Hoa", "Ngành Hai", "Phái Bốn", 9, "nu", "", "", "", "", "", ""],
+            ["n2_p4_9_5", "n2_p4_8_3", "Lê Thị Nhị", "Ngành Hai", "Phái Bốn", 9, "nu", "", "", "", "", "", ""],
+            ["n2_p4_8_4", "n2_p4_6_2", "Lê Văn Liệc", "Ngành Hai", "Phái Bốn", 8, "nam", "", "", "Phạm Thị Nhãn", "", "", ""],
+            ["n2_p4_9_6", "n2_p4_8_4", "Lê Văn Dũng", "Ngành Hai", "Phái Bốn", 9, "nam", "", "", "", "", "", ""],
+            ["n2_p4_9_7", "n2_p4_8_4", "Lê Văn Chanh", "Ngành Hai", "Phái Bốn", 9, "nam", "", "", "", "", "", ""],
+            ["n2_p4_9_8", "n2_p4_8_4", "Lê Thị Lan", "Ngành Hai", "Phái Bốn", 9, "nu", "", "", "", "", "", ""],
+            ["n2_p4_6_3", null, "Lê Thị Thếp", "Ngành Hai", "Phái Bốn", 6, "nu", "", "", "Nguyễn Như Tôn", "", "", ""],
+            ["n2_p4_6_4", null, "Lê Thị Đới", "Ngành Hai", "Phái Bốn", 6, "nu", "", "", "Lê Văn Tác", "", "", ""],
+            ["n2_p4_6_5", null, "Lê Thị Cờng", "Ngành Hai", "Phái Bốn", 6, "nu", "", "", "Lê Văn Đươi", "", "", ""],
+
+            // --- PHÁI NĂM (NGÀNH HAI) ---
+            ["n2_p5_6_1", null, "Lê Văn Cầm", "Ngành Hai", "Phái Năm", 6, "nam", "", "", "Nguyễn Thị Đông", "", "", "Trưởng chi"],
+            ["n2_p5_7_1", "n2_p5_6_1", "Lê Văn Nghiêm", "Ngành Hai", "Phái Năm", 7, "nam", "", "", "Đinh Thị Dẽ", "", "", ""],
+            ["n2_p5_8_1", "n2_p5_7_1", "Lê Thị Ngam", "Ngành Hai", "Phái Năm", 8, "nu", "", "", "Lê Văn Cớt", "", "", ""],
+            ["n2_p5_8_2", "n2_p5_7_1", "Lê Văn Châu (Ngồm)", "Ngành Hai", "Phái Năm", 8, "nam", "", "", "Lương Thị Ân", "", "", ""],
+            ["n2_p5_9_1", "n2_p5_8_2", "Lê Minh Lương", "Ngành Hai", "Phái Năm", 9, "nam", "", "", "Nguyễn Thị Phước", "", "", ""],
+            ["n2_p5_10_1", "n2_p5_9_1", "Lê Thị Minh Duyên", "Ngành Hai", "Phái Năm", 10, "nu", "", "", "", "", "", ""],
+            ["n2_p5_10_2", "n2_p5_9_1", "Lê Thị Minh Dung", "Ngành Hai", "Phái Năm", 10, "nu", "", "", "", "", "", ""],
+            ["n2_p5_10_3", "n2_p5_9_1", "Lê Minh Quân", "Ngành Hai", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["n2_p5_9_2", "n2_p5_8_2", "Lê Minh Tâm", "Ngành Hai", "Phái Năm", 9, "nam", "", "", "Nguyễn Thị Linh", "", "", ""],
+            ["n2_p5_10_4", "n2_p5_9_2", "Lê Minh Tịnh", "Ngành Hai", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["n2_p5_10_5", "n2_p5_9_2", "Lê Minh Kỳ", "Ngành Hai", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["n2_p5_9_3", "n2_p5_8_2", "Lê Minh Trung (Trí)", "Ngành Hai", "Phái Năm", 9, "nam", "", "", "Nguyễn Thị Hường", "", "", ""],
+            ["n2_p5_10_6", "n2_p5_9_3", "Lê Minh Tùng", "Ngành Hai", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["n2_p5_10_7", "n2_p5_9_3", "Lê Minh Nghĩa", "Ngành Hai", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["n2_p5_10_8", "n2_p5_9_3", "Lê Thị Ái", "Ngành Hai", "Phái Năm", 10, "nu", "", "", "", "", "", ""],
+            ["n2_p5_10_9", "n2_p5_9_3", "Lê Minh Quốc", "Ngành Hai", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["n2_p5_10_10", "n2_p5_9_3", "Lê Minh Tân", "Ngành Hai", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["n2_p5_10_11", "n2_p5_9_3", "Lê Minh Tiến", "Ngành Hai", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["n2_p5_10_12", "n2_p5_9_3", "Lê Minh Tuấn", "Ngành Hai", "Phái Năm", 10, "nam", "", "", "", "", "", ""],
+            ["n2_p5_8_3", "n2_p5_7_1", "Lê Thị Ngốm", "Ngành Hai", "Phái Năm", 8, "nu", "", "", "Đinh Văn Cưởng", "", "", ""],
+            ["n2_p5_8_4", "n2_p5_7_1", "Lê Văn Vinh", "Ngành Hai", "Phái Năm", 8, "nam", "", "", "Vũ Thị Thục", "", "", ""],
+            ["n2_p5_9_4", "n2_p5_8_4", "Lê Văn Ninh", "Ngành Hai", "Phái Năm", 9, "nam", "", "", "Vũ Thị Lan", "", "", ""],
+            ["n2_p5_9_5", "n2_p5_8_4", "Lê Thị Vân", "Ngành Hai", "Phái Năm", 9, "nu", "", "", "Nguyễn Minh Duệ", "", "", ""],
+            ["n2_p5_9_6", "n2_p5_8_4", "Lê Thị Yến", "Ngành Hai", "Phái Năm", 9, "nu", "", "", "Nguyễn Văn Hồng", "", "", ""],
+            ["n2_p5_9_7", "n2_p5_8_4", "Lê Văn Giang", "Ngành Hai", "Phái Năm", 9, "nam", "", "", "Nguyễn Thị Thúy Ninh", "", "", ""],
+            ["n2_p5_9_8", "n2_p5_8_4", "Lê Văn Phú", "Ngành Hai", "Phái Năm", 9, "nam", "", "", "Hoàng Thị Hà", "", "", ""],
+            ["n2_p5_9_9", "n2_p5_8_4", "Lê Thị Oanh", "Ngành Hai", "Phái Năm", 9, "nu", "", "", "", "", "", ""],
+            ["n2_p5_9_10", "n2_p5_8_4", "Lê Văn Hưng", "Ngành Hai", "Phái Năm", 9, "nam", "", "", "", "", "", ""],
+            ["n2_p5_9_11", "n2_p5_8_4", "Lê Văn Thịnh", "Ngành Hai", "Phái Năm", 9, "nam", "", "", "", "", "", ""],
+
+            ["n2_p5_7_2", "n2_p5_6_1", "Lê Văn Từa", "Ngành Hai", "Phái Năm", 7, "nam", "", "", "An Thị Mè", "", "", ""],
+            ["n2_p5_8_5", "n2_p5_7_2", "Lê Thị Tứa", "Ngành Hai", "Phái Năm", 8, "nu", "", "", "Đinh Văn Công", "", "", ""],
+            ["n2_p5_8_6", "n2_p5_7_2", "Lê Văn Tốn (Đức)", "Ngành Hai", "Phái Năm", 8, "nam", "", "", "Lương Thị Hòa", "", "", ""],
+            ["n2_p5_9_12", "n2_p5_8_6", "Lê Thị Bình", "Ngành Hai", "Phái Năm", 9, "nu", "", "", "Bùi Xuân Quỳ", "", "", ""],
+            ["n2_p5_9_13", "n2_p5_8_6", "Lê Thị Nguyệt", "Ngành Hai", "Phái Năm", 9, "nu", "", "", "Phạm Văn Xâm", "", "", ""],
+            ["n2_p5_9_14", "n2_p5_8_6", "Lê Thị Mùi", "Ngành Hai", "Phái Năm", 9, "nu", "", "", "Trần Xuân Trường", "", "", ""],
+            ["n2_p5_9_15", "n2_p5_8_6", "Lê Xuân Thủy", "Ngành Hai", "Phái Năm", 9, "nam", "", "", "", "", "", ""],
+            ["n2_p5_9_16", "n2_p5_8_6", "Lê Quang Lưu", "Ngành Hai", "Phái Năm", 9, "nam", "", "", "", "", "", ""],
+
+            // ================= NGÀNH BA =================
+            // --- PHÁI CẢ (NGÀNH BA) ---
+            ["n3_pc_6_1", null, "Lê Trần Thường", "Ngành Ba", "Phái Cả", 6, "nam", "", "", "Đào Thị Lý", "", "", "Thí sinh; Đồng biên soạn Bia Trùng Tu Từ Đường năm 1914"],
+            ["n3_pc_7_1", "n3_pc_6_1", "Lê Trần Lương", "Ngành Ba", "Phái Cả", 7, "nam", "", "", "Lê Thị Đườm (Đảm)", "", "", ""],
+            ["n3_pc_8_1", "n3_pc_7_1", "Lê Thị Nương", "Ngành Ba", "Phái Cả", 8, "nu", "", "", "Đỗ Phi Khản", "", "", ""],
+            ["n3_pc_7_2", "n3_pc_6_1", "Lê Trần Bình", "Ngành Ba", "Phái Cả", 7, "nam", "", "", "Lê Thị Phờn", "", "", ""],
+            ["n3_pc_8_2", "n3_pc_7_2", "Lê Thị An", "Ngành Ba", "Phái Cả", 8, "nu", "", "", "Ngô Văn Sơn", "", "", ""],
+            ["n3_pc_8_3", "n3_pc_7_2", "Lê Thị Yến", "Ngành Ba", "Phái Cả", 8, "nu", "", "Đã mất", "", "", "", "Mất sớm"],
+            ["n3_pc_8_4", "n3_pc_7_2", "Lê Trần Ngọc (Lê Hoành Sơn)", "Ngành Ba", "Phái Cả", 8, "nam", "", "", "Ngô Thị Ngọc Dung", "", "", ""],
+            ["n3_pc_9_1", "n3_pc_8_4", "Lê Hồng Lâm", "Ngành Ba", "Phái Cả", 9, "nam", "", "", "Nguyễn Thị Bích Nga", "", "", ""],
+            ["n3_pc_10_1", "n3_pc_9_1", "Lê Hồng Hải", "Ngành Ba", "Phái Cả", 10, "nu", "", "", "", "", "", "Phả ghi: con gái"],
+            ["n3_pc_10_2", "n3_pc_9_1", "Lê Thị Hồng Nhung", "Ngành Ba", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["n3_pc_9_2", "n3_pc_8_4", "Lê Thị Hoàng Mai", "Ngành Ba", "Phái Cả", 9, "nu", "", "", "Trần Văn Phước", "", "", ""],
+            ["n3_pc_9_3", "n3_pc_8_4", "Lê Thị Hoàng Liên", "Ngành Ba", "Phái Cả", 9, "nu", "", "", "Nguyễn Anh Dũng", "", "", ""],
+            ["n3_pc_9_4", "n3_pc_8_4", "Lê Thị Hải", "Ngành Ba", "Phái Cả", 9, "nu", "", "Đã mất", "", "", "", "Mất sớm"],
+            ["n3_pc_8_5", "n3_pc_7_2", "Lê Trần Ngà (Lê Thanh Tùng)", "Ngành Ba", "Phái Cả", 8, "nam", "", "", "Đoàn Thị Nhâm", "", "", ""],
+            ["n3_pc_9_5", "n3_pc_8_5", "Lê Tùng Khanh", "Ngành Ba", "Phái Cả", 9, "nam", "", "", "Nguyễn Thị Thanh", "", "", ""],
+            ["n3_pc_10_3", "n3_pc_9_5", "Lê Thanh Thảo", "Ngành Ba", "Phái Cả", 10, "nu", "", "", "", "", "", ""],
+            ["n3_pc_10_4", "n3_pc_9_5", "Lê Tùng Nguyên", "Ngành Ba", "Phái Cả", 10, "nam", "", "", "", "", "", ""],
+            ["n3_pc_10_5", "n3_pc_9_5", "Lê Thanh Phương", "Ngành Ba", "Phái Cả", 10, "nam", "", "", "", "", "", ""],
+            ["n3_pc_9_6", "n3_pc_8_5", "Lê Thị Liên Hương", "Ngành Ba", "Phái Cả", 9, "nu", "", "", "Nguyễn Khắc Dụng", "", "", ""],
+            ["n3_pc_9_7", "n3_pc_8_5", "Lê Thị Tuyết Lan", "Ngành Ba", "Phái Cả", 9, "nu", "", "", "Nguyễn Văn Tiến", "", "", ""],
+            ["n3_pc_9_8", "n3_pc_8_5", "Lê Thị Hoàng Yến", "Ngành Ba", "Phái Cả", 9, "nu", "", "", "Đặng Duy", "", "", ""],
+            ["n3_pc_8_6", "n3_pc_7_2", "Lê Trúc Hải", "Ngành Ba", "Phái Cả", 8, "nam", "", "", "Trần Thị Hoa Lý", "", "", ""],
+            ["n3_pc_9_9", "n3_pc_8_6", "Lê Trúc Việt", "Ngành Ba", "Phái Cả", 9, "nam", "", "", "", "", "", ""],
+            ["n3_pc_9_10", "n3_pc_8_6", "Lê Thị Hoàng Oanh", "Ngành Ba", "Phái Cả", 9, "nu", "", "", "Trương Thanh Hải", "", "", ""],
+            ["n3_pc_9_11", "n3_pc_8_6", "Lê Thái Hòa", "Ngành Ba", "Phái Cả", 9, "nam", "", "", "", "", "", ""],
+            ["n3_pc_8_7", "n3_pc_7_2", "Lê Thiếu Bảo", "Ngành Ba", "Phái Cả", 8, "nam", "", "", "Lê Kim Yến", "", "", ""],
+            ["n3_pc_8_8", "n3_pc_7_2", "Lê Trần Ninh", "Ngành Ba", "Phái Cả", 8, "nam", "", "Đã mất", "", "", "", "Mất sớm"],
+            ["n3_pc_8_9", "n3_pc_7_2", "Lê Trần Sức", "Ngành Ba", "Phái Cả", 8, "nam", "", "Đã mất", "", "", "", "Mất sớm"],
+            ["n3_pc_8_10", "n3_pc_7_2", "Lê Thị Dần", "Ngành Ba", "Phái Cả", 8, "nu", "", "", "Nguyễn Ngọc Cảnh", "", "", ""],
+            ["n3_pc_8_11", "n3_pc_7_2", "Lê Thị Cúc", "Ngành Ba", "Phái Cả", 8, "nu", "", "", "Nguyễn Xuân Tấn", "", "", ""],
+            ["n3_pc_7_3", "n3_pc_6_1", "Lê Thị Lợi", "Ngành Ba", "Phái Cả", 7, "nu", "", "", "Lê Văn Ngơi", "", "", ""],
+            ["n3_pc_7_4", "n3_pc_6_1", "Lê Thị Chiếng", "Ngành Ba", "Phái Cả", 7, "nu", "", "", "Lê Văn Chênh", "", "", ""],
+            ["n3_pc_7_5", "n3_pc_6_1", "Lê Trần Thành", "Ngành Ba", "Phái Cả", 7, "nam", "", "", "Lê Thị Dịu", "", "", "Không có con"],
+
+            // --- PHÁI HAI (NGÀNH BA) ---
+            ["n3_p2_6_1", null, "Lê Trần Thận", "Ngành Ba", "Phái Hai", 6, "nam", "", "Đã mất", "Bà (khuyết danh)", "04/05", "Kỳ Vĩ, Hoa Lư, Ninh Bình", "Nghị đồ; Kỵ ngày 4/5 Âm lịch"],
+            ["n3_p2_7_1", "n3_p2_6_1", "Lê Trần Mỹ", "Ngành Ba", "Phái Hai", 7, "nam", "", "", "Vũ Thị Nghĩa", "", "", ""],
+            ["n3_p2_8_1", "n3_p2_7_1", "Lê Trần Khương", "Ngành Ba", "Phái Hai", 8, "nam", "", "", "Lê Thị Hân", "", "", ""],
+            ["n3_p2_9_1", "n3_p2_8_1", "Lê Thị Hạnh", "Ngành Ba", "Phái Hai", 9, "nu", "", "", "Vũ Đình Lập", "", "", ""],
+            ["n3_p2_9_2", "n3_p2_8_1", "Lê Trần Khánh", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "Bùi Bích Thủy", "", "", ""],
+            ["n3_p2_10_1", "n3_p2_9_2", "Lê Thái Sơn", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_10_2", "n3_p2_9_2", "Lê Thái Dương", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_9_3", "n3_p2_8_1", "Lê Trần Thịnh", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "Lêkarola", "", "", ""],
+            ["n3_p2_10_3", "n3_p2_9_3", "Da vít", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_10_4", "n3_p2_9_3", "Levianka", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_10_5", "n3_p2_9_3", "Lê Thị Mai Chi", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_10_6", "n3_p2_9_3", "Lê Thị Mai Hương", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_9_4", "n3_p2_8_1", "Lê Trung Thu", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "Lê Thị Hằng Nga", "", "", ""],
+            ["n3_p2_10_7", "n3_p2_9_4", "Lê Thị Cảnh Tiên", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_10_8", "n3_p2_9_4", "Lê Trung Hậu", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_9_5", "n3_p2_8_1", "Lê Minh Dân", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "Lê Thị Tuyết Hồng", "", "", ""],
+            ["n3_p2_10_9", "n3_p2_9_5", "Lê Thái Ninh", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_10_10", "n3_p2_9_5", "Lê Thái Huy", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_10_11", "n3_p2_9_5", "Lê Trần Nam", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_10_12", "n3_p2_9_5", "Lê Tuyết Mi", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_10_13", "n3_p2_9_5", "Lê Thị Mai Hoa", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_10_14", "n3_p2_9_5", "Lê Minh Thành", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_8_2", "n3_p2_7_1", "Lê Thị Quỳ", "Ngành Ba", "Phái Hai", 8, "nu", "", "", "Đinh Văn Bốn", "", "", ""],
+            ["n3_p2_8_3", "n3_p2_7_1", "Lê Trần Hây", "Ngành Ba", "Phái Hai", 8, "nam", "", "", "Lê Thị Bấm", "", "", ""],
+            ["n3_p2_9_6", "n3_p2_8_3", "Lê Thị Thanh Hà", "Ngành Ba", "Phái Hai", 9, "nu", "", "Đã mất", "", "", "", "Liệt sỹ chống Mỹ"],
+            ["n3_p2_9_7", "n3_p2_8_3", "Lê Trần Phi Bằng", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "Lê Thị Kim Chinh", "", "", ""],
+            ["n3_p2_10_15", "n3_p2_9_7", "Lê Thị Tố Nữ", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_10_16", "n3_p2_9_7", "Lê Thị Mai Nhi", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_9_8", "n3_p2_8_3", "Lê Thị Thanh Huyền", "Ngành Ba", "Phái Hai", 9, "nu", "", "", "Đỗ Đức Quyến", "", "", ""],
+            ["n3_p2_9_9", "n3_p2_8_3", "Lê Thị Mai Linh", "Ngành Ba", "Phái Hai", 9, "nu", "", "", "Hà Đăng Phượng", "", "", ""],
+            ["n3_p2_9_10", "n3_p2_8_3", "Lê Trần Bảo Thạch", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "Mai Thị Lụa", "", "", ""],
+            ["n3_p2_10_17", "n3_p2_9_10", "Lê Thị Hồng Mai", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_10_18", "n3_p2_9_10", "Lê Thị Hương Giang", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_10_19", "n3_p2_9_10", "Lê Trần Thuận", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_9_11", "n3_p2_8_3", "Lê Thị Minh Châu", "Ngành Ba", "Phái Hai", 9, "nu", "", "", "Vũ Văn Ninh", "", "", ""],
+            ["n3_p2_9_12", "n3_p2_8_3", "Lê Trần Trung Hiếu", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "Nguyễn Thị Hằng", "", "", ""],
+            ["n3_p2_10_20", "n3_p2_9_12", "Lê Thị Thủy Ly", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_10_21", "n3_p2_9_12", "Lê Thị Minh Khuê", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_10_22", "n3_p2_9_12", "Lê Trần Thắng", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_9_13", "n3_p2_8_3", "Lê Thị Hồng Gấm", "Ngành Ba", "Phái Hai", 9, "nu", "", "", "An Ngọc Sơn", "", "", ""],
+
+            ["n3_p2_8_4", "n3_p2_7_1", "Lê Trần Phùng", "Ngành Ba", "Phái Hai", 8, "nam", "", "", "Lê Thị Thuấn", "", "", ""],
+            ["n3_p2_9_14", "n3_p2_8_4", "Lê Hào Hùng", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "Lê Thị Lan", "", "", ""],
+            ["n3_p2_10_23", "n3_p2_9_14", "Lê Trung Tín", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_9_15", "n3_p2_8_4", "Lê Hoàng Dũng", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "Nguyễn Minh Trang", "", "", ""],
+            ["n3_p2_10_24", "n3_p2_9_15", "Lê Hoàng Long", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_10_25", "n3_p2_9_15", "Lê Hoàng Anh Tuấn", "Ngành Ba", "Phái Hai", 10, "nam", "", "", "", "", "", ""],
+            ["n3_p2_10_26", "n3_p2_9_15", "Lê Yến Trinh", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", ""],
+            ["n3_p2_8_5", "n3_p2_7_1", "Lê Thị Vượng", "Ngành Ba", "Phái Hai", 8, "nu", "", "", "Đinh Ngọc Tư", "", "", ""],
+            ["n3_p2_8_6", "n3_p2_7_1", "Lê Trần Chín", "Ngành Ba", "Phái Hai", 8, "nam", "", "", "Nguyễn Thị Oanh", "", "", ""],
+            ["n3_p2_9_16", "n3_p2_8_6", "Lê Trần Chỉnh", "Ngành Ba", "Phái Hai", 9, "nam", "", "Đã mất", "", "", "", "Mất sớm"],
+            ["n3_p2_9_17", "n3_p2_8_6", "Lê Trần Thụ", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "Bùi Mai Hiên", "", "", ""],
+            ["n3_p2_10_27", "n3_p2_9_17", "Lê Trần Minh Anh", "Ngành Ba", "Phái Hai", 10, "nu", "", "", "", "", "", "Phả ghi: con gái"],
+            ["n3_p2_9_18", "n3_p2_8_6", "Lê Trần Hưởng", "Ngành Ba", "Phái Hai", 9, "nam", "", "Đã mất", "", "", "", "Mất sớm"],
+            ["n3_p2_9_19", "n3_p2_8_6", "Lê Trần Trí Thức", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "", "", "", ""],
+            ["n3_p2_9_20", "n3_p2_8_6", "Lê Trần Chiến Thuật", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "", "", "", ""],
+            ["n3_p2_8_7", "n3_p2_7_1", "Lê Trần Mười", "Ngành Ba", "Phái Hai", 8, "nam", "", "", "Bà cả: Nguyễn Thị Lý; Bà hai: Nguyễn Thị Sa", "", "", ""],
+            ["n3_p2_9_21", "n3_p2_8_7", "Lê Trần Phú", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "", "", "", ""],
+            ["n3_p2_9_22", "n3_p2_8_7", "Lê Thị Lâm", "Ngành Ba", "Phái Hai", 9, "nu", "", "", "Phùng Quang Hà", "", "", ""],
+            ["n3_p2_9_23", "n3_p2_8_7", "Lê Thị Liên", "Ngành Ba", "Phái Hai", 9, "nu", "", "", "Nguyễn Anh Dũng", "", "", ""],
+            ["n3_p2_9_24", "n3_p2_8_7", "Lê Trần Bắc", "Ngành Ba", "Phái Hai", 9, "nam", "", "", "", "", "", ""],
+
+            ["n3_p2_7_2", "n3_p2_6_1", "Lê Trần Nghĩa", "Ngành Ba", "Phái Hai", 7, "nam", "", "", "Lê Thị Thân", "", "", ""],
+            ["n3_p2_8_8", "n3_p2_7_2", "Lê Thị Cang", "Ngành Ba", "Phái Hai", 8, "nu", "", "", "", "", "", ""],
+            ["n3_p2_8_9", "n3_p2_7_2", "Lê Văn Lê", "Ngành Ba", "Phái Hai", 8, "nam", "", "", "", "", "", ""],
+            ["n3_p2_8_10", "n3_p2_7_2", "Lê Hữu Liêm", "Ngành Ba", "Phái Hai", 8, "nam", "", "", "", "", "", ""],
+            ["n3_p2_8_11", "n3_p2_7_2", "Lê Thị Hưng", "Ngành Ba", "Phái Hai", 8, "nu", "", "", "", "", "", ""],
+            ["n3_p2_8_12", "n3_p2_7_2", "Lê Thị Thìn", "Ngành Ba", "Phái Hai", 8, "nu", "", "", "", "", "", ""],
+            ["n3_p2_8_13", "n3_p2_7_2", "Lê Thị Hết", "Ngành Ba", "Phái Hai", 8, "nu", "", "", "", "", "", ""],
+            ["n3_p2_8_14", "n3_p2_7_2", "Lê Thị Út", "Ngành Ba", "Phái Hai", 8, "nu", "", "", "", "", "", ""],
+            ["n3_p2_8_15", "n3_p2_7_2", "Lê Văn Thanh", "Ngành Ba", "Phái Hai", 8, "nam", "", "", "", "", "", ""],
+
+            // --- PHÁI BA (NGÀNH BA) ---
+            ["n3_p3_6_1", null, "Lê Trần Mô", "Ngành Ba", "Phái Ba", 6, "nam", "", "", "Nguyễn Thị Kép", "", "", "Nhất trường; Đồng biên soạn Bia Trùng Tu Từ Đường năm 1914"],
+            ["n3_p3_7_1", "n3_p3_6_1", "Lê Thị The", "Ngành Ba", "Phái Ba", 7, "nu", "", "", "Hà Huy Duỗn", "", "", ""],
+            ["n3_p3_7_2", "n3_p3_6_1", "Lê Thị Xuyến", "Ngành Ba", "Phái Ba", 7, "nu", "", "", "Lê Văn Thân", "", "", ""],
+            ["n3_p3_7_3", "n3_p3_6_1", "Lê Trần Thi", "Ngành Ba", "Phái Ba", 7, "nam", "", "", "Bà cả: Nguyễn Thị Nếnh; Bà hai: Nguyễn Thị Thinh", "", "", "Hai bà đều không có con, nhận một con nuôi là Lê Thị Loan"],
+            ["n3_p3_8_1", "n3_p3_7_3", "Lê Thị Loan", "Ngành Ba", "Phái Ba", 8, "nuoi", "", "", "Trần Bảo Kiếm", "", "", "Con nuôi của cụ Lê Trần Thi"],
+            ["n3_p3_7_4", "n3_p3_6_1", "Lê Thị Tơ", "Ngành Ba", "Phái Ba", 7, "nu", "", "", "", "", "", "Không lấy chồng"]
         ];
 
-        const clanData = duLieuGiaPha.map(item => ({
-            id: item.id,
-            parentId: item.parentId,
-            fullName: item.ten,
-            generation: item.doi,
-            branch: item.chi || "Chi 1",
-            gender: item.gioiTinh === "nam" ? "male" : (item.gioiTinh === "nu" ? "female" : (item.gioiTinh === "nuoi" ? "adopted" : "spouse")),
-            isSpouse: item.gioiTinh === "dau" || item.gioiTinh === "re",
-            isAdopted: item.gioiTinh === "nuoi",
-            birthYear: item.namSinh || "",
-            deathYear: item.namMat || null,
-            isAlive: !item.namMat,
-            lunarDeathDate: item.ngayGioAm || null,
-            spouseName: item.voChong || "",
-            restingPlace: item.noiAnNghi || "",
-            bio: item.ghiChu || ""
-        }));
+        const clanData = rawPhaHeData.map(r => {
+            let lunarDeathDate = null;
+            if (r[10] && r[10].includes("/")) {
+                const parts = r[10].split("/");
+                lunarDeathDate = { day: parseInt(parts[0], 10), month: parseInt(parts[1], 10) };
+            }
+            const g = r[6];
+            return {
+                id: r[0],
+                parentId: r[1],
+                fullName: r[2],
+                nganh: r[3],
+                phai: r[4],
+                branch: `${r[3]} - ${r[4]}`,
+                generation: r[5],
+                gender: g === "nam" ? "male" : (g === "nu" ? "female" : (g === "nuoi" ? "adopted" : "spouse")),
+                isSpouse: g === "dau" || g === "re",
+                isAdopted: g === "nuoi",
+                birthYear: r[7] || "",
+                deathYear: r[8] || null,
+                isAlive: !r[8],
+                lunarDeathDate: lunarDeathDate,
+                spouseName: r[9] || "",
+                restingPlace: r[11] || "",
+                bio: r[12] || ""
+            };
+        });
 
         const timelineEvents = [
             {
-                year: "1680",
-                title: "Thủy Tổ Vũ Đạo Chính Khai Cơ",
-                description: "Cụ Thủy Tổ giáng sinh, khởi dựng nghiệp lớn tại đất Thái Bình, đặt nền móng truyền thừa bền vững."
+                year: "Thế kỷ X – Thời Tiền Lê",
+                title: "Nguồn Gốc Hoàng Tộc Phượng Vĩ – Liễu Đôi",
+                description: "Tổ tiên xuất thân từ dòng họ Lê hoàng tộc, vọng phiệt vùng Phượng Vĩ, tổng Liễu Đôi, phủ Hà Nam."
             },
             {
-                year: "1815",
-                title: "Thành Lập Ngũ Chi Phương",
-                description: "Cụ Vũ Đức Mậu sinh hạ năm người con trai lập nên 5 nhánh Chi (Chi 1 đến Chi 5) tỏa đi xóm làng lập nghiệp."
+                year: "Thời Hậu Lê – Khai Cơ",
+                title: "Cụ Tổ Thiên Lý Du Nam Lập Nghiệp Tại Kỳ Vĩ",
+                description: "Cụ Tổ vốn là tăng lữ thông thạo Nho Y Lý Số, rời Phượng Vĩ về tu tập tại chùa làng Kỳ Vĩ (Hoa Lư, Ninh Bình), giúp họ Nguyễn Như đắc địa phát đinh, được gả bà Nguyễn Thị Tào, hoàn tục lập nghiệp và rước hài cốt Thượng Tổ về an táng bên núi Hang Thờ, sông Chanh."
             },
             {
-                year: "1954",
-                title: "Bảo Tồn Bản Phả Hệ Cổ",
-                description: "Trải qua chiến tranh gian khổ, dòng họ cất giữ nguyên vẹn các cuốn sách phả hệ Nôm cổ."
+                year: "Thế kỷ XVIII – XIX",
+                title: "Hình Thành Ba Ngành & Các Phái Lớn",
+                description: "Từ một gốc năm cành phát triển thành ba ngành lớn (Ngành Cả, Ngành Hai, Ngành Ba) và nhiều phái nhánh phồn thịnh qua các đời."
             },
             {
-                year: "2026",
-                title: "Số Hóa Cây Phả Hệ Trực Tuyến",
-                description: "Xây dựng cổng phả hệ điện tử giúp con cháu năm chi ở khắp nơi dễ dàng tra cứu trực hệ cội nguồn."
+                year: "Năm Mậu Tuất (1898)",
+                title: "Khởi Dựng Ngôi Từ Đường Đầu Tiên",
+                description: "Mùa thu năm Thành Thái Mậu Tuất, anh em chú bác trong họ họp bàn dựng 3 gian từ đường gỗ xoan lợp tranh tại thôn Kỳ Vĩ."
+            },
+            {
+                year: "Năm Giáp Dần (1914)",
+                title: "Đại Trùng Tu Từ Đường & Lập Bia Đá",
+                description: "Mùa thu năm Duy Tân thứ 8, dòng họ góp công gần 300 lạng dựng lại từ đường cột lim, cột đá, lợp ngói vẩy khang trang, khắc đại tự, câu đối và lập bia trùng tu, bia hậu điền."
+            },
+            {
+                year: "Năm Kỷ Sửu (2009) & Quý Tỵ (2013)",
+                title: "Xây Nhà Bái Đường & Trùng Tu Tôn Tạo",
+                description: "Xây dựng nhà bái đường (27/3/2009), đại trùng tu từ đường (29/5/2013) cùng nhiều đồ tế khí, ngai bài vị, tam cấp đá, cây vạn tuế do con cháu thập phương tiến cúng."
+            },
+            {
+                year: "Năm 2026",
+                title: "Số Hóa Gia Phả Lê Trọng Tộc",
+                description: "Xây dựng trang gia phả điện tử lưu giữ trọn vẹn phả hệ 3 ngành, lịch sử, văn bia, từ đường và mộ chí để con cháu muôn đời tra cứu."
             }
         ];
 
@@ -1016,8 +1652,8 @@
             }
 
             const lifespanText = member.isAlive 
-                ? `${member.birthYear} - Còn sống` 
-                : `${member.birthYear} - ${member.deathYear || '?'}`;
+                ? (member.birthYear ? `Sinh ${member.birthYear}` : `Đời thứ ${member.generation}`)
+                : (member.birthYear ? `${member.birthYear} - ${member.deathYear}` : `${member.deathYear}`);
 
             return `
                 <div class="tree-node-item relative my-3 group" id="node-${member.id}">
@@ -1043,8 +1679,8 @@
                                     <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold ${badgeBg} flex items-center gap-1">
                                         ${genderIcon} ${member.isAdopted ? 'Con nuôi • ' : ''}Đời ${member.generation}
                                     </span>
-                                    <span class="px-2 py-0.5 rounded-md text-[11px] font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
-                                        ${member.branch}
+                                    <span class="px-2 py-0.5 rounded-md text-[11px] font-medium bg-amber-50 dark:bg-amber-950/40 text-amber-800 dark:text-amber-300 border border-amber-200/60 dark:border-amber-800/50">
+                                        ${member.nganh} • ${member.phai}
                                     </span>
                                     ${!member.isAlive ? '<span class="w-2 h-2 rounded-full bg-gray-400" title="Đã mất"></span>' : ''}
                                 </div>
@@ -1052,6 +1688,8 @@
                                 <div class="text-xs text-gray-500 dark:text-gray-400 mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
                                     <span><i class="fa-regular fa-clock text-[10px] mr-1"></i>${lifespanText}</span>
                                     ${member.spouseName ? `<span class="text-purple-600 dark:text-purple-400"><i class="fa-solid fa-heart text-[10px] mr-1"></i>Hôn phối: ${member.spouseName}</span>` : ''}
+                                    ${member.lunarDeathDate ? `<span class="text-amber-700 dark:text-amber-400 font-medium"><i class="fa-solid fa-calendar-day text-[10px] mr-1"></i>Giỗ: ${member.lunarDeathDate.day}/${member.lunarDeathDate.month} ÂL</span>` : ''}
+                                    ${member.bio ? `<span class="text-gray-600 dark:text-gray-300 italic"><i class="fa-solid fa-note-sticky text-[10px] mr-1 text-amber-500"></i>${member.bio}</span>` : ''}
                                 </div>
                             </div>
                         </div>
@@ -1084,13 +1722,15 @@
             let filteredMembers = clanData;
 
             if (activeBranchFilter !== "all") {
-                filteredMembers = filteredMembers.filter(m => m.branch === activeBranchFilter);
+                filteredMembers = filteredMembers.filter(m => m.nganh === activeBranchFilter);
             }
 
             if (queryNorm !== "") {
                 filteredMembers = filteredMembers.filter(m => 
                     removeVietnameseTones(m.fullName).includes(queryNorm) ||
-                    removeVietnameseTones(m.branch).includes(queryNorm) ||
+                    removeVietnameseTones(m.nganh).includes(queryNorm) ||
+                    removeVietnameseTones(m.phai).includes(queryNorm) ||
+                    removeVietnameseTones(m.bio).includes(queryNorm) ||
                     (m.spouseName && removeVietnameseTones(m.spouseName).includes(queryNorm))
                 );
             }
@@ -1103,12 +1743,18 @@
                 noResults.classList.add("hidden");
             }
 
-            if (queryNorm !== "" || activeBranchFilter !== "all") {
+            if (queryNorm !== "") {
                 container.innerHTML = `
                     <div class="mb-3 text-xs text-gray-500">Tìm thấy <b>${filteredMembers.length}</b> kết quả phù hợp:</div>
                     <div class="space-y-3">
                         ${filteredMembers.map(m => createMemberCardHtml(m)).join('')}
                     </div>
+                `;
+            } else if (activeBranchFilter !== "all") {
+                const branchRoots = roots.filter(r => r.nganh === activeBranchFilter);
+                container.innerHTML = `
+                    <div class="mb-3 text-xs text-gray-500">Hiển thị cây phả hệ <b>${activeBranchFilter}</b> (${filteredMembers.length} thành viên từ Đời thứ 6):</div>
+                    ${branchRoots.map(root => createMemberCardHtml(root)).join('')}
                 `;
             } else {
                 container.innerHTML = roots.map(root => createMemberCardHtml(root)).join('');
@@ -1122,7 +1768,7 @@
                     <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-heritage-800 dark:bg-amber-500 border-4 border-white dark:border-gray-900 shadow-md group-hover:scale-125 transition-transform"></div>
                     <div class="bg-heritage-50/60 dark:bg-gray-800/40 p-4 rounded-xl border border-heritage-200/80 dark:border-gray-800 hover:border-amber-500/50 transition-colors">
                         <span class="inline-block px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-500/10 text-amber-800 dark:text-amber-400 mb-1">
-                            Năm ${event.year}
+                            ${event.year}
                         </span>
                         <h4 class="font-serif font-bold text-base text-heritage-900 dark:text-gray-100">${event.title}</h4>
                         <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 leading-relaxed">${event.description}</p>
@@ -1167,9 +1813,9 @@
                             <h4 class="font-serif font-bold text-sm text-heritage-900 dark:text-amber-200 truncate">${item.fullName}</h4>
                             <span class="text-[10px] px-2 py-0.5 rounded bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 shrink-0">Đời ${item.generation}</span>
                         </div>
-                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">${item.branch} • Hưởng thọ: ${parseInt(item.deathYear) - parseInt(item.birthYear)} tuổi</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-0.5">${item.nganh} • ${item.phai}</p>
                         <p class="text-xs text-amber-700 dark:text-amber-400 mt-2 font-medium">
-                            <i class="fa-solid fa-location-dot mr-1"></i>${item.restingPlace || 'Từ Đường Thái Bình'}
+                            <i class="fa-solid fa-location-dot mr-1"></i>${item.restingPlace || 'Kỳ Vĩ, Hoa Lư, Ninh Bình'}
                         </p>
                     </div>
                 </div>
@@ -1181,12 +1827,17 @@
             if (!member) return;
 
             document.getElementById("modalFullName").textContent = member.fullName;
-            document.getElementById("modalBranchBadge").textContent = member.branch;
-            document.getElementById("modalTitle").textContent = `Thành viên đời thứ ${member.generation} • ${member.isAdopted ? 'Con nuôi • ' : ''}${member.isAlive ? 'Còn sống' : 'Đã mất'}`;
+            document.getElementById("modalBranchBadge").textContent = `${member.nganh} - ${member.phai}`;
+            document.getElementById("modalBranchLineage").textContent = `${member.nganh} • ${member.phai} • Đời thứ ${member.generation}`;
+            document.getElementById("modalTitle").textContent = `Thành viên đời thứ ${member.generation} • ${member.isAdopted ? 'Con nuôi • ' : ''}${member.isAlive ? 'Còn sống / Chưa rõ năm mất' : 'Đã mất'}`;
             
-            document.getElementById("modalLifespan").textContent = member.isAlive 
-                ? `${member.birthYear} (Còn sống)` 
-                : `${member.birthYear} - ${member.deathYear} (Hưởng thọ ${parseInt(member.deathYear) - parseInt(member.birthYear)} tuổi)`;
+            let lifespanDisplay = "Chưa cập nhật";
+            if (member.isAlive) {
+                lifespanDisplay = member.birthYear ? `Sinh năm ${member.birthYear}` : "Chưa cập nhật năm sinh";
+            } else {
+                lifespanDisplay = member.birthYear ? `${member.birthYear} - ${member.deathYear}` : member.deathYear;
+            }
+            document.getElementById("modalLifespan").textContent = lifespanDisplay;
             
             document.getElementById("modalDeathAnniversary").textContent = member.lunarDeathDate 
                 ? `Ngày ${member.lunarDeathDate.day} tháng ${member.lunarDeathDate.month} (Âm lịch)` 
@@ -1194,7 +1845,7 @@
 
             document.getElementById("modalSpouse").textContent = member.spouseName || "Chưa cập nhật";
             document.getElementById("modalRestingPlace").textContent = member.restingPlace || "Chưa cập nhật";
-            document.getElementById("modalBio").textContent = member.bio || "Chưa có tiểu sử chi tiết.";
+            document.getElementById("modalBio").textContent = member.bio || "Chưa có ghi chú bổ sung.";
 
             const ancestry = getAncestryPath(memberId);
             const pathContainer = document.getElementById("modalLineagePath");
@@ -1254,11 +1905,11 @@
             const targetElementId = `node-${member.id}`;
             const baseUrl = window.location.href.split('#')[0];
             const shareUrl = `${baseUrl}#${targetElementId}`;
-            const shareTitle = `Gia Phả Vũ Tộc - ${member.fullName}`;
-            const shareText = `Xem thông tin trực hệ ${member.fullName} (${member.branch}, Đời ${member.generation}) trong Cây Phả Hệ Vũ Tộc.`;
+            const shareTitle = `Gia Phả Lê Trọng Tộc - ${member.fullName}`;
+            const shareText = `Xem thông tin trực hệ ${member.fullName} (${member.nganh} - ${member.phai}, Đời ${member.generation}) trong Cây Phả Hệ Lê Trọng Tộc.`;
 
             document.getElementById("shareTargetTitle").textContent = member.fullName;
-            document.getElementById("shareTargetSubtitle").textContent = `${member.branch} • Thế hệ đời thứ ${member.generation}`;
+            document.getElementById("shareTargetSubtitle").textContent = `${member.nganh} • ${member.phai} • Thế hệ đời thứ ${member.generation}`;
             document.getElementById("shareUrlInput").value = shareUrl;
 
             const qrApi = `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(shareUrl)}`;
@@ -1315,8 +1966,7 @@
         function switchView(targetSectionId) {
             const tabContents = document.querySelectorAll(".tab-content");
             const treeControls = document.getElementById("treeControlsBar");
-            const btnTamSu = document.getElementById("btnTamSuHero");
-            const btnHuongDan = document.getElementById("btnHuongDanHero");
+            const heroButtons = document.querySelectorAll(".hero-nav-btn");
 
             tabContents.forEach(content => {
                 if (content.id === targetSectionId) {
@@ -1326,31 +1976,30 @@
                 }
             });
 
-            if (btnTamSu && btnHuongDan) {
-                btnTamSu.classList.remove("hero-btn-active");
-                btnHuongDan.classList.remove("hero-btn-active");
-
-                if (targetSectionId === "section-tamsu") {
-                    btnTamSu.classList.add("hero-btn-active");
-                } else if (targetSectionId === "section-huongdan") {
-                    btnHuongDan.classList.add("hero-btn-active");
+            heroButtons.forEach(btn => {
+                if (btn.getAttribute("data-target") === targetSectionId) {
+                    btn.classList.add("hero-btn-active");
+                } else {
+                    btn.classList.remove("hero-btn-active");
                 }
-            }
+            });
 
-            if (targetSectionId === "section-tamsu" || targetSectionId === "section-huongdan") {
+            const specialSections = ["section-nguongoc", "section-tuduong", "section-caudoi", "section-haubiky", "section-dotekhi", "section-mochi", "section-huongdan"];
+            if (specialSections.includes(targetSectionId)) {
                 treeControls.classList.add("hidden");
             } else {
                 treeControls.classList.remove("hidden");
             }
 
             const navTabs = document.querySelectorAll(".nav-tab");
+            const isBranchSelected = targetSectionId === "section-tree" && activeBranchFilter !== "all";
             navTabs.forEach(t => {
-                if (t.getAttribute("data-target") === targetSectionId) {
-                    t.classList.add("bg-heritage-800", "dark:bg-amber-600", "text-white", "active");
-                    t.classList.remove("text-gray-600", "dark:text-gray-300");
+                if (t.getAttribute("data-target") === targetSectionId && !isBranchSelected) {
+                    t.classList.add("bg-heritage-800", "dark:bg-amber-600", "text-white", "shadow-sm", "active");
+                    t.classList.remove("text-gray-600", "dark:text-gray-300", "hover:bg-heritage-200/60", "dark:hover:bg-gray-800");
                 } else {
-                    t.classList.remove("bg-heritage-800", "dark:bg-amber-600", "text-white", "active");
-                    t.classList.add("text-gray-600", "dark:text-gray-300");
+                    t.classList.remove("bg-heritage-800", "dark:bg-amber-600", "text-white", "shadow-sm", "active");
+                    t.classList.add("text-gray-600", "dark:text-gray-300", "hover:bg-heritage-200/60", "dark:hover:bg-gray-800");
                 }
             });
             window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1360,11 +2009,25 @@
             const hash = window.location.hash;
             if (!hash) return;
 
-            if (hash === "#tam-su" || hash === "#tamsu") {
-                switchView("section-tamsu");
-                return;
-            } else if (hash === "#huong-dan" || hash === "#huongdan") {
-                switchView("section-huongdan");
+            const hashToSectionMap = {
+                "#nguon-goc": "section-nguongoc",
+                "#nguongoc": "section-nguongoc",
+                "#tu-duong": "section-tuduong",
+                "#tuduong": "section-tuduong",
+                "#cau-doi": "section-caudoi",
+                "#caudoi": "section-caudoi",
+                "#hau-bi-ky": "section-haubiky",
+                "#haubiky": "section-haubiky",
+                "#do-te-khi": "section-dotekhi",
+                "#dotekhi": "section-dotekhi",
+                "#mo-chi": "section-mochi",
+                "#mochi": "section-mochi",
+                "#huong-dan": "section-huongdan",
+                "#huongdan": "section-huongdan"
+            };
+
+            if (hashToSectionMap[hash]) {
+                switchView(hashToSectionMap[hash]);
                 return;
             }
 
@@ -1406,7 +2069,6 @@
         }
 
         document.addEventListener("DOMContentLoaded", function() {
-            
             updateStats();
             renderTree();
             renderTimeline();
@@ -1419,18 +2081,25 @@
             navTabs.forEach(tab => {
                 tab.addEventListener("click", function() {
                     const targetId = this.getAttribute("data-target");
+                    if (targetId === "section-tree") {
+                        activeBranchFilter = "all";
+                        document.querySelectorAll(".branch-filter-btn").forEach(b => {
+                            b.classList.remove("bg-heritage-800", "dark:bg-amber-600", "text-white", "shadow-sm", "active");
+                            b.classList.add("text-gray-600", "dark:text-gray-300", "hover:bg-heritage-200/60", "dark:hover:bg-gray-800");
+                        });
+                        renderTree();
+                    }
                     switchView(targetId);
                 });
             });
 
-            document.getElementById("btnTamSuHero").addEventListener("click", function() {
-                window.location.hash = "tam-su";
-                switchView("section-tamsu");
-            });
-
-            document.getElementById("btnHuongDanHero").addEventListener("click", function() {
-                window.location.hash = "huong-dan";
-                switchView("section-huongdan");
+            document.querySelectorAll(".hero-nav-btn").forEach(btn => {
+                btn.addEventListener("click", function() {
+                    const targetId = this.getAttribute("data-target");
+                    const hashVal = this.getAttribute("data-hash");
+                    if (hashVal) window.location.hash = hashVal;
+                    switchView(targetId);
+                });
             });
 
             document.querySelectorAll(".btn-back-to-tree").forEach(btn => {
@@ -1458,13 +2127,16 @@
             branchBtns.forEach(btn => {
                 btn.addEventListener("click", function() {
                     const branch = this.getAttribute("data-branch");
+                    branchBtns.forEach(b => {
+                        b.classList.remove("bg-heritage-800", "dark:bg-amber-600", "text-white", "shadow-sm", "active");
+                        b.classList.add("text-gray-600", "dark:text-gray-300", "hover:bg-heritage-200/60", "dark:hover:bg-gray-800");
+                    });
                     if (activeBranchFilter === branch) {
                         activeBranchFilter = "all";
-                        this.classList.remove("bg-heritage-800", "text-white");
                     } else {
                         activeBranchFilter = branch;
-                        branchBtns.forEach(b => b.classList.remove("bg-heritage-800", "text-white"));
-                        this.classList.add("bg-heritage-800", "text-white");
+                        this.classList.add("bg-heritage-800", "dark:bg-amber-600", "text-white", "shadow-sm", "active");
+                        this.classList.remove("text-gray-600", "dark:text-gray-300", "hover:bg-heritage-200/60", "dark:hover:bg-gray-800");
                     }
                     
                     switchView("section-tree");
@@ -1522,7 +2194,11 @@
                 activeBranchFilter = "all";
                 searchHeader.value = "";
                 searchMobile.value = "";
-                branchBtns.forEach(b => b.classList.remove("bg-heritage-800", "text-white"));
+                branchBtns.forEach(b => {
+                    b.classList.remove("bg-heritage-800", "dark:bg-amber-600", "text-white", "shadow-sm", "active");
+                    b.classList.add("text-gray-600", "dark:text-gray-300", "hover:bg-heritage-200/60", "dark:hover:bg-gray-800");
+                });
+                switchView("section-tree");
                 renderTree();
             });
 
